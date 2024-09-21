@@ -1,0 +1,1 @@
+This folder will hold all main codes for the project.
