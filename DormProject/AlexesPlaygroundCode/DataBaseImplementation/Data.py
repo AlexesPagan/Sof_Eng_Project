@@ -8,9 +8,6 @@ firebase_admin.initialize_app(cred)
 # Initialize Firestore
 db = firestore.client()
 
-#print("Firebase connected!")
-#print("Hello pycharm")
-
 #This class defines all data that represents a student
 class Student:
 
@@ -76,21 +73,86 @@ def collect_student_info():
     return Student(name, student_id, year, handicaps, preferences)
 
 #Testing
-new_student = collect_student_info()
-add_student(new_student)
-print("All students:")
-get_students()
+#new_student = collect_student_info()
+#add_student(new_student)
+#print("All students:")
+#get_students()
 
-#class Dorms:
-    #def __init__(self):
+#This class defines all data that represents a Dorm Building
+class Dorm:
 
-    #class Rooms:
-        #def __init__(self):
+    #This method acts as a constructor and assigns these attributes to each dorm object
+    def __init__(self, name, housing_style, capacity):
+        self.name = name
+        self.housing_style = housing_style
+        self.capacity = capacity
+        self.rooms = []
 
-        #def to_dict(self):
+    #This nested class defines all data that represents the different rooms within a dorm
+    class Room:
 
-    #def add_room(self):
+        #This method acts as a constructor and assigns these attributes to each room object
+        def __init__(self, room_number, capacity, is_occupied=False):
+            self.room_number = room_number
+            self.capacity = capacity
+            self.is_occupied = is_occupied
 
-    #def to_dict(self):
+        #This method converts the data of the room into a dictionary format
+        def to_dict(self):
+            return {
+                'room_number': self.room_number,
+                'capacity': self.capacity,
+                'is_occupied': self.is_occupied
+            }
+
+        #This method displays room data as a string
+        def __str__(self):
+            return f"Room Number: {self.room_number}, Capacity: {self.capacity}, Occupied: {self.is_occupied}"
+
+    #This method adds a new room object to the list of rooms
+    def add_room(self, room):
+        self.rooms.append(room)
+
+    #This method converts the data of the dorm into a dictionary format
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'housing_style': self.housing_style,
+            'capacity': self.capacity,
+            'rooms': [room.to_dict() for room in self.rooms]  # Include room info
+        }
+
+    #This method displays the data of the dorm as a string
+    def __str__(self):
+        return f"Dorm Name: {self.name}, Style: {self.housing_style}, Capacity: {self.capacity}"
+
+#This method adds a dorm to the database
+def add_dorm(dorm):
+    db.collection('dorms').add(dorm.to_dict())
+    print(f"Added dorm: {dorm.name}")
 
 #Testing
+dorm1 = Dorm(name="Nebula Hall", housing_style="Suite", capacity=200)
+
+#names for future dorms: moonlight hall, aurora hall, solstice hall, comet hall, eclipse hall
+room1 = Dorm.Room(room_number="Rm01", capacity=2, is_occupied=False)
+room2 = Dorm.Room(room_number="Rm02", capacity=3, is_occupied=False)
+room3 = Dorm.Room(room_number="Rm03", capacity=2, is_occupied=True)
+
+dorm1.add_room(room1)
+dorm1.add_room(room2)
+dorm1.add_room(room3)
+
+#this calls the __str__ method for the dorm object
+print(dorm1)
+for room in dorm1.rooms:
+    #this calls the __str__ method for the room object
+    print(room)
+
+dorm1Dict = dorm1.to_dict()
+print(dorm1Dict)
+for room in dorm1.rooms:
+    roomDict = room.to_dict()
+    print(roomDict)
+
+add_dorm(dorm1)
