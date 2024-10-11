@@ -1,5 +1,6 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
+import re
 
 # Path to the service account JSON file
 cred = credentials.Certificate("C:/Users/PJ/Desktop/Key/databasebuilds-firebase-adminsdk-arl8u-c0af0513df.json")  # Update the path
@@ -31,9 +32,28 @@ class Student:
 
 #This method asks the user general data questions and creates a student object with it
 def collect_student_info():
-    name = input("Enter your name: ")
-    student_id = input("Enter your student ID: ")
-    year = input("Enter your year (e.g., Freshman, Sophomore, etc.): ")
+    # Validating the name
+    while True:
+        name = input("Enter your name: ")
+        if re.match(r'^[A-Za-z ]+$', name):
+            break
+        print("Invalid name. Please use only letters and spaces.")
+
+    # Validating the student ID
+    while True:
+        student_id = input("Enter your student ID: ")
+        if re.match(r'^H\d{9}$', student_id):
+            break
+        print("Invalid ID. Format should be 'H' followed by 9 digits.")
+
+    # Validating the year
+    valid_years = ['freshman', 'sophomore', 'junior', 'senior']
+    while True:
+        year = input("Enter your year (e.g., Freshman, Sophomore, etc.): ")
+        if year.lower() in valid_years:
+            break
+        print("Invalid year. Enter a valid year name like Freshman, Senior...")
+
     handicaps = input("Enter any handicaps (separate by commas, or type 'None'): ") # ***Future solution that leverages Machine Learning to summarize the important part of the text***
 
     #check if the user inputted no handicaps
