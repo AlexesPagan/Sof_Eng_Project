@@ -284,12 +284,12 @@ def add_dorm(dorm):
 
 dorm6 = Dorm(name="Eclipse Hall", housing_style="Tower", capacity=60)
 
-comet_room_config = [
+eclipse_room_config = [
     {"start": 1, "end": 20, "capacity": 1, "is_occupied": False},
     {"start": 21, "end": 40, "capacity": 2, "is_occupied": False}
 ]
 
-for config in comet_room_config:
+for config in eclipse_room_config:
 
     for i in range(config['start'], config['end'] + 1):
 
