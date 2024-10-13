@@ -132,27 +132,179 @@ def add_dorm(dorm):
     print(f"Added dorm: {dorm.name}")
 
 #Testing
-dorm1 = Dorm(name="Nebula Hall", housing_style="Suite", capacity=200)
 
-#names for future dorms: moonlight hall, aurora hall, solstice hall, comet hall, eclipse hall
-room1 = Dorm.Room(room_number="Rm01", capacity=2, is_occupied=False)
-room2 = Dorm.Room(room_number="Rm02", capacity=3, is_occupied=False)
-room3 = Dorm.Room(room_number="Rm03", capacity=2, is_occupied=True)
+#dorm1 = Dorm(name="Nebula Hall", housing_style="Suite", capacity=140)
 
-dorm1.add_room(room1)
-dorm1.add_room(room2)
-dorm1.add_room(room3)
+#create a list of dictionaries that contains the start and end room number, capacity number and occupied boolean
+#nebula_room_config = [
+
+    #first 20 rooms can fit 3 people. The next 20 rooms can fit 4 people
+    #{"start": 1, "end": 20, "capacity": 3, "is_occupied": False},
+    #{"start": 21, "end": 40, "capacity": 4, "is_occupied": False}
+#]
+
+#iterate through each dictionary in the list of dictionaries
+#for config in nebula_room_config:
+
+    #iterate from the start and end time specified from the dictionary
+    #for i in range(config['start'], config['end'] + 1):
+
+        #this sets a format of Rm followed by the value of i which follows a two digit format. Ex: Rm01, Rm10...
+        #room_number_it = f"Rm{i:02}"
+
+        #create a room object for each iteration
+        #room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_occupied = config['is_occupied'])
+        #dorm1.add_room(room)
 
 #this calls the __str__ method for the dorm object
-print(dorm1)
-for room in dorm1.rooms:
+#print(dorm1)
+#for room in dorm1.rooms:
     #this calls the __str__ method for the room object
+    #print(room)
+
+#dorm1Dict = dorm1.to_dict()
+#print(dorm1Dict)
+#for room in dorm1.rooms:
+    #roomDict = room.to_dict()
+    #print(roomDict)
+
+#add_dorm(dorm1)
+
+#dorm2 = Dorm(name="Moonlight Hall", housing_style="Suite", capacity=30)
+
+#moonlight_room_config = [
+    #{"start": 1, "end": 10, "capacity": 1, "is_occupied": False},
+    #{"start": 11, "end": 20, "capacity": 2, "is_occupied": False}
+#]
+
+#for config in moonlight_room_config:
+
+    #for i in range(config['start'], config['end'] + 1):
+
+        #room_number_it = f"Rm{i:02}"
+        #room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_occupied = config['is_occupied'])
+        #dorm2.add_room(room)
+
+#print(dorm2)
+#for room in dorm2.rooms:
+    #print(room)
+
+#dorm2Dict = dorm2.to_dict()
+#print(dorm2Dict)
+#for room in dorm2.rooms:
+    #roomDict = room.to_dict()
+    #print(roomDict)
+
+#add_dorm(dorm2)
+
+#dorm3 = Dorm(name="Aurora Hall", housing_style="Tower", capacity=100)
+
+#aurora_room_config = [
+    #{"start": 1, "end": 10, "capacity": 1, "is_occupied": False},
+    #{"start": 11, "end": 20, "capacity": 2, "is_occupied": False},
+    #{"start": 21, "end": 30, "capacity": 3, "is_occupied": False},
+    #{"start": 31, "end": 40, "capacity": 4, "is_occupied": False}
+#]
+
+#for config in aurora_room_config:
+
+    #for i in range(config['start'], config['end'] + 1):
+
+        #room_number_it = f"Rm{i:02}"
+        #room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_occupied = config['is_occupied'])
+        #dorm3.add_room(room)
+
+#print(dorm3)
+#for room in dorm3.rooms:
+    #print(room)
+
+#dorm3Dict = dorm3.to_dict()
+#print(dorm3Dict)
+#for room in dorm3.rooms:
+    #roomDict = room.to_dict()
+    #print(roomDict)
+
+#add_dorm(dorm3)
+
+#dorm4 = Dorm(name="Solstice Hall", housing_style="Tower", capacity=45)
+
+#solstice_room_config = [
+    #{"start": 1, "end": 15, "capacity": 1, "is_occupied": False},
+    #{"start": 16, "end": 30, "capacity": 2, "is_occupied": False}
+#]
+
+#for config in solstice_room_config:
+
+    #for i in range(config['start'], config['end'] + 1):
+
+        #room_number_it = f"Rm{i:02}"
+        #room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_occupied = config['is_occupied'])
+        #dorm4.add_room(room)
+
+#print(dorm4)
+#for room in dorm4.rooms:
+    #print(room)
+
+#dorm4Dict = dorm4.to_dict()
+#print(dorm4Dict)
+#for room in dorm4.rooms:
+    #roomDict = room.to_dict()
+    #print(roomDict)
+
+#add_dorm(dorm4)
+
+#dorm5 = Dorm(name="Comet Hall", housing_style="Suite", capacity=210)
+
+#comet_room_config = [
+    #{"start": 1, "end": 15, "capacity": 2, "is_occupied": False},
+    #{"start": 16, "end": 30, "capacity": 3, "is_occupied": False},
+    #{"start": 31, "end": 45, "capacity": 4, "is_occupied": False},
+    #{"start": 46, "end": 60, "capacity": 5, "is_occupied": False}
+#]
+
+#for config in comet_room_config:
+
+    #for i in range(config['start'], config['end'] + 1):
+
+        #room_number_it = f"Rm{i:02}"
+        #room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_occupied = config['is_occupied'])
+        #dorm5.add_room(room)
+
+#print(dorm5)
+#for room in dorm5.rooms:
+    #print(room)
+
+#dorm5Dict = dorm5.to_dict()
+#print(dorm5Dict)
+#for room in dorm5.rooms:
+    #roomDict = room.to_dict()
+    #print(roomDict)
+
+#add_dorm(dorm5)
+
+dorm6 = Dorm(name="Eclipse Hall", housing_style="Tower", capacity=60)
+
+comet_room_config = [
+    {"start": 1, "end": 20, "capacity": 1, "is_occupied": False},
+    {"start": 21, "end": 40, "capacity": 2, "is_occupied": False}
+]
+
+for config in comet_room_config:
+
+    for i in range(config['start'], config['end'] + 1):
+
+        room_number_it = f"Rm{i:02}"
+        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_occupied = config['is_occupied'])
+        dorm6.add_room(room)
+
+print(dorm6)
+for room in dorm6.rooms:
     print(room)
 
-dorm1Dict = dorm1.to_dict()
-print(dorm1Dict)
-for room in dorm1.rooms:
+dorm6Dict = dorm6.to_dict()
+print(dorm6Dict)
+for room in dorm6.rooms:
     roomDict = room.to_dict()
     print(roomDict)
 
-add_dorm(dorm1)
+add_dorm(dorm6)
