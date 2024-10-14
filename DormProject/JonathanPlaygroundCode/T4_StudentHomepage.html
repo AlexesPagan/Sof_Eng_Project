@@ -1,0 +1,145 @@
+
+<!-- REVISION HISTORY  
+
+Jonathan  10/11/24     Created Framework, basic HTML set up
+
+-->
+
+
+  <!-- shift+1 enter to get the following code. This is preliminary setup -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Student HomePage</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+      <!-- STYLE FOR JAVA SCRIPT STUFF-->
+      <style>
+        .dropdown-item:active {
+            background-color: #d2c6d3; /* Change to your desired color */
+            color: #fff; /* Change the text color if needed */
+        }
+        .dropdown-item.active {
+            background-color: #d2c6d3; /* Change to your desired color */
+            color: #fff; /* Change the text color if needed */
+        }
+    </style>
+
+  </head>
+  <body>
+
+    <div style="position: absolute; top: 30px; right: 40px; background-color: #dcecf1; padding: 10px 20px; font-family: Georgia, serif; font-size: large; font-weight: bold; border-radius: 10px; color: #1a2f4a;">
+      Temporary University
+    </div>
+    
+      <!-- This has been added in. This is the login page from under Bootstrap>examples>sign-in with addins from Kyren -->
+      <Body
+          style = "background-color:white" style="background-size: 100vw 100vh;"></Body> <!-- white smoke-->
+  
+          
+      <body class="text-center">
+          <form class="form-signin">
+            <h1></h1>
+  
+              <!-- using 'style="font-family: etc' to set the font style of the specific text. I picked Gerogia just cause I thought it looked nice-->
+          
+            <p style=" position: absolute; bottom: 0; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
+          </form>                                                                                                                                         <!-- Changed this copyright from a 'class', to just style. Regular text, not classd, to make it work.-->
+          
+          
+
+          <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 230px; height: 100vh;background-color: #dcecf1 !important">  <!-- !important keyword overrides whatever boostrap is doing to keep the color white-->
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-4 link-body-emphasis text-decoration-none">
+              <svg class="bi pe-none me-2" width="40" height="32"><use></use></svg>
+              <span class="fs-4"><img class="mb-4" src="https://i.ibb.co/YRmh26W/Screenshot-2024-09-16-152612-removebg-preview.png" alt="" width="175" height="175">  <!-- install the image to my computer folder, call the file here so it is not connecting to internet-->
+              </span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item" style="margin-bottom: 15px;">
+                <a href="#" class="nav-link active" aria-current="page" style="background-color: #d2c6d3; color: #1a2f4a; font-family:Georgia, serif; font-weight: bold; font-size: large; padding-right: 40px;">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                  Overview
+                </a>
+              </li>
+              <li style="margin-bottom: 15px;">
+                <a href="#" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family: Georgia, serif; font-size: larger; display: flex; align-items: center; padding-right: 40px;">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                  Dorm Application
+                </a>
+              </li>
+              <li style="margin-bottom: 15px;">
+                <a href="#" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family:Georgia, serif;font-size: large; padding-right: 40px;">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                  Dorm Details
+                </a>
+              </li>
+              <li style="margin-bottom: 15px;">
+                <a href="#" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family:Georgia, serif; font-size: large; padding-right: 40px;">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                  Help
+                </a>
+              </li>
+              <li>
+                
+              </li>
+            </ul>
+            <hr>
+
+    <!-- Default dropup button ... GOTTA MAKE THIS DROPUP ACTUALLY WORK--> 
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #d2c6d3; color: #1a2f4a; font-family: Georgia, serif; font-weight: bold;">
+            Test Student 1
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Profile</a></li>
+            <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Sign Out</a></li>
+          </ul>
+        </div>
+
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let lastActiveItem = null; // To store the last active item
+
+        function setActive(element) {
+            // Remove active style from all items
+            const items = document.querySelectorAll('.dropdown-item');
+            items.forEach(item => {
+                item.style.backgroundColor = '';
+                item.style.color = '#1a2f4a'; // Reset color
+            });
+
+            // Set active style for the clicked item
+            element.style.backgroundColor = '#d2c6d3'; // Change to your desired color
+
+
+            lastActiveItem = element; // Store the last active item
+        }
+
+        // Remove highlight when clicking outside the dropdown
+        document.addEventListener('click', function(event) {
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            // Check if the click was outside the dropdown
+            if (!dropdownMenu.contains(event.target) && lastActiveItem) {
+                lastActiveItem.style.backgroundColor = ''; // Reset background color
+                lastActiveItem.style.color = '#1a2f4a'; // Reset text color
+                lastActiveItem = null; // Clear the last active item
+            }
+        });
+
+
+    </script>
+</body>
+</html>
