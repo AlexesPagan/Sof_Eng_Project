@@ -13,12 +13,14 @@ db = firestore.client()
 class Student:
 
     #This method acts as a constructor and assigns these attributes for each student object
-    def __init__(self, name, student_id, year, handicaps, preferences):
+    def __init__(self, name, student_id, year, handicaps, preferences, email, password):
         self.name = name
         self.student_id = student_id
         self.year = year
         self.handicaps = handicaps
         self.preferences = preferences
+        self.email = email,
+        self.password = password
 
     #This method converts the student data into a dictionary format
     def to_dict(self):
@@ -27,50 +29,76 @@ class Student:
             'student_id': self.student_id,
             'year': self.year,
             'handicaps': self.handicaps,
-            'preferences': self.preferences
+            'preferences': self.preferences,
+            'email': self.email,
+            'password': self.password
         }
 
 #This method asks the user general data questions and creates a student object with it
 def collect_student_info():
-    # Validating the name
+    name, student_id, year, email, password = get_validated_input()
+    handicaps, preferences = get_handicaps_preferences()
+    return Student(name, student_id, year, handicaps, preferences, email, password)
+
+def get_validated_input():
+    name = validate_name()
+    student_id = validate_student_id()
+    year = validate_year()
+    email = validate_email()
+    password = validate_password()
+    return name, student_id, year, email, password
+
+# Validating the name
+def validate_name():
     while True:
         name = input("Enter your name: ")
         if re.match(r'^[A-Za-z ]+$', name):
-            break
+            return name
         print("Invalid name. Please use only letters and spaces.")
 
-    # Validating the student ID
+# Validating the student ID
+def validate_student_id():
     while True:
         student_id = input("Enter your student ID: ")
         if re.match(r'^H\d{9}$', student_id):
-            break
+            return student_id
         print("Invalid ID. Format should be 'H' followed by 9 digits.")
 
-    # Validating the year
+# Validating the year
+def validate_year():
     valid_years = ['freshman', 'sophomore', 'junior', 'senior']
     while True:
         year = input("Enter your year (e.g., Freshman, Sophomore, etc.): ")
         if year.lower() in valid_years:
-            break
+            return year
         print("Invalid year. Enter a valid year name like Freshman, Senior...")
 
-    handicaps = input("Enter any handicaps (separate by commas, or type 'None'): ") # ***Future solution that leverages Machine Learning to summarize the important part of the text***
+# Validating the email
+def validate_email():
+    while True:
+        email = input("Enter your email: ")
+        if re.match(r'^[a-zA-Z0-9._]+@pride\.hofstra\.edu$', email):
+            return email
+        print("Invalid email format. Please enter a valid email.")
 
-    #check if the user inputted no handicaps
-    #strip() gets rid of unnecessary whitespace. lower() changes string to lowercase
+# Validating the password
+def validate_password():
+    while True:
+        password = input("Enter your password: ")
+        if len(password) >= 6:
+            return password
+        print("Password must be at least 6 characters long.")
+
+# Validating the handicaps and preferences
+def get_handicaps_preferences():
+    handicaps = input("Enter any handicaps (separate by commas, or type 'None'): ")
     if handicaps.strip().lower() == 'none':
         handicaps = []
-
-    #user inputted a handicap
-    #split() is used to separate strings based on commas
     else:
         handicaps = [h.strip() for h in handicaps.split(',')]
-
     preferences = input("Enter your preferences (separate by commas): ")
     preferences = [p.strip() for p in preferences.split(',')]
-
-    #create a new student object with provided data
-    return Student(name, student_id, year, handicaps, preferences)
+    return handicaps, preferences
 
 #This method adds a student to the database
 def add_student(student):
