@@ -101,7 +101,7 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
 
 
 
-                /* Adjust column layout for different screen sizes */
+        /* Adjust column layout for different screen sizes */
         .col-lg-4 img {
             width: 100%;
             height: auto;
@@ -131,6 +131,7 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
                 width: 70%; /* Slightly smaller width for larger screens */
             }
 
+            
         /* Dorm Details Tab CSS */
         #dorm-details{
           visibility: hidden;
@@ -152,12 +153,14 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
           margin-left: 280px;
           margin-bottom: 200px;
           position: relative;
+          bottom: 580px; /* Moves carosuel up and down */
           width: 80%; /* Width */
           max-width: 1200px; /* Cap the width for larger screens */
           max-height: 90vh; /* Limit the height to 90% of the viewport */
           overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
           padding: 10px;
-          margin-bottom: 200px; /* Adjust this to move the carousel up or down */
+          margin-bottom: 200px; 
+
         }
 
 
@@ -185,7 +188,7 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
           <div>
             <h1></h1>
               <!-- using 'style="font-family: etc' to set the font style of the specific text. I picked Gerogia just cause I thought it looked nice-->
-            <p style=" position: absolute; bottom: 0; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
+            <p style=" position: absolute; bottom: -1000px; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
           </div>                                                                                                                                         <!-- Changed this copyright from a 'class', to just style. Regular text, not classd, to make it work.-->
           
              
