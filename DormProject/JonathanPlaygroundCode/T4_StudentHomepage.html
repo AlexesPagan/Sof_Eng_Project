@@ -11,7 +11,7 @@ Jonathan  10/18/24     Added generic 'toggleButton' function for future use
 Kyren     10/18/24     Added functionality to the first dorm detail's button and added the carousel
 Jonathan  10/18/24     Added test images to the dorm details page
 Jonathan  10/18/24     Formated the carsoule page, colored the arrows, added the images, text, etc.
-Jonathan  10/19/24     
+Jonathan  10/21/24     Did some more work attempting to make resizing the window actually work... its difficult
 
 -->
 
@@ -39,6 +39,12 @@ Jonathan  10/19/24
         }
 
         /*Carousel CSS */
+
+        .carousel {
+          margin-top: 10px; /* Adjust this to move the carousel closer to the top */
+        }
+
+        
         
         .carousel-control-prev-icon{
           background-color: #f1d2f5; 
@@ -71,25 +77,89 @@ Jonathan  10/19/24
             border-radius: 10px; /* Rounds corners */
         }
 
+
+        /* Handle text and content layout */
+        .container {
+            margin: 20px auto;
+            max-width: 80vw; /* Max width based on viewport */
+        }
+
         
+        /* Make carousel items responsive */
+        .carousel-item img {
+            width: 100%; /* Image takes full width */
+            height: auto; /* Adjusts height proportionally */
+            object-fit: contain; /* Ensures the image fits without distortion */
+        }
+
+
+
+        /* Carousel inner container */
+        .carousel-inner {
+            max-height: 1000px; /* Ensure the height stays controlled */
+            overflow: hidden; /* Prevent overflow issues */
+        }
+
+
+                /* Adjust column layout for different screen sizes */
+        .col-lg-4 img {
+            width: 100%;
+            height: auto;
+            border-radius: 10%;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%; /* Increase container width on smaller screens */
+                padding: 0;
+            }
+
+            /* Adjust carousel size for mobile */
+            .carousel {
+                height: 50vh; /* Reduce height on smaller screens */
+            }
+
+            .carousel-item img {
+                height: 50vh; /* Responsive height for images */
+            }
+        }
+
+        /* Media query for large screens */
+        @media (min-width: 1200px) {
+            #DD-Dorm-1-Page {
+                width: 70%; /* Slightly smaller width for larger screens */
+            }
 
         /* Dorm Details Tab CSS */
         #dorm-details{
-          visibility: hidden; /* Hides the dorm details page */
+          visibility: hidden;
+          margin: 0 auto;
+          position: relative;
+          width: 80%; /* Responsive width */
+          max-width: 1200px; /* Cap the width for larger screens */
+          max-height: 90vh; /* Limit the height to 90% of the viewport */
+          overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+          padding: 10px;
+          margin-top: 20px; /* Adjust this to move the carousel up or down */
         }
 
-        #DD-Dorm-1-Page{
-          visibility: hidden; /* Hides the dorm details >> dorm 1 details button page */
-          margin-left: 300px;
-          margin-top: 45px;
-          position: fixed;
-          width: calc(100%-250px);
+        }
+
+        #DD-Dorm-1-Page {
+          visibility: hidden;
+          margin: 0 auto;
+          position: relative;
+          width: 80%; /* Responsive width */
+          max-width: 1200px; /* Cap the width for larger screens */
+          max-height: 90vh; /* Limit the height to 90% of the viewport */
+          overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+          padding: 10px;
+          margin-top: 20px; /* Adjust this to move the carousel up or down */
         }
 
 
-
-
-
+      
     </style>
   </head>
   <body>
@@ -113,7 +183,7 @@ Jonathan  10/19/24
           <div>
             <h1></h1>
               <!-- using 'style="font-family: etc' to set the font style of the specific text. I picked Gerogia just cause I thought it looked nice-->
-            <p style=" position: absolute; bottom: 0; left: 0; width: 100%; position: fixed; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
+            <p style=" position: absolute; bottom: 0; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
           </div>                                                                                                                                         <!-- Changed this copyright from a 'class', to just style. Regular text, not classd, to make it work.-->
           
              
@@ -121,12 +191,13 @@ Jonathan  10/19/24
 
           <div class="container" id="dorm-details">
       
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="padding-left: 220px; padding-top: 100px;">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="padding-left: 220px;;">
               <div class="col">
                 <div class="card shadow-sm"> 
                   <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/d6RjnKd/image-removebg-preview-1-Photoroom-upscaled.png" alt="Image of Test Dormitory 1" width="100%" height="225">
                   <div class="card-body">
-                    <p class="card-text">Comet Hall ==== The largest dorm building, with up to 2 floors of several different suite-style rooms, this dorm can fit up to 210 students. 
+                    <h5 style="text-align: center;"> Comet Hall</h5>
+                    <p class="card-text">The largest dorm building, with up to 2 floors of several different suite-style rooms, this dorm can fit up to 210 students. 
                       Room assignments consist of doubles, triples, quads and even quints. This dorm is best for people who prefer larger communities.
                       
                     </p>
@@ -140,10 +211,12 @@ Jonathan  10/19/24
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/d6RjnKd/image-removebg-preview-1-Photoroom-upscaled.png" alt="Image of Test Dormitory 1" width="100%" height="225">
+                  <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
                   <div class="card-body">
-                    <p class="card-text">Comet Hall ==== The largest dorm building, with up to 2 floors of several different suite-style rooms, this dorm can fit up to 210 students. 
-                      Room assignments consist of doubles, triples, quads and even quints. This dorm is best for people who prefer larger communities.</p>
+                    <h5 style="text-align: center;">Auroa Hall</h5>
+                    <p class="card-text">A 5 floor tower-style dorm that can fit up to 100 students. 
+                      Room assignments consist of singles, doubles, triples and quads, where each floor consists of 8 different rooms
+                      .</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
@@ -154,10 +227,13 @@ Jonathan  10/19/24
               </div>
               <div class="col">
                 <div class="card shadow-sm">
-                  <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/d6RjnKd/image-removebg-preview-1-Photoroom-upscaled.png" alt="Image of Test Dormitory 1" width="100%" height="225">
+                  <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/swmjSjY/Solstice-hall-is-a-6-floor-tower-style-dorm-that-can-fit-up-to-45-students-Room-assignments-consist.png" alt="Image of Test Dormitory 1" width="100%" height="225">
                   <div class="card-body">
-                    <p class="card-text">Comet Hall ==== The largest dorm building, with up to 2 floors of several different suite-style rooms, this dorm can fit up to 210 students. 
-                      Room assignments consist of doubles, triples, quads and even quints. This dorm is best for people who prefer larger communities.</p>
+                    <h5 style="text-align: center;">Solstice Hall</h5>
+                    <p class="card-text">Solstice hall is a 6 floor tower-style dorm that can fit up to 45 students. 
+                      Room assignments consist of singles and doubles, where each floor consists of 5 different rooms. This dorm is best for people who prefer an apartment style of living and like smaller spaces.
+            
+                    </p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
@@ -173,8 +249,9 @@ Jonathan  10/19/24
         
 
         <!-- THIS IS THE CODE FOR THE CAROUSEL IN THE DORM DETAIL'S SPECIFIC PAGES-->
-         <div class="container" id="DD-Dorm-1-Page" style="margin-left: 800px">
-          <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" style="font-family: Georgia, serif; margin-top: -500px;;">
+         
+         <div class="container" id="DD-Dorm-1-Page" style="justify-content: center;">
+          <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" style="font-family: Georgia, serif;">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
               <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
@@ -182,16 +259,16 @@ Jonathan  10/19/24
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="https://i.ibb.co/9TQ7PwS/Single.png" class="d-block w-100" alt="Single Room" style="height: 400px; object-fit: cover";>
+                <img src="https://i.ibb.co/9TQ7PwS/Single.png" class="d-block w-100" alt="Single Room" style="height: 400px; object-fit: cover;">
                 <div class="container">
-                  <div class="carousel-caption text-start" style="font-family: Georgia, serif; font-size: large;";>
+                  <div class="carousel-caption text-start" style="font-family: Georgia, serif; font-size: large;">
                     <h1>Single Room</h1>
                     <p class=>Includes a twin bed, desk, dresser.... etc etc etc</p>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="https://i.ibb.co/vL6qCSW/Comet-Hall-Interior.png" class="d-block w-100" alt="Double Room" style="height: 400px; object-fit: cover";>
+                <img src="https://i.ibb.co/vL6qCSW/Comet-Hall-Interior.png" class="d-block w-100" alt="Double Room" style="height: 400px; object-fit: cover;">
 
                 <div class="container">
                   <div class="carousel-caption" style="font-family: Georgia, serif; font-size: large;">
@@ -201,7 +278,7 @@ Jonathan  10/19/24
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="https://i.ibb.co/yd2ZWqm/Suite.png" class="d-block w-100" alt="Suite" style="height: 400px; object-fit: cover";>
+                <img src="https://i.ibb.co/yd2ZWqm/Suite.png" class="d-block w-100" alt="Suite" style="height: 400px; object-fit: cover;">
 
                 <div class="container">
                   <div class="carousel-caption text-end" style="font-family: Georgia, serif; font-size: large;">
@@ -216,7 +293,7 @@ Jonathan  10/19/24
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next" style="margin-bottom: 250px";>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next" style="margin-bottom: 250px;">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>      
@@ -225,19 +302,19 @@ Jonathan  10/19/24
             <!-- Three columns of text below the carousel -->
             <div class="row">
               <div class="col-lg-4">
-                <img src="https://i.ibb.co/9TQ7PwS/Single.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;";>
+                <img src="https://i.ibb.co/9TQ7PwS/Single.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
                 <h2 class="fw-norml"> Single </h2>
                 <p>Random Text About The Single.</p>
                 <p><a class="btn btn-secondary" href="#" style="background-color: #d2c6d3; color: #1a2f4a";>View details »</a></p>
               </div><!-- /.col-lg-4 -->
               <div class="col-lg-4">
-                <img src="https://i.ibb.co/vL6qCSW/Comet-Hall-Interior.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;";>
+                <img src="https://i.ibb.co/vL6qCSW/Comet-Hall-Interior.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
                 <h2 class="fw-normal">Double</h2>
                 <p>Random Text About The Double.</p>
                 <p><a class="btn btn-secondary" href="#" style="background-color: #d2c6d3; color: #1a2f4a";>View details »</a></p>
               </div><!-- /.col-lg-4 -->
               <div class="col-lg-4">
-                <img src="https://i.ibb.co/yd2ZWqm/Suite.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;";>
+                <img src="https://i.ibb.co/yd2ZWqm/Suite.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
                 <h2 class="fw-normal">Suite</h2>
                 <p>Random Text About The Suite.</p>
                 <p><a class="btn btn-secondary" href="#" style="background-color: #d2c6d3; color: #1a2f4a";>View details »</a></p>
@@ -250,7 +327,7 @@ Jonathan  10/19/24
 
 
         <!-- THESE ARE THE BUTTONS ON THE OVERVIEW MENU -->
-          <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 230px; height: 100vh; position: fixed; background-color: #dcecf1 !important; position: fixed; top: 0; left: 0;">  <!-- !important keyword overrides whatever boostrap is doing to keep the color white-->
+          <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 230px; height: 100vh; background-color: #dcecf1 !important; position: fixed; top: 0; left: 0;">  <!-- !important keyword overrides whatever boostrap is doing to keep the color white-->
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-4 link-body-emphasis text-decoration-none">
               <svg class="bi pe-none me-2" width="40" height="32"><use></use></svg>
               <span class="fs-4"><img class="mb-4" src="https://i.ibb.co/YRmh26W/Screenshot-2024-09-16-152612-removebg-preview.png" alt="" width="175" height="175">  <!-- install the image to my computer folder, call the file here so it is not connecting to internet-->
@@ -343,28 +420,25 @@ Jonathan  10/19/24
 
         // THIS IS TO GET THE DORM DETAILS PAGE TO APPEAR ON CLICK
         // THIS IS NOW REUSABLE, JUST CALL THIS FUNCTION AFTER AN EVENTLISTENER
-
-        function toggleButton(element){
+        function toggleButton(element) {
           const elementID = document.getElementById(element);
-          console.log("active element is:" + activeElement);
 
-          if(activeElement != null){
-            console.log("In first if.")
-            activeElement.style.visibility = 'hidden';
+          // If another element is already active hide it
+          if (activeElement && activeElement !== elementID) {
+              activeElement.style.visibility = 'hidden'; // Hide the previously active element
           }
 
-          if(elementID.style.visibility === 'hidden' && elementID != activeElement){
-            console.log("In second if");
-             elementID.style.visibility = 'visible';
-             activeElement = elementID; 
-          }
-          
-          else{
-            console.log("In else if.")
-            elementID.style.visibility = 'hidden';
-            activeElement = null;
+          // If the clicked element is hidden show it
+          if (elementID.style.visibility === 'hidden' || elementID.style.visibility === '') {
+              elementID.style.visibility = 'visible';
+              activeElement = elementID; // Set this element as the active one
+          } else {
+              // If the clicked element is already visible, hide it
+              elementID.style.visibility = 'hidden';
+              activeElement = null; // No active element now
           }
         }
+
 
         document.getElementById('dormDetailsButton').addEventListener('click',function(){
           toggleButton('dorm-details')
