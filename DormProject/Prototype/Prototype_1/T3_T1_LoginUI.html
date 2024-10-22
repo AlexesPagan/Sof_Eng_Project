@@ -96,9 +96,9 @@ Parsa     10/13/2024   Integrated Firebase Authentication, implemented login log
             .then(doc => { // Parsa: the doc in this function represents the document fetched from Firestore. It contains data about the user, such as their role (stduent or admin).
               const userData = doc.data(); // Parsa: userData contains the data fields from the Firestore document.
               if(userData && userData.role === 'admin') {
-                window.location.href = '/admin-homepage.html'; // Admin homepage URL
+                window.location.href = 'admin-homepage.html'; // Admin homepage URL
               } else {
-                window.location.href = '/T4_StudentHomepage.html'; //Student homepage URL
+                window.location.href = 'T4_StudentHomepage.html'; //Student homepage URL
                 console.log('Successful Log in')
               }
             })
