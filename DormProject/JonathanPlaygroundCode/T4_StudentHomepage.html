@@ -1,4 +1,4 @@
-
+  
 <!-- REVISION HISTORY  
 
 Jonathan  10/11/24     Created Framework, basic HTML set up
@@ -96,9 +96,9 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
 
         /* Carousel inner container */
         .carousel-inner {
-            max-height: 1000px; /* Ensure the height stays controlled */
-            overflow: hidden; /* Prevent overflow issues */
+            height: auto; /* Let it expand naturally */
         }
+
 
 
                 /* Adjust column layout for different screen sizes */
@@ -135,13 +135,13 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
         #dorm-details{
           visibility: hidden;
           margin: 0 auto;
+          margin-top: 150px;
           position: relative;
           width: 80%; /* Responsive width */
           max-width: 1200px; /* Cap the width for larger screens */
           max-height: 90vh; /* Limit the height to 90% of the viewport */
           overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
           padding: 10px;
-          margin-top: 20px; /* Adjust this to move the carousel up or down */
         }
 
         }
@@ -149,13 +149,15 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
         #DD-Dorm-1-Page {
           visibility: hidden;
           margin: 0 auto;
+          margin-left: 280px;
+          margin-bottom: 200px;
           position: relative;
-          width: 80%; /* Responsive width */
+          width: 80%; /* Width */
           max-width: 1200px; /* Cap the width for larger screens */
           max-height: 90vh; /* Limit the height to 90% of the viewport */
-          overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+          overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
           padding: 10px;
-          margin-top: 20px; /* Adjust this to move the carousel up or down */
+          margin-bottom: 200px; /* Adjust this to move the carousel up or down */
         }
 
 
