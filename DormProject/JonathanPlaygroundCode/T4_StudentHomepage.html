@@ -191,6 +191,34 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
             <p style=" position: absolute; bottom: -1000px; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
           </div>                                                                                                                                         <!-- Changed this copyright from a 'class', to just style. Regular text, not classd, to make it work.-->
           
+
+
+         <!-- DORM APPLICATION PAGE -->
+      
+          <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="dorm-application">
+            <div class="container-fluid py-5" style="padding-left: 300px;">
+              
+              <iframe
+              id="JotFormIFrame-242995867523170"
+              title="Dorm Selection"
+              onload="window.parent.scrollTo(0,0)"
+              allowtransparency="true"
+              allow="geolocation; microphone; camera; fullscreen"
+              src="https://form.jotform.com/242995867523170"
+              frameborder="0"
+              style="min-width:100%;max-width:100%;height:539px;border:none;"
+              scrolling="no"
+            >
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-242995867523170']", "https://form.jotform.com/")</script>
+  
+            </div>
+          </div>      
+
+
+
+
              
           <!-- THIS IS THE DORM DETAILS HTML -->
 
@@ -347,7 +375,7 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
                 </a>
               </li>
               <li style="margin-bottom: 15px;">
-                <a href="#" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family: Georgia, serif; font-size: larger; display: flex; align-items: center; padding-left: 22px;">
+                <a href="#" id="dormApplicationButton" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family: Georgia, serif; font-size: larger; display: flex; align-items: center; padding-left: 22px;">
                   <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
                   Dorm Application
                   
@@ -380,6 +408,25 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
             <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Sign Out</a></li>
           </ul>
         </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 
   <!-- Bootstrap JS and dependencies -->
@@ -453,7 +500,9 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
           toggleButton('DD-Dorm-1-Page')
         });
 
-
+        document.getElementById('dormApplicationButton').addEventListener('click',function(){
+          toggleButton('dorm-application')
+        });
     </script>
 </body>
 </html>
