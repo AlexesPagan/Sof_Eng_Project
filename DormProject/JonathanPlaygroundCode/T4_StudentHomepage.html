@@ -12,7 +12,10 @@ Kyren     10/18/24     Added functionality to the first dorm detail's button and
 Jonathan  10/18/24     Added test images to the dorm details page
 Jonathan  10/18/24     Formated the carsoule page, colored the arrows, added the images, text, etc.
 Jonathan  10/21/24     Did some more work attempting to make resizing the window actually work... its difficult
-
+Kyren     10/26/24     Did research into a form we can use for the dorm application
+Kyren     10/26/24     Started the implementation of the dorm application form
+Jonathan  10/27/24     Embeded the form into the application
+Jonathan  10/28/24     Made the form overlay the other elements, formatted it better
 -->
 
 
@@ -132,6 +135,8 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
             }
 
             
+
+        
         /* Dorm Details Tab CSS */
         #dorm-details{
           visibility: hidden;
@@ -160,6 +165,15 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
           overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
           padding: 10px;
           margin-bottom: 200px; 
+
+        }
+        
+        #dorm-application{
+          visibility: hidden;
+          margin:auto;
+          position: absolute;
+          margin-left: 450px;
+
 
         }
 
@@ -195,8 +209,8 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
 
          <!-- DORM APPLICATION PAGE -->
       
-          <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="dorm-application">
-            <div class="container-fluid py-5" style="padding-left: 800px;">
+
+            <div class="container-fluid py-5" id="dorm-application">
               
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-h4w1kUcP_hO528P4K70VfartWI6-_I-5fZUwZkgWxWeToA/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
@@ -209,7 +223,8 @@ Jonathan  10/21/24     Did some more work attempting to make resizing the window
           <!-- THIS IS THE DORM DETAILS HTML -->
 
           <div class="container" id="dorm-details">
-      
+            
+  
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="padding-left: 220px;;">
               <div class="col">
                 <div class="card shadow-sm"> 
