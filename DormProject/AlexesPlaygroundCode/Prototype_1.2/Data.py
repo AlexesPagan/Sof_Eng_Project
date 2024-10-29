@@ -1,7 +1,11 @@
 # REVISION HISTORY
 # Parsa     10/20/2024  Added the Admin class, refined the user role logic, and improved input validation for a streamlined and error-free user experience.
 # Parsa     10/20/2024  Implemented synchronization between Firestore and Firebase Authentication to ensure that each user's Firestore document ID is used as their Firebase Authentication UID upon creation.
-#
+# Alexes    10/26/2024  Modified Dorm data to include specific fata fields such as if a room has accessibility accommodations or not as well as a list of students to illustrate who is assigned to what room.
+# Alexes    10/26/2024  Added room assignment functions to add or remove students to specified rooms in a dorm
+# Alexes    10/26/2024  Adjusted dorm data testing code to update our firestore database based on the previous changes I implemented
+# Alexes    10/28/2024  Added the get_response() function to retrieve all data from the form_responses collection in our firestore
+# Alexes    10/28/2024  Added the trim_response_data() function to remove any invalid form response data from the form_responses collection
 
 
 
@@ -507,29 +511,89 @@ def get_students():
 
 #add_dorm(dorm5)
 
-dorm6 = Dorm(name="Eclipse Hall", housing_style="Tower", capacity=60)
+#dorm6 = Dorm(name="Eclipse Hall", housing_style="Tower", capacity=60)
 
-eclipse_room_config = [
-    {"start": 1, "end": 20, "capacity": 1, "is_accessible": False},
-    {"start": 21, "end": 40, "capacity": 2, "is_accessible": False}
-]
+#eclipse_room_config = [
+#    {"start": 1, "end": 20, "capacity": 1, "is_accessible": False},
+#    {"start": 21, "end": 40, "capacity": 2, "is_accessible": False}
+#]
 
-for config in eclipse_room_config:
+#for config in eclipse_room_config:
 
-    for i in range(config['start'], config['end'] + 1):
+#    for i in range(config['start'], config['end'] + 1):
 
-        room_number_it = f"Rm{i:02}"
-        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
-        dorm6.add_room(room)
+#        room_number_it = f"Rm{i:02}"
+#        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
+#        dorm6.add_room(room)
 
-print(dorm6)
-for room in dorm6.rooms:
-    print(room)
+#print(dorm6)
+#for room in dorm6.rooms:
+#    print(room)
 
-dorm6Dict = dorm6.to_dict()
-print(dorm6Dict)
-for room in dorm6.rooms:
-    roomDict = room.to_dict()
-    print(roomDict)
+#dorm6Dict = dorm6.to_dict()
+#print(dorm6Dict)
+#for room in dorm6.rooms:
+#    roomDict = room.to_dict()
+#    print(roomDict)
 
-add_dorm(dorm6)
+#add_dorm(dorm6)
+#--------------------------------------------------------------------------------------------------------
+
+# function to get all responses from the form_responses collection
+def get_responses():
+
+    #I realized this line of code does the exact same job as the get_students function
+    return db.collection('form_responses').stream()
+
+#function that compares each id for all responses in the form_responses collection with all ids in the students collection. Removes any invalid response data
+def trim_response_data():
+    # get all data from student collection
+    student_example = get_students()
+
+    # create a dictionary of the student data containing only their student id
+    student_id_test = [student.to_dict().get('user_id', 'Unknown') for student in student_example]
+    print(student_id_test)
+
+    # get all data from the form_responses collection
+    response_example = get_responses()
+
+    # create a list of tuples which includes the id from the form response and the firestore document reference to that response
+    response_data = [(response.to_dict().get("1", "Unknown"), response.reference) for response in response_example]
+
+    # create a list taking only the id data from response_data
+    response_ids = [response[0] for response in response_data]
+    print(response_ids)
+
+    #iterate through each tuple in the list of tuples
+    for response_id, reference in response_data:
+
+        #variable to signify a valid id comparison
+        valid_data = False
+
+        #iterate through each student id
+        for id in student_id_test:
+
+            print(f"comparing {response_id} with {id}")
+
+            #if the id specified in the form does not match the student id, it is an invalid id
+            if response_id != id:
+                print(f"valid id: {valid_data}")
+
+            #if the id specified in the form does match, it is a valid id. Break to exit this for loop
+            else:
+                valid_data = True
+                print(f"valid id: {valid_data}")
+                break
+
+        print("Comparison completed")
+
+        if valid_data == False:
+            print(f"No match was found. {response_id} is an invalid id. Deleting")
+
+            #remove the invalid response data by deleting the firestore document in the form_responses collection
+            reference.delete()
+
+    print("Trimming is complete, all invalid responses were deleted")
+
+#Testing
+trim_response_data()
