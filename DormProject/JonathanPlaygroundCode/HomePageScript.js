@@ -46,6 +46,8 @@ function toggleButton(element){
   }
 }
 
+
+// Actual button clicks, using the general function created
 document.getElementById('dormDetailsButton').addEventListener('click',function(){
   toggleButton('dorm-details')
 });
