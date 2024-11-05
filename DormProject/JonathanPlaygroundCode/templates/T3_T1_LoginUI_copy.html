@@ -47,7 +47,8 @@ Parsa     10/13/2024   Integrated Firebase Authentication, implemented login log
       
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        //const auth = getAuth(app);
+        const auth = firebase.auth(); // Added this 
+        
       </script>  
     </head>
   </html>
@@ -61,7 +62,7 @@ Parsa     10/13/2024   Integrated Firebase Authentication, implemented login log
           <!-- Parsa: onsumbit="handleLogin(event)" is basically telling the browser to execute the handleLogin function when the form is submitted
            and to pass the event object to that function. This prevents the default for submission that reloads the page. -->
           <!-- Parsa: the javascript function starts from line 83. It handles -->
-          <form class="form-signin" onsubmit="handleLogin(event)">
+          <form class="form-signin" method="POST" onsubmit="handleLogin(event)">
             <h1></h1>
             <img class="mb-4" src="https://i.ibb.co/YRmh26W/Screenshot-2024-09-16-152612-removebg-preview.png" alt="" width="150" height="150"> <!-- I got this link from a website called Postimage -->
   
@@ -82,33 +83,47 @@ Parsa     10/13/2024   Integrated Firebase Authentication, implemented login log
       </body>
 
       <script>
-        function handleLogin(event) {
-          event.preventDefault(); // Parsa: This line prevents the default form submission behavior where the page reloads.
-          const email = document.getElementById('inputEmail').value; // Parsa: This retrieves the email from the form by its ID and stores the value 
-          const password = document.getElementById('inputPassword').value; // Parsa: Similiarly, this retrieves the password input from the form by its ID.
-          firebase.auth().signInWithEmailAndPassword(email,password) // Parsa: This line uses Firebase authentication to sign with the email and password.
-            // Signed In
-            .then((userCredential) => { // Parsa: This function is called if the login is successful and it receives a userCredential object. 
-              const user = userCredential.user; // Parsa: from the object, extract the user details.
-              // Parsa: Get additional user data from Firestore
-              return firebase.firestore().collection('students').doc(user.uid).get(); // *** 'student' might have to change later *** // Parsa: After successful authentication this line fetches additional user data from Firestore based on the user's unique ID. It retrieves a document from the users collection.
-            })
-            .then(doc => { // Parsa: the doc in this function represents the document fetched from Firestore. It contains data about the user, such as their role (stduent or admin).
-              const userData = doc.data(); // Parsa: userData contains the data fields from the Firestore document.
-              if(userData && userData.role === 'admin') {
-                window.location.href = '/admin-homepage.html'; // Admin homepage URL
-              } else {
-                window.location.href = '/T4_StudentHomepage.html'; //Student homepage URL
-                console.log('Successful Log in')
-              }
-            })
-            .catch((error) => {
-              const errorCode = error.code; 
-              const errorMessage = error.message;
-              document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger" role="alert">${errorMessage}</div>`;
-              console.log('Failed to log in:', errorCode, errorMessage); 
+ function handleLogin(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const email = document.getElementById('inputEmail').value;
+    const password = document.getElementById('inputPassword').value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            return user.getIdToken().then((idToken) => {
+                return fetch('/protected-route', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + idToken
+                    },
+                    body: JSON.stringify({ email: email }) // Send email to the backend
+                });
             });
-        }
+        })
+        .then(response => {
+            return response.json().then(data => {
+                // Log the data for debugging
+                console.log("Response data:", data);
+                if (data.message) {
+                    console.log(data.message); // Log success message
+                    window.location.href = '/T4_StudentHomepage'; // Redirect to student homepage
+                } else if (data.error) {
+                    console.error(data.error); // Log error message
+                    document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger" role="alert">${data.error}</div>`;
+                }
+            });
+        })
+        .catch((error) => {
+            console.error("Error during login:", error);
+            document.getElementById('loginMessage').innerHTML = `<div class="alert alert-danger" role="alert">${error.message}</div>`;
+        });
+}
+
+
+    
       </script>
   </body>
   </html>
