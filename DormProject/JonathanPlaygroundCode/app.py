@@ -35,9 +35,9 @@ def protected_route():
         # Query Firestore for user data
         user_data = db.collection('users').document(user['uid']).get()  # Use the initialized db object
         if user_data.exists:
-            session['name'] = user_data.to_dict().get('name', user['email'])  # Default to email if no name exists
+            session['name'] = user_data.to_dict().get(user['name'], user['email'])  # Default to email if no name exists
         else:
-            session['name'] = user['email']  # Fallback if no user data is found
+            session['name'] = user['name']  # Fallback if no user data is found
 
         return jsonify({"message": f"Hello, {session['name']}!", "name": session['name']}), 200
     else:
@@ -54,7 +54,7 @@ def student_homepage():
         name = session.get('name', email)  # Get name from session, default to email
         return render_template('T4_StudentHomepage.html', name=name)  # Pass name to the template
     else:
-        return redirect('/login')  # Redirect to login if not logged in
+        return redirect('/')  # Redirect to login if not logged in
     
 @app.route('/logout', methods=['POST'])  # Ensure 'POST' is included here
 def logout():
