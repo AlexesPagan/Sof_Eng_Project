@@ -18,6 +18,8 @@ Jonathan  10/28/24     Made the form overlay the other elements, formatted it be
 Kyren     10/29/24     Fixed the codes indentation.
 Jonathan  11/04/24     Separated CSS and JS from HTML file
 Jonathan  11/04/24     Formatted Form Better
+Jonathan  11/04/24     Integrated Flask
+Kyren     11/05/24     Bug Fix (overflow name)
 -->
 
 
@@ -219,7 +221,7 @@ Jonathan  11/04/24     Formatted Form Better
 
     <!-- Default dropup button ... GOTTA MAKE THIS DROPUP ACTUALLY WORK--> 
     <div class="btn-group dropup">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #d2c6d3; color: #1a2f4a; font-family: Georgia, serif; font-weight: bold;">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #d2c6d3; color: #1a2f4a; font-family: Georgia, serif; font-weight: bold; overflow: hidden;">
         {{name}}
       </button>
       <ul class="dropdown-menu">
