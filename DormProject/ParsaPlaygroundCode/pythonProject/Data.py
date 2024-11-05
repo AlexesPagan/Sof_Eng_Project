@@ -1,5 +1,12 @@
+# REVISION HISTORY
+# Parsa     10/20/2024  Added the Admin class, refined the user role logic, and improved input validation for a streamlined and error-free user experience.
+# Parsa     10/20/2024  Implemented synchronization between Firestore and Firebase Authentication to ensure that each user's Firestore document ID is used as their Firebase Authentication UID upon creation.
+#
+
+
+
 import firebase_admin
-from firebase_admin import credentials, firestore
+from firebase_admin import credentials, firestore, auth
 import re
 
 # Path to the service account JSON file
@@ -7,48 +14,108 @@ cred = credentials.Certificate("C:/Users/PJ/Desktop/Key/databasebuilds-firebase-
 firebase_admin.initialize_app(cred)
 
 # Initialize Firestore
+
 db = firestore.client()
 
-#This class defines all data that represents a student
-class Student:
 
-    #This method acts as a constructor and assigns these attributes for each student object
-    def __init__(self, name, student_id, year, handicaps, preferences, email, password):
+class User:
+    def __init__(self, name, user_id, email, role):
         self.name = name
-        self.student_id = student_id
-        self.year = year
-        self.handicaps = handicaps
-        self.preferences = preferences
-        self.email = email,
-        self.password = password
+        self.user_id = user_id
+        self.email = email
+        self.role = role
 
-    #This method converts the student data into a dictionary format
     def to_dict(self):
         return {
             'name': self.name,
-            'student_id': self.student_id,
+            'user_id': self.user_id,
+            'email': self.email,
+            'role': self.role
+        }
+
+
+#This class defines all data that represents a student
+class Student(User):
+
+    #This method acts as a constructor and assigns these attributes for each student object
+    def __init__(self, name, user_id, email, role, year, handicaps, preferences):
+        super().__init__(name, user_id, email, role)
+        self.year = year
+        self.handicaps = handicaps
+        self.preferences = preferences
+
+    #This method converts the student data into a dictionary format
+    def to_dict(self):
+        student_dict = super().to_dict()
+        student_dict.update({
             'year': self.year,
             'handicaps': self.handicaps,
             'preferences': self.preferences,
-            'email': self.email,
-            'password': self.password
-        }
+        })
+        return student_dict
 
-#This method asks the user general data questions and creates a student object with it
-def collect_student_info():
-    name, student_id, year, email, password = get_validated_input()
-    handicaps, preferences = get_handicaps_preferences()
-    return Student(name, student_id, year, handicaps, preferences, email, password)
+class Admin(User):
+    def __init__(self, name, user_id, email, role):
+        super().__init__(name, user_id, email, role)
 
-def get_validated_input():
+    def change_room_assignment(self, student_id, new_room):
+        # Logic to change the room assignment in Firestore
+        print(f"Changing room for student {student_id} to {new_room}")
+
+
+    def view_student_info(self, student_id):
+        # Logic to retrieve and view detailed student information for matching or status updates
+        print(f"Viewing information for student {student_id}")
+        # This method would interact with Firestore to retrieve detailed student information
+
+    def cancel_room_request(self, student_id):
+        # Logic to cancel a room request
+        print(f"Cancelling room request for student {student_id}")
+        # Method to handle the cancellation process in Firestore
+
+    def update_room_status(self, room_id, new_status):
+        # Logic to update the status of a room
+        print(f"Updating status of room {room_id} to {new_status}")
+        # This would change the availability status of a room in the Firestore database
+
+# User creation with role management
+def create_user():
+    role = input("Enter 'admin' for Admin, 'student' for Student: ")
+    if role == 'student':
+        return create_student()
+    elif role == 'admin':
+        return create_admin()
+
+def create_student():
     name = validate_name()
-    student_id = validate_student_id()
-    year = validate_year()
+    user_id = validate_user_id()
     email = validate_email()
-    password = validate_password()
-    return name, student_id, year, email, password
+    year = validate_year()
+    handicaps, preferences = get_handicaps_preferences()
+    student = Student(name, user_id, email, 'student', year, handicaps, preferences)
+    add_user(student)
+    return student
 
-# Validating the name
+def create_admin():
+    name = validate_name()
+    user_id = validate_user_id()
+    email = validate_email()
+    admin = Admin(name, user_id, email, 'admin')
+    add_user(admin)
+    return admin
+
+# Input validation based on role
+#def get_validated_input(role):
+    #name = validate_name()
+    #user_id = validate_user_id()
+    #email = validate_email()
+    #if role == 'student':
+        #year = validate_year()
+        #handicaps, preferences = get_handicaps_preferences()
+    #else:
+        #year, handicaps, preferences = None, [], []
+    #return name, user_id, email, year, handicaps, preferences
+
 def validate_name():
     while True:
         name = input("Enter your name: ")
@@ -56,15 +123,13 @@ def validate_name():
             return name
         print("Invalid name. Please use only letters and spaces.")
 
-# Validating the student ID
-def validate_student_id():
+def validate_user_id():
     while True:
-        student_id = input("Enter your student ID: ")
-        if re.match(r'^H\d{9}$', student_id):
-            return student_id
+        user_id = input("Enter your user ID: ")
+        if re.match(r'^H\d{9}$', user_id):
+            return user_id
         print("Invalid ID. Format should be 'H' followed by 9 digits.")
 
-# Validating the year
 def validate_year():
     valid_years = ['freshman', 'sophomore', 'junior', 'senior']
     while True:
@@ -73,7 +138,6 @@ def validate_year():
             return year
         print("Invalid year. Enter a valid year name like Freshman, Senior...")
 
-# Validating the email
 def validate_email():
     while True:
         email = input("Enter your email: ")
@@ -81,15 +145,6 @@ def validate_email():
             return email
         print("Invalid email format. Please enter a valid email.")
 
-# Validating the password
-def validate_password():
-    while True:
-        password = input("Enter your password: ")
-        if len(password) >= 6:
-            return password
-        print("Password must be at least 6 characters long.")
-
-# Validating the handicaps and preferences
 def get_handicaps_preferences():
     handicaps = input("Enter any handicaps (separate by commas, or type 'None'): ")
     if handicaps.strip().lower() == 'none':
@@ -97,79 +152,65 @@ def get_handicaps_preferences():
     else:
         handicaps = [h.strip() for h in handicaps.split(',')]
     preferences = input("Enter your preferences (separate by commas): ")
-    preferences = [p.strip() for p in preferences.split(',')]
-    return handicaps, preferences
+    return handicaps, [p.strip() for p in preferences.split(',')]
 
-#This method adds a student to the database
-def add_student(student):
-    db.collection('students').add(student.to_dict())
-    print(f"Added student: {student.name}")
+# Add, update, delete, and get users
+def add_user(user):
+    # First, adding the user to Firestore and get the document reference
+    doc_ref = db.collection(user.role + 's').add(user.to_dict())[1]  # This returns the document reference
+    print(f"Added {user.role}: {user.name} with Firestore ID {doc_ref.id}")
 
-# This method updates the student's information, by passing the student's ID and the updated data
-def update_student(student_id, update_data):
+    # Now, asking for a password and create the user in Firebase Authentication
+    password = input(f"Enter a password for {user.email}: ")
+    create_firebase_user(user.email, password, user.name, user.role, doc_ref.id)
 
-    # Sets a reference to the database
-    students_ref = db.collection('students')
+def create_firebase_user(email, password, name, role, doc_id):
+    # Create the user in Firebase Authentication using the Firestore document ID as the UID
+    try:
+        user = auth.create_user(
+            uid=doc_id,
+            email=email,
+            password=password,
+            display_name=name
+        )
+        print('Successfully created new user for Firebase Authentication:', user.uid)
+    except Exception as e:
+        print(f"Failed to create Firebase user: {e}")
 
-    # Query to find the student by ID
-    result = students_ref.where('student_id', '==', student_id).stream()
+def update_user_info(user_id, update_data):
+    collection = 'admins' if user_id.startswith('A') else 'students'
+    user_doc = db.collection(collection).where('user_id', '==', user_id).get()
+    for doc in user_doc:
+        doc.reference.update(update_data)
+        print(f"Updated {collection[:-1]} with ID {user_id}")
 
-    for student in result:
-        # Updating the student document
-        db.collection('students').document(student.id).update(update_data)
-        print(f"Updated student with ID {student_id}")
+def delete_user(user_id, role):
+    collection = 'admins' if role == 'admin' else 'students'
+    user_doc = db.collection(collection).where('user_id', '==', user_id).get()
+    for doc in user_doc:
+        doc.reference.delete()
+        print(f"Deleted {role} with ID {user_id}")
 
-# This method deletes the student object from the data by passing the student ID
-def delete_student(student_id):
-    # Sets a reference to the database
-    students_ref = db.collection('students')
+def get_users():
+    print("Getting users: ")
+    collection = 'admins' if input("Enter 'a' for admins, any other key for students: ").lower() == 'a' else 'students'
+    users = db.collection(collection).stream()
+    for user in users:
+        print(f"{user.id} => {user.to_dict()}")
 
-    # Query to find the student by ID
-    result = students_ref.where('student_id', '==', student_id).stream()
+# Main execution
+new_user = create_user()
 
-    for student in result:
-        # Delete the specific student found by the query
-        db.collection('students').document(student.id).delete()
-        print(f"Deleted student with ID {student_id}")
+# Role-specific actions
+if isinstance(new_user, Admin):
+    new_user.view_student_info('S123')
+    new_user.change_room_assignment('S123', 'Room 102')
+elif isinstance(new_user, Student):
+    update_data = {'year': 'Junior', 'preferences': ['quiet', 'library']}
+    update_user_info(new_user.user_id, update_data)
 
-#This method retrieves all students from the database
-def get_students():
-
-    #sets a reference to the database
-    students_ref = db.collection('students')
-
-    #use stream() in order to get all data from the database reference
-    students = students_ref.stream()
-
-    #iterate through the entire database
-    for student in students:
-
-        #prints the unique document id for each collection of data followed by that students data
-        print(f"{student.id} => {student.to_dict()}")
-
-
-
-# Testing the functionalities
-print("Registering new student...")
-new_student = collect_student_info()
-add_student(new_student)
-
-print("Current students: ")
-get_students()
-
-# Example update data
-update_data = {'year': 'Junior', 'preferences': ['quiet', 'library']}
-print("Updating student information...")
-update_student(new_student.student_id, update_data)
-
-print("Updated students: ")
-get_students()
-
-print("Deleting a student...")
-delete_student(new_student.student_id)
-
-print("Students after deletion: ")
-get_students()
+get_users()
+#delete_user(new_user.user_id, new_user.role)
 
 
 #class Dorms:
