@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template, session, redirect, u
 import firebase_admin
 from firebase_admin import auth, credentials, firestore  # Import Firestore
 
+
 # Initialize Flask app
 app = Flask(__name__)
 app.secret_key = 'secret_key'  # Needed for session management

@@ -1,0 +1,27 @@
+2024-11-05 17:41:25,007 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-05 17:41:25,007 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-05 17:41:25,007 - INFO -  * Restarting with stat
+2024-11-05 17:41:26,072 - WARNING -  * Debugger is active!
+2024-11-05 17:41:26,075 - INFO -  * Debugger PIN: 218-518-769
+2024-11-05 17:41:58,196 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-05 17:41:58,234 - INFO - Response: 200 OK Duration: 0.04s
+2024-11-05 17:41:58,235 - INFO - 127.0.0.1 - - [05/Nov/2024 17:41:58] "GET / HTTP/1.1" 200 -
+2024-11-05 17:41:58,312 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-05 17:41:58,408 - INFO - Response: 200 OK Duration: 0.10s
+2024-11-05 17:41:58,409 - INFO - 127.0.0.1 - - [05/Nov/2024 17:41:58] "GET /static/app.js HTTP/1.1" 200 -
+2024-11-05 17:42:29,423 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-05 17:42:29,848 - INFO - Response: 200 OK Duration: 0.42s
+2024-11-05 17:42:29,848 - INFO - 127.0.0.1 - - [05/Nov/2024 17:42:29] "POST /login HTTP/1.1" 200 -
+2024-11-05 17:42:29,875 - INFO - Request: GET http://127.0.0.1:5000/student User ID: JeOqRdsGuCNlr5GYwZv8Ohv1aTL2 Role: student
+2024-11-05 17:42:29,923 - INFO - Response: 200 OK Duration: 0.05s
+2024-11-05 17:42:29,923 - INFO - 127.0.0.1 - - [05/Nov/2024 17:42:29] "GET /student HTTP/1.1" 200 -
+2024-11-05 17:42:38,740 - INFO - Request: GET http://127.0.0.1:5000/logout User ID: JeOqRdsGuCNlr5GYwZv8Ohv1aTL2 Role: student
+2024-11-05 17:42:38,740 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-05 17:42:38,740 - INFO - 127.0.0.1 - - [05/Nov/2024 17:42:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-05 17:42:38,757 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-05 17:42:38,759 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-05 17:42:38,759 - INFO - 127.0.0.1 - - [05/Nov/2024 17:42:38] "GET / HTTP/1.1" 200 -
+2024-11-05 17:42:38,811 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-05 17:42:38,811 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-05 17:42:38,811 - INFO - 127.0.0.1 - - [05/Nov/2024 17:42:38] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
