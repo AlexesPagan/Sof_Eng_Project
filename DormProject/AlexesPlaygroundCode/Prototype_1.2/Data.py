@@ -362,178 +362,193 @@ def get_students():
 #------------------------------------------------------------------------------------
 #Updating our current dorm data
 
-#dorm1 = Dorm(name="Nebula Hall", housing_style="Suite", capacity=140)
+dorm1 = Dorm(name="Nebula Hall", housing_style="Suite", capacity=75)
 
 #create a list of dictionaries that contains the start and end room number, capacity number and occupied boolean
-#nebula_room_config = [
+nebula_room_config = [
 
     #first 20 rooms can fit 3 people. The next 20 rooms can fit 4 people
-#    {"start": 1, "end": 20, "capacity": 3, "is_accessible": False},
-#    {"start": 21, "end": 40, "capacity": 4, "is_accessible": False}
-#]
+    {"start": 1, "end": 5, "capacity": 1, "is_accessible": False},
+    {"start": 6, "end": 10, "capacity": 2, "is_accessible": False},
+    {"start": 11, "end": 15, "capacity": 3, "is_accessible": False},
+    {"start": 16, "end": 20, "capacity": 4, "is_accessible": False},
+    {"start": 21, "end": 25, "capacity": 5, "is_accessible": False}
+]
 
 #iterate through each dictionary in the list of dictionaries
-#for config in nebula_room_config:
+for config in nebula_room_config:
 
     #iterate from the start and end time specified from the dictionary
-#    for i in range(config['start'], config['end'] + 1):
+    for i in range(config['start'], config['end'] + 1):
 
         #this sets a format of Rm followed by the value of i which follows a two digit format. Ex: Rm01, Rm10...
-#        room_number_it = f"Rm{i:02}"
+        room_number_it = f"Rm{i:02}"
 
         #create a room object for each iteration
-#        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
-#        dorm1.add_room(room)
+        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
+        dorm1.add_room(room)
 
 #this calls the __str__ method for the dorm object
 #print(dorm1)
 #for room in dorm1.rooms:
     #this calls the __str__ method for the room object
-#    print(room)
+    #print(room)
 
-#dorm1Dict = dorm1.to_dict()
+dorm1Dict = dorm1.to_dict()
 #print(dorm1Dict)
-#for room in dorm1.rooms:
-#    roomDict = room.to_dict()
-#    print(roomDict)
+for room in dorm1.rooms:
+    roomDict = room.to_dict()
+    #print(roomDict)
 
 #add_dorm(dorm1)
 
-#dorm2 = Dorm(name="Moonlight Hall", housing_style="Suite", capacity=30)
+dorm2 = Dorm(name="Moonlight Hall", housing_style="Suite", capacity=75)
 
-#moonlight_room_config = [
-#    {"start": 1, "end": 10, "capacity": 1, "is_accessible": True},
-#    {"start": 11, "end": 20, "capacity": 2, "is_accessible": False}
-#]
+moonlight_room_config = [
+    {"start": 1, "end": 5, "capacity": 1, "is_accessible": True},
+    {"start": 6, "end": 10, "capacity": 2, "is_accessible": False},
+    {"start": 11, "end": 15, "capacity": 3, "is_accessible": False},
+    {"start": 16, "end": 20, "capacity": 4, "is_accessible": False},
+    {"start": 21, "end": 25, "capacity": 5, "is_accessible": False}
+]
 
-#for config in moonlight_room_config:
+for config in moonlight_room_config:
 
-#    for i in range(config['start'], config['end'] + 1):
+    for i in range(config['start'], config['end'] + 1):
 
-#        room_number_it = f"Rm{i:02}"
-#        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
-#        dorm2.add_room(room)
+        room_number_it = f"Rm{i:02}"
+        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
+        dorm2.add_room(room)
 
 #print(dorm2)
 #for room in dorm2.rooms:
 #    print(room)
 
-#dorm2Dict = dorm2.to_dict()
+dorm2Dict = dorm2.to_dict()
 #print(dorm2Dict)
-#for room in dorm2.rooms:
-#    roomDict = room.to_dict()
+for room in dorm2.rooms:
+    roomDict = room.to_dict()
 #    print(roomDict)
 
 #add_dorm(dorm2)
 
-#dorm3 = Dorm(name="Aurora Hall", housing_style="Tower", capacity=100)
+dorm3 = Dorm(name="Aurora Hall", housing_style="Tower", capacity=75)
 
-#aurora_room_config = [
-#    {"start": 1, "end": 10, "capacity": 1, "is_accessible": True},
-#    {"start": 11, "end": 20, "capacity": 2, "is_accessible": False},
-#    {"start": 21, "end": 30, "capacity": 3, "is_accessible": False},
-#    {"start": 31, "end": 40, "capacity": 4, "is_accessible": False}
-#]
+aurora_room_config = [
 
-#for config in aurora_room_config:
+    {"start": 1, "end": 5, "capacity": 1, "is_accessible": True},
+    {"start": 6, "end": 10, "capacity": 2, "is_accessible": False},
+    {"start": 11, "end": 15, "capacity": 3, "is_accessible": False},
+    {"start": 16, "end": 20, "capacity": 4, "is_accessible": False},
+    {"start": 21, "end": 25, "capacity": 5, "is_accessible": False}
+]
 
-#    for i in range(config['start'], config['end'] + 1):
+for config in aurora_room_config:
 
-#        room_number_it = f"Rm{i:02}"
-#        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
-#        dorm3.add_room(room)
+    for i in range(config['start'], config['end'] + 1):
+
+        room_number_it = f"Rm{i:02}"
+        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
+        dorm3.add_room(room)
 
 #print(dorm3)
 #for room in dorm3.rooms:
 #    print(room)
 
-#dorm3Dict = dorm3.to_dict()
+dorm3Dict = dorm3.to_dict()
 #print(dorm3Dict)
-#for room in dorm3.rooms:
-#    roomDict = room.to_dict()
+for room in dorm3.rooms:
+    roomDict = room.to_dict()
 #    print(roomDict)
 
 #add_dorm(dorm3)
 
-#dorm4 = Dorm(name="Solstice Hall", housing_style="Tower", capacity=45)
+dorm4 = Dorm(name="Solstice Hall", housing_style="Tower", capacity=75)
 
-#solstice_room_config = [
-#    {"start": 1, "end": 15, "capacity": 1, "is_accessible": True},
-#    {"start": 16, "end": 30, "capacity": 2, "is_accessible": False}
-#]
+solstice_room_config = [
+    {"start": 1, "end": 5, "capacity": 1, "is_accessible": True},
+    {"start": 6, "end": 10, "capacity": 2, "is_accessible": False},
+    {"start": 11, "end": 15, "capacity": 3, "is_accessible": False},
+    {"start": 16, "end": 20, "capacity": 4, "is_accessible": False},
+    {"start": 21, "end": 25, "capacity": 5, "is_accessible": False}
+]
 
-#for config in solstice_room_config:
+for config in solstice_room_config:
 
-#    for i in range(config['start'], config['end'] + 1):
+    for i in range(config['start'], config['end'] + 1):
 
-#        room_number_it = f"Rm{i:02}"
-#        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
-#        dorm4.add_room(room)
+        room_number_it = f"Rm{i:02}"
+        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
+        dorm4.add_room(room)
 
 #print(dorm4)
 #for room in dorm4.rooms:
 #    print(room)
 
-#dorm4Dict = dorm4.to_dict()
+dorm4Dict = dorm4.to_dict()
 #print(dorm4Dict)
-#for room in dorm4.rooms:
-#    roomDict = room.to_dict()
+for room in dorm4.rooms:
+    roomDict = room.to_dict()
 #    print(roomDict)
 
 #add_dorm(dorm4)
 
-#dorm5 = Dorm(name="Comet Hall", housing_style="Suite", capacity=210)
+dorm5 = Dorm(name="Comet Hall", housing_style="Suite", capacity=75)
 
-#comet_room_config = [
-#    {"start": 1, "end": 15, "capacity": 2, "is_accessible": False},
-#    {"start": 16, "end": 30, "capacity": 3, "is_accessible": False},
-#    {"start": 31, "end": 45, "capacity": 4, "is_accessible": False},
-#    {"start": 46, "end": 60, "capacity": 5, "is_accessible": False}
-#]
+comet_room_config = [
+    {"start": 1, "end": 5, "capacity": 1, "is_accessible": False},
+    {"start": 6, "end": 10, "capacity": 2, "is_accessible": False},
+    {"start": 11, "end": 15, "capacity": 3, "is_accessible": False},
+    {"start": 16, "end": 20, "capacity": 4, "is_accessible": False},
+    {"start": 21, "end": 25, "capacity": 5, "is_accessible": False}
+]
 
-#for config in comet_room_config:
+for config in comet_room_config:
 
-#    for i in range(config['start'], config['end'] + 1):
+    for i in range(config['start'], config['end'] + 1):
 
-#        room_number_it = f"Rm{i:02}"
-#        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
-#        dorm5.add_room(room)
+        room_number_it = f"Rm{i:02}"
+        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
+        dorm5.add_room(room)
 
 #print(dorm5)
 #for room in dorm5.rooms:
 #    print(room)
 
-#dorm5Dict = dorm5.to_dict()
+dorm5Dict = dorm5.to_dict()
 #print(dorm5Dict)
-#for room in dorm5.rooms:
-#    roomDict = room.to_dict()
+for room in dorm5.rooms:
+    roomDict = room.to_dict()
 #    print(roomDict)
 
 #add_dorm(dorm5)
 
-#dorm6 = Dorm(name="Eclipse Hall", housing_style="Tower", capacity=60)
+dorm6 = Dorm(name="Eclipse Hall", housing_style="Tower", capacity=75)
 
-#eclipse_room_config = [
-#    {"start": 1, "end": 20, "capacity": 1, "is_accessible": False},
-#    {"start": 21, "end": 40, "capacity": 2, "is_accessible": False}
-#]
+eclipse_room_config = [
+    {"start": 1, "end": 5, "capacity": 1, "is_accessible": False},
+    {"start": 6, "end": 10, "capacity": 2, "is_accessible": False},
+    {"start": 11, "end": 15, "capacity": 3, "is_accessible": False},
+    {"start": 16, "end": 20, "capacity": 4, "is_accessible": False},
+    {"start": 21, "end": 25, "capacity": 5, "is_accessible": False}
+]
 
-#for config in eclipse_room_config:
+for config in eclipse_room_config:
 
-#    for i in range(config['start'], config['end'] + 1):
+    for i in range(config['start'], config['end'] + 1):
 
-#        room_number_it = f"Rm{i:02}"
-#        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
-#        dorm6.add_room(room)
+        room_number_it = f"Rm{i:02}"
+        room = Dorm.Room(room_number=room_number_it, capacity = config['capacity'], is_accessible = config['is_accessible'])
+        dorm6.add_room(room)
 
 #print(dorm6)
 #for room in dorm6.rooms:
 #    print(room)
 
-#dorm6Dict = dorm6.to_dict()
+dorm6Dict = dorm6.to_dict()
 #print(dorm6Dict)
-#for room in dorm6.rooms:
-#    roomDict = room.to_dict()
+for room in dorm6.rooms:
+    roomDict = room.to_dict()
 #    print(roomDict)
 
 #add_dorm(dorm6)
@@ -558,7 +573,7 @@ def trim_response_data():
     response_example = get_responses()
 
     # create a list of tuples which includes the id from the form response and the firestore document reference to that response
-    response_data = [(response.to_dict().get("1", "Unknown"), response.reference) for response in response_example]
+    response_data = [(response.to_dict().get("ID", "Unknown"), response.reference) for response in response_example]
 
     # create a list taking only the id data from response_data
     response_ids = [response[0] for response in response_data]
@@ -596,4 +611,4 @@ def trim_response_data():
     print("Trimming is complete, all invalid responses were deleted")
 
 #Testing
-trim_response_data()
+#trim_response_data()
