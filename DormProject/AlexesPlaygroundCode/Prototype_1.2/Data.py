@@ -612,3 +612,211 @@ def trim_response_data():
 
 #Testing
 #trim_response_data()
+
+#---------------------------------------------------------------------------------------------------------
+
+#function that takes as a parameter the name of a dorm, and the numbered choice of that dorm. ex: (Comet Hall, 1st)
+#this function only works for students who have the RSS choices with exception for people with RA choices as RA refers to accommodation students. This is meant for the dorms with the suite housing style
+def get_students_by_dorm_choice_suite(dorm_name, choice_number):
+
+    #create a reference key based on the choice_number parameter
+    dorm_key = f"{choice_number}RSS_dorm_choice"
+    dorm_key2 = f"{choice_number}RA_dorm_choice"
+
+    #create a list of all the form responses in a dictionary format
+    response_data = [response.to_dict() for response in db.collection('form_responses').stream()]
+
+    #create a new list of only the form responses who have the same numbered dorm choice. ex: a list of only students who chose Comet Hall as their 1st choice
+    filtered_students = [data for data in response_data if data.get(dorm_key) == dorm_name]
+    filtered_accommodated_students = [data for data in response_data if data.get(dorm_key2) == dorm_name]
+
+    for student in filtered_accommodated_students:
+        filtered_students.append(student)
+
+    return filtered_students
+
+#function that takes as a parameter the name of a dorm, and the numbered choice of that dorm. ex: (Aurora Hall, 1st)
+#this function only works for students who have the RST choices with exception for people with RA choices as RA refers to accommodation students. This is meant for the dorms with the tower housing style
+def get_students_by_dorm_choice_tower(dorm_name, choice_number):
+
+    # create a reference key based on the choice_number parameter
+    dorm_key = f"{choice_number}RST_dorm_choice"
+    dorm_key2 = f"{choice_number}RA_dorm_choice"
+
+    # create a list of all the form responses in a dictionary format
+    response_data = [response.to_dict() for response in db.collection('form_responses').stream()]
+
+    # create a new list of only the form responses who have the same numbered dorm choice. ex: a list of only students who chose Aurora Hall as their 1st choice
+    filtered_students = [data for data in response_data if data.get(dorm_key) == dorm_name]
+    filtered_accommodated_students = [data for data in response_data if data.get(dorm_key2) == dorm_name]
+
+    for student in filtered_accommodated_students:
+        filtered_students.append(student)
+
+    return filtered_students
+
+#function to display all data of the given list of dictionaries, specifically for the two functions above
+def display_student_data(students):
+  #iterate through the list of dictionaries
+    for student in students:
+
+        #case of student applying for dorm with suite style
+        if student.get("Accomodations") == "No, I do not require accommodations" and student.get("House_Style") == "Suite style":
+            print("ID:", student.get("ID"))
+            print("1st Dorm Choice:", student.get("1stRSS_dorm_choice"))
+            print("1st Room Choice:", student.get("1stRSS_room_choice"))
+            print("2nd Dorm Choice:", student.get("2ndRSS_dorm_choice"))
+            print("2nd Room Choice:", student.get("2ndRSS_room_choice"))
+            print("3rd Dorm Choice:", student.get("3rdRSS_dorm_choice"))
+            print("3rd Room Choice:", student.get("3rdRSS_room_choice"))
+            print("Accommodations:", student.get("Accomodations"))
+            print("Personality:", student.get("Personality"))
+            print("Temperature Preference:", student.get("Temperature"))
+            print("Time Preference:", student.get("Time"))
+
+        #case of student applying for dorm with tower style
+        elif student.get("Accomodations") == "No, I do not require accommodations" and student.get("House_Style") == "Tower style":
+            print("ID:", student.get("ID"))
+            print("1st Dorm Choice:", student.get("1stRST_dorm_choice"))
+            print("1st Room Choice:", student.get("1stRST_room_choice"))
+            print("2nd Dorm Choice:", student.get("2ndRST_dorm_choice"))
+            print("2nd Room Choice:", student.get("2ndRST_room_choice"))
+            print("3rd Dorm Choice:", student.get("3rdRST_dorm_choice"))
+            print("3rd Room Choice:", student.get("3rdRST_room_choice"))
+            print("Accommodations:", student.get("Accomodations"))
+            print("Personality:", student.get("Personality"))
+            print("Temperature Preference:", student.get("Temperature"))
+            print("Time Preference:", student.get("Time"))
+
+        #case of student who requires accommodations. There is 1 suite dorm and 2 tower dorms with single rooms that have accommodations
+        else:
+            print("ID:", student.get("ID"))
+            print("1st Dorm Choice:", student.get("1stRA_dorm_choice"))
+            print("1st Room Choice: Single")
+            print("2nd Dorm Choice:", student.get("2ndRA_dorm_choice"))
+            print("2nd Room Choice: Single")
+            print("3rd Dorm Choice:", student.get("3rdRA_dorm_choice"))
+            print("3rd Room Choice: Single")
+            print("Accommodations:", student.get("Accomodations"))
+            print("Personality:", student.get("Personality"))
+            print("Temperature Preference:", student.get("Temperature"))
+            print("Time Preference:", student.get("Time"))
+
+print("Sorting suite dorms")
+#create lists for each of the dorms that have a suite style
+CH_first_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "1st")
+CH_second_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "2nd")
+CH_third_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "3rd")
+
+#display_student_data(CH_first_choice_students)
+#display_student_data(CH_second_choice_students)
+#display_student_data(CH_third_choice_students)
+
+MH_first_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "1st")
+MH_second_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "2nd")
+MH_third_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "3rd")
+
+#display_student_data(MH_first_choice_students)
+#display_student_data(MH_second_choice_students)
+#display_student_data(MH_third_choice_students)
+
+NH_first_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "1st")
+NH_second_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "2nd")
+NH_third_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "3rd")
+
+#display_student_data(NH_first_choice_students)
+#display_student_data(NH_second_choice_students)
+#display_student_data(NH_third_choice_students)
+
+print("Sorting tower dorms")
+#now create lists for each of the dorms that have a tower style
+AH_first_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "1st")
+AH_second_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "2nd")
+AH_third_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "3rd")
+
+#display_student_data(AH_first_choice_students)
+#display_student_data(AH_second_choice_students)
+#display_student_data(AH_third_choice_students)
+
+SH_first_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "1st")
+SH_second_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "2nd")
+SH_third_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "3rd")
+
+#display_student_data(SH_first_choice_students)
+#display_student_data(SH_second_choice_students)
+#display_student_data(SH_third_choice_students)
+
+EH_first_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "1st")
+EH_second_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "2nd")
+EH_third_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "3rd")
+
+#display_student_data(EH_first_choice_students)
+#display_student_data(EH_second_choice_students)
+#display_student_data(EH_third_choice_students)
+
+#function that given a list of dictionaries, will create a list of student names that match with the given student ids in the dictionaries
+def get_student_name(student_choice):
+
+    list_student_names = []
+    student_collection = get_students()
+
+    for student in student_collection:
+        for students in student_choice:
+
+            #print(student.to_dict().get("user_id", "Unknown"))
+            #print(students.get("ID"))
+
+            #if the student id matches the form response id, that is the same student, so we add their name to the list
+            if student.to_dict().get("user_id", "Unknown") == students.get("ID"):
+                #print("Match found")
+                list_student_names.append(student.to_dict().get("name", "Unknown"))
+                break
+
+            #else:
+                #print("No Match")
+
+    for people in list_student_names:
+        print(f"list of students: {people}")
+
+print("Comet Hall 1st choice students:")
+get_student_name(CH_first_choice_students)
+print("Comet Hall 2nd choice students:")
+get_student_name(CH_second_choice_students)
+print("Comet Hall 3rd choice students:")
+get_student_name(CH_third_choice_students)
+
+print("Moonlight Hall 1st choice students:")
+get_student_name(MH_first_choice_students)
+print("Moonlight Hall 2nd choice students:")
+get_student_name(MH_second_choice_students)
+print("Moonlight Hall 3rd choice students:")
+get_student_name(MH_third_choice_students)
+
+print("Nebula Hall 1st choice students:")
+get_student_name(NH_first_choice_students)
+print("Nebula Hall 2nd choice students:")
+get_student_name(NH_second_choice_students)
+print("Nebula Hall 3rd choice students:")
+get_student_name(NH_third_choice_students)
+
+print("Aurora Hall 1st choice students:")
+get_student_name(AH_first_choice_students)
+print("Aurora Hall 2nd choice students:")
+get_student_name(AH_second_choice_students)
+print("Aurora Hall 3rd choice students:")
+get_student_name(AH_third_choice_students)
+
+print("Solstice Hall 1st choice students:")
+get_student_name(SH_first_choice_students)
+print("Solstice Hall 2nd choice students:")
+get_student_name(SH_second_choice_students)
+print("Solstice Hall 3rd choice students:")
+get_student_name(SH_third_choice_students)
+
+print("Eclipse Hall 1st choice students:")
+get_student_name(EH_first_choice_students)
+print("Eclipse Hall 2nd choice students:")
+get_student_name(EH_second_choice_students)
+print("Eclipse Hall 3rd choice students:")
+get_student_name(EH_third_choice_students)
+
