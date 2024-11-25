@@ -1,10 +1,8 @@
-  
 <!-- REVISION HISTORY  
 
 Jonathan  10/11/24     Created Framework, basic HTML set up
 Jonathan  10/11/24     Finished basic design, logo, coloring etc
 Jonathan  10/12/24     Added in working dropup menu, javascript, CSS style for it
-
 Jonathan  10/17/24     Added Dorm Details Framework 
 Jonathan  10/18/24     Got working JS for the details appearance button
 Jonathan  10/18/24     Added generic 'toggleButton' function for future use
@@ -17,6 +15,15 @@ Kyren     10/26/24     Started the implementation of the dorm application form
 Jonathan  10/27/24     Embeded the form into the application
 Jonathan  10/28/24     Made the form overlay the other elements, formatted it better
 Kyren     10/29/24     Fixed the codes indentation.
+Jonathan  11/04/24     Separated CSS and JS from HTML file
+Jonathan  11/04/24     Formatted Form Better
+Jonathan  11/04/24     Integrated Flask
+Kyren     11/05/24     Bug Fix (overflow name)
+Kyren     11/07/24     Implemented the outline for the overview page (data from backend can be filled in when ready)
+Kyren     11/10/24     Added the button press for overview page (made the initial value for activeElement = 'overview-page')
+Kyren     11/10/24     Fixed the issue of having objects overlay when you click on a button and added line to prevent side-scrolling.
+Kyren     11/10/24     Began to use and slightly modified Alexes' code for the cross check for student IDs to implement for our overview page. (I've got some questions here.)
+Kyren     11/24/24     Added the Help page, looked into further admin implementation (Fixed this with Jonathan), slightly reworked dorm details, small bug fixes. 
 -->
 
 
@@ -29,157 +36,52 @@ Kyren     10/29/24     Fixed the codes indentation.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student HomePage</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='HomePageStyleSheet.css') }}">
 
-  <!-- CSS STYLE FOR JAVA SCRIPT STUFF-->
-  <style>
-
-    /* dropdown CSS */
-    .dropdown-item:active {
-      background-color: #d2c6d3; 
-      color: #fff; 
-    }
-    .dropdown-item.active {
-        background-color: #d2c6d3; 
-        color: #fff;  
-    }
-
-    /*Carousel CSS */
-    .carousel {
-      margin-top: 10px; /* Adjust this to move the carousel closer to the top */
-    }
-
-    .carousel-control-prev-icon{
-      background-color: #f1d2f5; 
-      border-radius: 80%;  /* Makes it round edged, as opposed to straight. Used in temp uni tab */
-      margin-top: 40px;
-    }
-
-    .carousel-control-next-icon {
-      background-color:#f1d2f5; 
-      border-radius: 80%; /* Makes it round edged, as opposed to straight. Used in temp uni tab */
-      margin-top: 40px;
-    }
-
-    .carousel-indicators [data-bs-target] {
-        background-color: #dcecf1; 
-        margin-bottom: 600px
-    }
-
-    .carousel-indicators .active {
-        background-color: #edbcf2; 
-    }
-
-    .carousel-caption {
-      background-color: rgba(0, 0, 0, 0.5); /* Set RGB color as first 3 values, then the last is opacity! Easiest way to make opacity without turning */
-                                                /* the entire element & text opacity. (Yes i had this issue) */
-      padding: 10px; /* Adds some padding around the text */
-      border-radius: 10px; /* Rounds corners */
-    }
-
-    /* Handle text and content layout */
-    .container {
-      margin: 20px auto;
-      max-width: 80vw; /* Max width based on viewport */
-    }
-
-    /* Make carousel items responsive */
-    .carousel-item img {
-      width: 100%; /* Image takes full width */
-      height: auto; /* Adjusts height proportionally */
-      object-fit: contain; /* Ensures the image fits without distortion */
-    }
-
-    /* Carousel inner container */
-    .carousel-inner {
-        height: auto; /* Let it expand naturally */
-    }
-
-    /* Adjust column layout for different screen sizes */
-    .col-lg-4 img {
-        width: 100%;
-        height: auto;
-        border-radius: 10%;
-    }
-
-    /* Media query for smaller screens */
-    @media (max-width: 768px) {
-      .container {
-        width: 95%; /* Increase container width on smaller screens */
-        padding: 0;
-      }
-
-      /* Adjust carousel size for mobile */
-      .carousel {
-        height: 50vh; /* Reduce height on smaller screens */
-      }
-
-      .carousel-item img {
-        height: 50vh; /* Responsive height for images */
-      }
-    }
-
-    /* Media query for large screens */
-    @media (min-width: 1200px) {
-      #DD-Dorm-1-Page {
-        width: 70%; /* Slightly smaller width for larger screens */
-      }
-
-      /* Dorm Details Tab CSS */
-      #dorm-details{
-        visibility: hidden;
-        margin: 0 auto;
-        margin-top: 150px;
-        position: relative;
-        width: 80%; /* Responsive width */
-        max-width: 1200px; /* Cap the width for larger screens */
-        max-height: 90vh; /* Limit the height to 90% of the viewport */
-        overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
-        padding: 10px;
-      }
-    }
-
-    #DD-Dorm-1-Page {
-      visibility: hidden;
-      margin: 0 auto;
-      margin-left: 280px;
-      margin-bottom: 200px;
-      position: relative;
-      bottom: 580px; /* Moves carosuel up and down */
-      width: 80%; /* Width */
-      max-width: 1200px; /* Cap the width for larger screens */
-      max-height: 90vh; /* Limit the height to 90% of the viewport */
-      overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
-      padding: 10px;
-      margin-bottom: 200px; 
-    }
-    
-    #dorm-application{
-      visibility: hidden;
-      margin:auto;
-      position: absolute;
-      margin-left: 450px;
-    }
-  </style>
 </head>
 
 <!-- NOTES FOR BELOW SECTION -->
 <!-- using 'style="font-family: etc' to set the font style of the specific text. I picked Gerogia just cause I thought it looked nice -->
 
-<head>
-  <body>
+  <body style="overflow-x: hidden;">
     <div style="position: absolute; top: 30px; right: 40px; background-color: #dcecf1; padding: 10px 20px; font-family: Georgia, serif; font-size: large; font-weight: bold; border-radius: 10px; color: #1a2f4a;">
       Temporary University
     </div>
     <Body style = "background-color:white" style="background-size: 100vw 100vh;"></Body> <!-- Litterally just the white-ish background -->
     <div>
-      <p style=" position: absolute; bottom: -1000px; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
+      <p style=" position: fixed; bottom: 8px; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
     </div>                                                                                                                                         <!-- Changed this copyright from a 'class', to just style. Regular text, not classd, to make it work.-->
         
 
     <!-- DORM APPLICATION PAGE -->
-    <div class="container-fluid py-5" id="dorm-application">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-h4w1kUcP_hO528P4K70VfartWI6-_I-5fZUwZkgWxWeToA/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div class="container-fluid py-5" id="dorm-application" style="top: 100px;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSee9dfwCguIhjlgU3xSEz5vA6DXeFflIhEDsRQ1oLjrwbaJPg/viewform?embedded=true" width="640" height="2000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
+
+
+    <!-- THIS IS THE ACTUAL OVERVIEW PAGE THAT IS FIRST DISPLAYED -->
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="overview-page"> <!-- p is for paragraph, mb is for margin-bottom -->
+      <h1 class="display-5 fw-bold" style="font-family: 'Georgia', serif;">Overview</h1> 
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Room Style:</h2> 
+      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">** Add room style here **</p>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Suitemates:</h2> <!-- md is for the break point of the text -->
+      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">** Add suitemates here **</p>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Roommates:</h2> 
+      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">** Add roommates here **</p>
+    </div>
+
+
+    <!-- THIS IS THE HELP PAGE -->
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="help-page"> <!-- p is for paragraph, mb is for margin-bottom -->
+      <h1 class="display-5 fw-bold" style="font-family: 'Georgia', serif;">Help:</h1> 
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Overview:</h2> 
+      <p class="col-md-12" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">The overview page gives you an outline of your application. Which room you have been assigned, who you're dorming with, and who your suitemates are.</p>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Dorm Application:</h2> <!-- md is for the break point of the text -->
+      <p class="col-md-12" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">The dorm application page gives you access to the application. There is a progress bar at the bottom of the page and you should get a page that says "Your response has been recorded." when you have completed the application. When you complete this application, the overview page should update with your information.</p>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Dorm Details:</h2> 
+      <p class="col-md-12" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">The dorm details page gives you insight into what the rooms look like within the different halls.</p>
+    </div>
+
 
 
     <!-- THIS IS THE DORM DETAILS HTML -->
@@ -189,10 +91,8 @@ Kyren     10/29/24     Fixed the codes indentation.
           <div class="card shadow-sm"> 
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/d6RjnKd/image-removebg-preview-1-Photoroom-upscaled.png" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;"> Comet Hall</h5>
-              <p class="card-text">The largest dorm building, with up to 2 floors of several different suite-style rooms, this dorm can fit up to 210 students. 
-                Room assignments consist of doubles, triples, quads and even quints. This dorm is best for people who prefer larger communities.
-              </p>
+              <h5 style="text-align: center;"> Moonlight Hall</h5>
+              <p class="card-text"> This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group" id="Dorm_1_Details_Button">
                   <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
@@ -205,10 +105,8 @@ Kyren     10/29/24     Fixed the codes indentation.
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;">Auroa Hall</h5>
-              <p class="card-text">A 5 floor tower-style dorm that can fit up to 100 students. 
-                Room assignments consist of singles, doubles, triples and quads, where each floor consists of 8 different rooms
-                .</p>
+              <h5 style="text-align: center;">Solstice Hall</h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
@@ -221,10 +119,50 @@ Kyren     10/29/24     Fixed the codes indentation.
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/swmjSjY/Solstice-hall-is-a-6-floor-tower-style-dorm-that-can-fit-up-to-45-students-Room-assignments-consist.png" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;">Solstice Hall</h5>
-              <p class="card-text">Solstice hall is a 6 floor tower-style dorm that can fit up to 45 students. 
-                Room assignments consist of singles and doubles, where each floor consists of 5 different rooms. This dorm is best for people who prefer an apartment style of living and like smaller spaces.
-              </p>
+              <h5 style="text-align: center;">Nebula Hall</h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Eclipse Hall</h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Comet Hall</h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Aurora Hall</h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
@@ -235,7 +173,7 @@ Kyren     10/29/24     Fixed the codes indentation.
         </div>
       </div>
     </div>
-
+    
 
     <!-- THIS IS THE CODE FOR THE CAROUSEL IN THE DORM DETAIL'S SPECIFIC PAGES-->
     <div class="container" id="DD-Dorm-1-Page" style="justify-content: center;">
@@ -321,7 +259,7 @@ Kyren     10/29/24     Fixed the codes indentation.
       </a>
       <ul class="nav nav-pills flex-column mb-auto">
         <li style="margin-bottom: 15px;">
-          <a href="#" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family: Georgia, serif; font-size: larger; display: flex; align-items: center; padding-left: 22px;">
+          <a href="#" id="overviewButton" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family: Georgia, serif; font-size: larger; display: flex; align-items: center; padding-left: 22px;">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
             Overview
           </a>
@@ -339,7 +277,7 @@ Kyren     10/29/24     Fixed the codes indentation.
           </a>
         </li>
         <li style="margin-bottom: 15px;">
-          <a href="#" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family:Georgia, serif; font-size: large; padding-right: 40px;">
+          <a href="#" id="helpButton" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family:Georgia, serif; font-size: large; padding-right: 40px;">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
             Help
           </a>
@@ -348,87 +286,31 @@ Kyren     10/29/24     Fixed the codes indentation.
     </div>
 
     <!-- Default dropup button ... GOTTA MAKE THIS DROPUP ACTUALLY WORK--> 
-    <div class="btn-group dropup">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #d2c6d3; color: #1a2f4a; font-family: Georgia, serif; font-weight: bold;">
-        Test Student 1
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Profile</a></li>
-        <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Settings</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Sign Out</a></li>
-      </ul>
+    <div class="fixed-bottom-left"> <!-- This is from Arman. This makes the drop up sticky to the bottom left of the page.-->
+      <div class="btn-group dropup">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #d2c6d3; color: #1a2f4a; font-family: Georgia, serif; font-weight: bold; overflow: hidden;">
+          {{name}}
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Profile</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Settings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <form action="{{ url_for('logout') }}" method="POST" style="margin: 0;">
+                <button type="submit" class="dropdown-item">Sign Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
     </div>
-
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- JAVASCRIPT LINK -->
+    <script src="{{ url_for('static', filename='HomePageScript.js') }}"></script>
 
 
-    <!-- JAVASCRIPT -->
-
-    <script>
-      let activeElement = null; // Probably change this to 'overview'
-      console.log(activeElement);
-      let lastActiveItem = null; // To store the last active item
-      function setActive(element) {
-        // Remove active style from all items
-        const items = document.querySelectorAll('.dropdown-item');
-        items.forEach(item => {
-          item.style.backgroundColor = '';
-          item.style.color = '#1a2f4a'; // Reset color
-        });
-        // Set active style for the clicked item
-        element.style.backgroundColor = '#d2c6d3'; // Change to your desired color
-        lastActiveItem = element; // Store the last active item
-      }
-
-      // Remove highlight when clicking outside the dropdown
-      document.addEventListener('click', function(event) {
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-          // Check if the click was outside the dropdown
-          if (!dropdownMenu.contains(event.target) && lastActiveItem) {
-            lastActiveItem.style.backgroundColor = ''; // Reset background color
-            lastActiveItem.style.color = '#1a2f4a'; // Reset text color
-            lastActiveItem = null; // Clear the last active item
-          }
-      });
-
-      // THIS IS TO GET THE DORM DETAILS PAGE TO APPEAR ON CLICK
-      // THIS IS NOW REUSABLE, JUST CALL THIS FUNCTION AFTER AN EVENTLISTENER
-      function toggleButton(element){
-        const elementID = document.getElementById(element);
-
-        // If another element is already active hide it
-        if (activeElement && activeElement !== elementID) {
-            activeElement.style.visibility = 'hidden'; // Hide the previously active element
-        }
-        // If the clicked element is hidden show it
-        if (elementID.style.visibility === 'hidden' || elementID.style.visibility === '') {
-          elementID.style.visibility = 'visible';
-          activeElement = elementID; // Set this element as the active one
-        } else {
-          // If the clicked element is already visible, hide it
-          elementID.style.visibility = 'hidden';
-          activeElement = null; // No active element now
-        }
-      }
-
-      document.getElementById('dormDetailsButton').addEventListener('click',function(){
-        toggleButton('dorm-details')
-      });
-      
-      document.getElementById('Dorm_1_Details_Button').addEventListener('click', function(){
-        toggleButton('DD-Dorm-1-Page')
-      });
-
-      document.getElementById('dormApplicationButton').addEventListener('click',function(){
-        toggleButton('dorm-application')
-      });
-
-    </script>
   </body>
-</head>
 </html>

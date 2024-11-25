@@ -56,6 +56,15 @@ def student_homepage():
     else:
         return redirect('/')  # Redirect to login if not logged in
     
+@app.route('/T5_AdminHomepage')
+def admin_homepage():
+    if 'email' in session:
+        email = session['email']  # Get email from session
+        name = session.get('name', email)  # Get name from session, default to email
+        return render_template('T5_AdminHomepage.html', name=name)  # Pass name to the template
+    else:
+        return redirect('/')  # Redirect to login if not logged in
+    
 @app.route('/logout', methods=['POST'])  # Ensure 'POST' is included here
 def logout():
     session.pop('user_id', None)  # Clear the session

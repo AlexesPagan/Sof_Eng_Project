@@ -102,7 +102,7 @@
           width: 80%; /* Responsive width */
           max-width: 1200px; /* Cap the width for larger screens */
           max-height: 90vh; /* Limit the height to 90% of the viewport */
-          overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+          overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
           padding: 10px;
         }
       }
@@ -112,6 +112,7 @@
         margin: 0 auto;
         margin-left: 280px;
         margin-bottom: 200px;
+        margin-top: -200px;
         position: relative;
         bottom: 580px; /* Moves carosuel up and down */
         width: 80%; /* Width */
@@ -119,7 +120,6 @@
         max-height: 90vh; /* Limit the height to 90% of the viewport */
         overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
         padding: 10px;
-        margin-bottom: 200px; 
       }
       
       #dorm-application{
