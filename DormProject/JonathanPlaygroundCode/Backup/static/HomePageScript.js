@@ -1,4 +1,7 @@
-let activeElement = document.getElementById('overview-page'); 
+
+
+let activeElement = null; // Probably change this to 'overview'
+console.log(activeElement);
 let lastActiveItem = null; // To store the last active item
 function setActive(element) {
   // Remove active style from all items
@@ -27,26 +30,20 @@ document.addEventListener('click', function(event) {
 // THIS IS NOW REUSABLE, JUST CALL THIS FUNCTION AFTER AN EVENTLISTENER
 function toggleButton(element){
   const elementID = document.getElementById(element);
-  console.log(activeElement);
 
-  // If another element is already active, hide it
+  // If another element is already active hide it
   if (activeElement && activeElement !== elementID) {
       activeElement.style.visibility = 'hidden'; // Hide the previously active element
   }
-
-  // If the clicked element is hidden, show it
+  // If the clicked element is hidden show it
   if (elementID.style.visibility === 'hidden' || elementID.style.visibility === '') {
     elementID.style.visibility = 'visible';
     activeElement = elementID; // Set this element as the active one
-  } 
-  
-  //I dont think we need this. I've deleted it unless we decide we want it. 
-  //else {
+  } else {
     // If the clicked element is already visible, hide it
-    //elementID.style.visibility = 'hidden';
-    //activeElement = null; // No active element now
-  //}
-
+    elementID.style.visibility = 'hidden';
+    activeElement = null; // No active element now
+  }
 }
 
 
@@ -61,24 +58,4 @@ document.getElementById('Dorm_1_Details_Button').addEventListener('click', funct
 
 document.getElementById('dormApplicationButton').addEventListener('click',function(){
   toggleButton('dorm-application')
-});
-
-document.getElementById('overviewButton').addEventListener('click', function(){
-  toggleButton('overview-page')
-})
-
-document.getElementById('helpButton').addEventListener('click', function(){
-  toggleButton('help-page')
-})
-
-document.getElementById('SingleRoomButton').addEventListener('click', function() {
-  toggleButton('SingleRoomDetails');
-});
-
-document.getElementById('DoubleRoomButton').addEventListener('click',function(){
-  toggleButton('DoubleRoomDetails')
-});
-
-document.getElementById('SuiteRoomButton').addEventListener('click',function(){
-  toggleButton('SuiteRoomDetails')
 });
