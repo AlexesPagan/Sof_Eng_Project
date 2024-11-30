@@ -6,6 +6,8 @@
 # Alexes    10/26/2024  Adjusted dorm data testing code to update our firestore database based on the previous changes I implemented
 # Alexes    10/28/2024  Added the get_response() function to retrieve all data from the form_responses collection in our firestore
 # Alexes    10/28/2024  Added the trim_response_data() function to remove any invalid form response data from the form_responses collection
+# Alexes    11/29/2024  Added the get_student_in_dorm(dorm_name) function to return as a list all id's of the students residing in those dorms, this includes roommate id's.
+# Alexes    11/29/2024  Created the add_or_remove_student function that provides the backend functionality for allowing admins to add or remove students from a dorm room. It takes 4 different parameters including the dorm name, room number, student id, and role (add or remove). This function also updates the firestore database to visualize the changes.
 
 
 
@@ -320,26 +322,111 @@ def get_students():
 
     return student_list
 
+#function that stores as a list all id's for all students in a given dorm
+def get_students_in_dorm(dorm_name):
+
+    #set a reference to a specified dorm in the dorm collection
+    dorm_ref = db.collection('dorms').where('name', '==', dorm_name).stream()
+
+    #create a list to store student id's
+    student_ids = []
+
+    #transform the dorm data into a readable dictionary format
+    for dorm in dorm_ref:
+        dorm_data = dorm.to_dict()
+
+        #iterate through all rooms of the dorm
+        for rooms in dorm_data.get('rooms', []):
+
+            #iterate through the student list for each room
+            for students in rooms.get('students', []):
+
+                #find and add all the id's within each rooms student list.
+                student_id = students.get('ID')
+
+                #if the data for the student id is found, add the id to the list of id's
+                if student_id:
+                    student_ids.append(student_id)
+
+    #return the list of id's
+    return student_ids
+
+#function that will either add or remove a specified student from a dorm room.
+#all excluded print statements are just used for testing purposes
+def add_or_remove_student(dorm_name, room_number, student_id, task):
+
+    #print(dorm_name)
+    #print(room_number)
+    #print(student_id)
+    #print(task)
+
+    #set a reference to a specified dorm in the dorm collection
+    dorm_ref = db.collection('dorms').where('name', '==', dorm_name).stream()
+
+    #print('entering first iteration')
+
+    #transform the dorm data into a readable dictionary format
+    for dorm in dorm_ref:
+        dorm_data = dorm.to_dict()
+
+        #keep a reference to the document id for the specific dorm
+        dorm_id = dorm.id
+
+        #print("entering second iteration")
+
+        #iterate through all rooms of the dorm until a match is found
+        for rooms in dorm_data.get('rooms', []):
+
+            #if the current room is the room specified in the parameter
+            if rooms.get('room_number') == room_number:
+                #print("found room")
+
+                #access the student list in the specified room
+                students = rooms.get('students', [])
+
+                #print("entering student list in room")
+
+                if task == "Add":
+
+                    print("adding student")
+
+                    #add the specified student id to the student list and then call firebase to update the data of the specified document id
+                    students.append({"ID": student_id})
+                    db.collection('dorms').document(dorm_id).update({'rooms': dorm_data['rooms']})
+
+                elif task == "Remove":
+                    print("removing student")
+
+                    #we "remove" the student by creating a new list of students excluding the student with the id we want to remove
+                    updated_students = [student for student in students if student.get('ID') != student_id]
+
+                    #locally update the data for the dorm and then update the data on the database to match with the local data
+                    rooms['students'] = updated_students
+                    db.collection('dorms').document(dorm_id).update({'rooms': dorm_data['rooms']})
+
+    print("done")
+
+
 #Testing
 
-#test_dorm = Dorm(name="Test Dorm", housing_style="suite", capacity=25)
+test_dorm = Dorm(name="Test Dorm", housing_style="suite", capacity=25)
 
-#room_configs = [
-#    {"room_number": "RM01", "capacity": 2, "is_accessible": False},
-#    {"room_number": "Rm02", "capacity": 3, "is_accessible": True},
-#    {"room_number": "Rm03", "capacity": 1, "is_accessible": False},
-#    {"room_number": "Rm04", "capacity": 2, "is_accessible": True},
-#    {"room_number": "Rm05", "capacity": 3, "is_accessible": False},
-#    {"room_number": "Rm06", "capacity": 4, "is_accessible": True},
-#    {"room_number": "Rm07", "capacity": 1, "is_accessible": False},
-#    {"room_number": "Rm08", "capacity": 2, "is_accessible": False},
-#    {"room_number": "Rm09", "capacity": 3, "is_accessible": True},
-#    {"room_number": "Rm10", "capacity": 4, "is_accessible": False}
-#]
+room_configs = [
+    {"room_number": "RM01", "capacity": 2, "is_accessible": False},
+    {"room_number": "Rm02", "capacity": 3, "is_accessible": True},
+    {"room_number": "Rm03", "capacity": 1, "is_accessible": False},
+    {"room_number": "Rm04", "capacity": 2, "is_accessible": True},
+    {"room_number": "Rm05", "capacity": 3, "is_accessible": False},
+    {"room_number": "Rm06", "capacity": 4, "is_accessible": True},
+    {"room_number": "Rm07", "capacity": 1, "is_accessible": False},
+    {"room_number": "Rm08", "capacity": 2, "is_accessible": False},
+    {"room_number": "Rm09", "capacity": 3, "is_accessible": True},
+    {"room_number": "Rm10", "capacity": 4, "is_accessible": False}
+]
 
-#for config in room_configs:
-#    room = Dorm.Room(room_number=config["room_number"], capacity=config["capacity"], is_accessible=config["is_accessible"])
-#    test_dorm.add_room(room)
+for config in room_configs:
+    room = Dorm.Room(room_number=config["room_number"], capacity=config["capacity"], is_accessible=config["is_accessible"])
+    test_dorm.add_room(room)
 
 #test_student = get_students()
 #print (test_student)
@@ -356,9 +443,21 @@ def get_students():
 #print(test_dorm)
 
 #for room in test_dorm.rooms:
-#    print(room)
+    #print(room)
 
 #add_dorm(test_dorm)
+#-------------------------------------------------------------------------------
+#Testing get_students_in_dorm and add_or_remove_student functions
+
+#students_in_dorm = get_students_in_dorm("Comet Hall")
+
+#for student in students_in_dorm:
+    #print(student)
+
+#add_or_remove_student("Test Dorm", "Rm06", "H777777777", "Add")
+
+add_or_remove_student("Test Dorm", "Rm06", "H777777777", "Remove")
+
 #------------------------------------------------------------------------------------
 #Updating our current dorm data
 
@@ -662,6 +761,7 @@ def display_student_data(students):
 
         #case of student applying for dorm with suite style
         if student.get("Accomodations") == "No, I do not require accommodations" and student.get("House_Style") == "Suite style":
+            print("student data")
             print("ID:", student.get("ID"))
             print("1st Dorm Choice:", student.get("1stRSS_dorm_choice"))
             print("1st Room Choice:", student.get("1stRSS_room_choice"))
@@ -702,53 +802,56 @@ def display_student_data(students):
             print("Temperature Preference:", student.get("Temperature"))
             print("Time Preference:", student.get("Time"))
 
-print("Sorting suite dorms")
+#print("Sorting suite dorms")
 #create lists for each of the dorms that have a suite style
-CH_first_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "1st")
-CH_second_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "2nd")
-CH_third_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "3rd")
+
+#print("Comet Hall data")
+#CH_first_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "1st")
+#CH_second_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "2nd")
+#CH_third_choice_students = get_students_by_dorm_choice_suite("Comet Hall", "3rd")
 
 #display_student_data(CH_first_choice_students)
 #display_student_data(CH_second_choice_students)
 #display_student_data(CH_third_choice_students)
 
-MH_first_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "1st")
-MH_second_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "2nd")
-MH_third_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "3rd")
+#print("Moonlight hall data")
+#MH_first_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "1st")
+#MH_second_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "2nd")
+#MH_third_choice_students = get_students_by_dorm_choice_suite("Moonlight Hall", "3rd")
 
 #display_student_data(MH_first_choice_students)
 #display_student_data(MH_second_choice_students)
 #display_student_data(MH_third_choice_students)
 
-NH_first_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "1st")
-NH_second_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "2nd")
-NH_third_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "3rd")
+#NH_first_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "1st")
+#NH_second_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "2nd")
+#NH_third_choice_students = get_students_by_dorm_choice_suite("Nebula Hall", "3rd")
 
 #display_student_data(NH_first_choice_students)
 #display_student_data(NH_second_choice_students)
 #display_student_data(NH_third_choice_students)
 
-print("Sorting tower dorms")
+#print("Sorting tower dorms")
 #now create lists for each of the dorms that have a tower style
-AH_first_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "1st")
-AH_second_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "2nd")
-AH_third_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "3rd")
+#AH_first_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "1st")
+#AH_second_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "2nd")
+#AH_third_choice_students = get_students_by_dorm_choice_suite("Aurora Hall", "3rd")
 
 #display_student_data(AH_first_choice_students)
 #display_student_data(AH_second_choice_students)
 #display_student_data(AH_third_choice_students)
 
-SH_first_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "1st")
-SH_second_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "2nd")
-SH_third_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "3rd")
+#SH_first_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "1st")
+#SH_second_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "2nd")
+#SH_third_choice_students = get_students_by_dorm_choice_suite("Solstice Hall", "3rd")
 
 #display_student_data(SH_first_choice_students)
 #display_student_data(SH_second_choice_students)
 #display_student_data(SH_third_choice_students)
 
-EH_first_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "1st")
-EH_second_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "2nd")
-EH_third_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "3rd")
+#EH_first_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "1st")
+#EH_second_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "2nd")
+#EH_third_choice_students = get_students_by_dorm_choice_suite("Eclipse Hall", "3rd")
 
 #display_student_data(EH_first_choice_students)
 #display_student_data(EH_second_choice_students)
@@ -778,45 +881,45 @@ def get_student_name(student_choice):
     for people in list_student_names:
         print(f"list of students: {people}")
 
-print("Comet Hall 1st choice students:")
-get_student_name(CH_first_choice_students)
-print("Comet Hall 2nd choice students:")
-get_student_name(CH_second_choice_students)
-print("Comet Hall 3rd choice students:")
-get_student_name(CH_third_choice_students)
+#print("Comet Hall 1st choice students:")
+#get_student_name(CH_first_choice_students)
+#print("Comet Hall 2nd choice students:")
+#get_student_name(CH_second_choice_students)
+#print("Comet Hall 3rd choice students:")
+#get_student_name(CH_third_choice_students)
 
-print("Moonlight Hall 1st choice students:")
-get_student_name(MH_first_choice_students)
-print("Moonlight Hall 2nd choice students:")
-get_student_name(MH_second_choice_students)
-print("Moonlight Hall 3rd choice students:")
-get_student_name(MH_third_choice_students)
+#print("Moonlight Hall 1st choice students:")
+#get_student_name(MH_first_choice_students)
+#print("Moonlight Hall 2nd choice students:")
+#get_student_name(MH_second_choice_students)
+#print("Moonlight Hall 3rd choice students:")
+#get_student_name(MH_third_choice_students)
 
-print("Nebula Hall 1st choice students:")
-get_student_name(NH_first_choice_students)
-print("Nebula Hall 2nd choice students:")
-get_student_name(NH_second_choice_students)
-print("Nebula Hall 3rd choice students:")
-get_student_name(NH_third_choice_students)
+#print("Nebula Hall 1st choice students:")
+#get_student_name(NH_first_choice_students)
+#print("Nebula Hall 2nd choice students:")
+#get_student_name(NH_second_choice_students)
+#print("Nebula Hall 3rd choice students:")
+#get_student_name(NH_third_choice_students)
 
-print("Aurora Hall 1st choice students:")
-get_student_name(AH_first_choice_students)
-print("Aurora Hall 2nd choice students:")
-get_student_name(AH_second_choice_students)
-print("Aurora Hall 3rd choice students:")
-get_student_name(AH_third_choice_students)
+#print("Aurora Hall 1st choice students:")
+#get_student_name(AH_first_choice_students)
+#print("Aurora Hall 2nd choice students:")
+#get_student_name(AH_second_choice_students)
+#print("Aurora Hall 3rd choice students:")
+#get_student_name(AH_third_choice_students)
 
-print("Solstice Hall 1st choice students:")
-get_student_name(SH_first_choice_students)
-print("Solstice Hall 2nd choice students:")
-get_student_name(SH_second_choice_students)
-print("Solstice Hall 3rd choice students:")
-get_student_name(SH_third_choice_students)
+#print("Solstice Hall 1st choice students:")
+#get_student_name(SH_first_choice_students)
+#print("Solstice Hall 2nd choice students:")
+#get_student_name(SH_second_choice_students)
+#print("Solstice Hall 3rd choice students:")
+#get_student_name(SH_third_choice_students)
 
-print("Eclipse Hall 1st choice students:")
-get_student_name(EH_first_choice_students)
-print("Eclipse Hall 2nd choice students:")
-get_student_name(EH_second_choice_students)
-print("Eclipse Hall 3rd choice students:")
-get_student_name(EH_third_choice_students)
+#print("Eclipse Hall 1st choice students:")
+#get_student_name(EH_first_choice_students)
+#print("Eclipse Hall 2nd choice students:")
+#get_student_name(EH_second_choice_students)
+#print("Eclipse Hall 3rd choice students:")
+#get_student_name(EH_third_choice_students)
 
