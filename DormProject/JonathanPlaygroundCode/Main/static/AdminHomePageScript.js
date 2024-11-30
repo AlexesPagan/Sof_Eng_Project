@@ -42,7 +42,6 @@ function toggleButton(element){
 }
 
 
-// In the admin page specifically... (I (Kyren) got this code from Jonathan)
 
 // Define sendData function
 function sendData(ID, dorm, room, choice) {

@@ -1889,3 +1889,293 @@
 2024-11-29 22:59:51,024 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
 2024-11-29 22:59:51,350 - INFO - Response: 200 OK Duration: 0.33s
 2024-11-29 22:59:51,350 - INFO - 127.0.0.1 - - [29/Nov/2024 22:59:51] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 23:03:52,816 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:03:52,816 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:03:52,816 - INFO -  * Restarting with stat
+2024-11-29 23:03:53,992 - WARNING -  * Debugger is active!
+2024-11-29 23:03:54,007 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:04:00,977 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:04:00,977 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 23:04:00,977 - INFO - 127.0.0.1 - - [29/Nov/2024 23:04:00] "GET / HTTP/1.1" 200 -
+2024-11-29 23:04:01,072 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:04:01,162 - INFO - Response: 304 NOT MODIFIED Duration: 0.09s
+2024-11-29 23:04:01,162 - INFO - 127.0.0.1 - - [29/Nov/2024 23:04:01] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 23:04:05,228 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:04:05,743 - INFO - Response: 200 OK Duration: 0.52s
+2024-11-29 23:04:05,743 - INFO - 127.0.0.1 - - [29/Nov/2024 23:04:05] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:04:05,761 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:04:06,030 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-29 23:04:06,030 - INFO - 127.0.0.1 - - [29/Nov/2024 23:04:06] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:04:06,121 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:04:06,122 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:04:06,122 - INFO - 127.0.0.1 - - [29/Nov/2024 23:04:06] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:04:06,178 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:04:06,179 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:04:06,180 - INFO - 127.0.0.1 - - [29/Nov/2024 23:04:06] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 23:16:28,330 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\dormOutput.py', reloading
+2024-11-29 23:16:28,430 - INFO -  * Restarting with stat
+2024-11-29 23:16:29,659 - WARNING -  * Debugger is active!
+2024-11-29 23:16:29,659 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:18:19,698 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:18:19,813 - INFO -  * Restarting with stat
+2024-11-29 23:18:21,112 - WARNING -  * Debugger is active!
+2024-11-29 23:18:21,112 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:18:26,706 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:18:26,707 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:18:26,708 - INFO -  * Restarting with stat
+2024-11-29 23:18:27,671 - WARNING -  * Debugger is active!
+2024-11-29 23:18:27,679 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:18:29,541 - INFO - Request: GET http://127.0.0.1:5000/student User ID: None Role: None
+2024-11-29 23:18:29,541 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 23:18:29,541 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:29] "[32mGET /student HTTP/1.1[0m" 302 -
+2024-11-29 23:18:29,605 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:18:29,606 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 23:18:29,606 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:29] "GET / HTTP/1.1" 200 -
+2024-11-29 23:18:29,799 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:18:29,896 - INFO - Response: 304 NOT MODIFIED Duration: 0.10s
+2024-11-29 23:18:29,896 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:29] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 23:18:33,332 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:18:33,725 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-29 23:18:33,725 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:33] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:18:33,745 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:18:34,110 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:34] "[35m[1mGET /student HTTP/1.1[0m" 500 -
+2024-11-29 23:18:34,232 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:34] "GET /student?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-11-29 23:18:34,265 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:34] "GET /student?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-11-29 23:18:34,368 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:34] "GET /student?__debugger__=yes&cmd=resource&f=console.png&s=TPhdiesjmST18e3tMExA HTTP/1.1" 200 -
+2024-11-29 23:18:34,475 - INFO - 127.0.0.1 - - [29/Nov/2024 23:18:34] "GET /student?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-29 23:24:30,140 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:24:30,229 - INFO -  * Restarting with stat
+2024-11-29 23:24:31,479 - WARNING -  * Debugger is active!
+2024-11-29 23:24:31,480 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:24:39,565 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:24:39,647 - INFO -  * Restarting with stat
+2024-11-29 23:24:57,648 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:24:57,648 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:24:57,649 - INFO -  * Restarting with stat
+2024-11-29 23:24:58,684 - WARNING -  * Debugger is active!
+2024-11-29 23:24:58,696 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:25:02,602 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:25:02,602 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:25:02,602 - INFO -  * Restarting with stat
+2024-11-29 23:25:03,783 - WARNING -  * Debugger is active!
+2024-11-29 23:25:03,791 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:25:04,918 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:25:05,321 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-29 23:25:05,321 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:05] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:25:05,337 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:25:05,636 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:05] "[35m[1mGET /student HTTP/1.1[0m" 500 -
+2024-11-29 23:25:05,858 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:05] "[36mGET /student?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-29 23:25:05,859 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:05] "[36mGET /student?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-29 23:25:05,891 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:05] "GET /student?__debugger__=yes&cmd=resource&f=console.png&s=D2nhhoTWCw7Pep0y23GR HTTP/1.1" 200 -
+2024-11-29 23:25:07,979 - INFO - Request: POST http://127.0.0.1:5000/login User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:25:08,197 - INFO - Response: 200 OK Duration: 0.22s
+2024-11-29 23:25:08,197 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:08] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:25:08,213 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:25:08,474 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:08] "[35m[1mGET /student HTTP/1.1[0m" 500 -
+2024-11-29 23:25:08,555 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:08] "[36mGET /student?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-29 23:25:08,558 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:08] "[36mGET /student?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-29 23:25:08,585 - INFO - 127.0.0.1 - - [29/Nov/2024 23:25:08] "[36mGET /student?__debugger__=yes&cmd=resource&f=console.png&s=D2nhhoTWCw7Pep0y23GR HTTP/1.1[0m" 304 -
+2024-11-29 23:26:51,692 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:26:51,739 - INFO -  * Restarting with stat
+2024-11-29 23:26:52,738 - WARNING -  * Debugger is active!
+2024-11-29 23:26:52,744 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:29:07,995 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\dormOutput.py', reloading
+2024-11-29 23:29:08,097 - INFO -  * Restarting with stat
+2024-11-29 23:29:09,487 - WARNING -  * Debugger is active!
+2024-11-29 23:29:09,487 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:29:31,719 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:29:31,814 - INFO -  * Restarting with stat
+2024-11-29 23:29:33,142 - WARNING -  * Debugger is active!
+2024-11-29 23:29:33,150 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:31:23,181 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:31:23,265 - INFO -  * Restarting with stat
+2024-11-29 23:31:24,531 - WARNING -  * Debugger is active!
+2024-11-29 23:31:24,531 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:33:04,064 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:33:04,064 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:33:04,064 - INFO -  * Restarting with stat
+2024-11-29 23:33:04,997 - WARNING -  * Debugger is active!
+2024-11-29 23:33:04,997 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:33:06,739 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:33:06,744 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 23:33:06,744 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:06] "GET / HTTP/1.1" 200 -
+2024-11-29 23:33:06,825 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:33:06,922 - INFO - Response: 304 NOT MODIFIED Duration: 0.10s
+2024-11-29 23:33:06,922 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:06] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 23:33:11,235 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:33:11,626 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-29 23:33:11,626 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:11] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:33:11,659 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:33:12,040 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:12] "[35m[1mGET /student HTTP/1.1[0m" 500 -
+2024-11-29 23:33:12,144 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:12] "[36mGET /student?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-29 23:33:12,150 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:12] "[36mGET /student?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-29 23:33:12,187 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:12] "GET /student?__debugger__=yes&cmd=resource&f=console.png&s=mFmpAxOAkwT6sD0J4y9I HTTP/1.1" 200 -
+2024-11-29 23:33:22,714 - INFO - Request: GET http://127.0.0.1:5000/ User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:33:22,714 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 23:33:22,714 - INFO - 127.0.0.1 - - [29/Nov/2024 23:33:22] "GET / HTTP/1.1" 200 -
+2024-11-29 23:33:36,787 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:33:36,787 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:33:36,787 - INFO -  * Restarting with stat
+2024-11-29 23:33:37,617 - WARNING -  * Debugger is active!
+2024-11-29 23:33:37,617 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:36:06,411 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:36:06,519 - INFO -  * Restarting with stat
+2024-11-29 23:36:10,835 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:36:10,835 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:36:10,838 - INFO -  * Restarting with stat
+2024-11-29 23:36:12,045 - WARNING -  * Debugger is active!
+2024-11-29 23:36:12,052 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:36:13,079 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:36:13,086 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 23:36:13,087 - INFO - 127.0.0.1 - - [29/Nov/2024 23:36:13] "GET / HTTP/1.1" 200 -
+2024-11-29 23:36:13,224 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:36:13,325 - INFO - Response: 304 NOT MODIFIED Duration: 0.10s
+2024-11-29 23:36:13,325 - INFO - 127.0.0.1 - - [29/Nov/2024 23:36:13] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 23:36:16,551 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:36:16,954 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-29 23:36:16,954 - INFO - 127.0.0.1 - - [29/Nov/2024 23:36:16] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:36:16,982 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:36:17,354 - INFO - 127.0.0.1 - - [29/Nov/2024 23:36:17] "[35m[1mGET /student HTTP/1.1[0m" 500 -
+2024-11-29 23:36:17,461 - INFO - 127.0.0.1 - - [29/Nov/2024 23:36:17] "[36mGET /student?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-29 23:36:17,462 - INFO - 127.0.0.1 - - [29/Nov/2024 23:36:17] "[36mGET /student?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-29 23:36:17,596 - INFO - 127.0.0.1 - - [29/Nov/2024 23:36:17] "GET /student?__debugger__=yes&cmd=resource&f=console.png&s=5iNbTneShLveX5V2BQs2 HTTP/1.1" 200 -
+2024-11-29 23:37:53,217 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:37:53,279 - INFO -  * Restarting with stat
+2024-11-29 23:37:54,245 - WARNING -  * Debugger is active!
+2024-11-29 23:37:54,252 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:39:10,149 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 23:39:10,217 - INFO -  * Restarting with stat
+2024-11-29 23:39:11,324 - WARNING -  * Debugger is active!
+2024-11-29 23:39:11,328 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:39:34,490 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:39:34,490 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:39:34,492 - INFO -  * Restarting with stat
+2024-11-29 23:39:35,548 - WARNING -  * Debugger is active!
+2024-11-29 23:39:35,553 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:39:45,946 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:39:46,404 - INFO - Response: 200 OK Duration: 0.46s
+2024-11-29 23:39:46,405 - INFO - 127.0.0.1 - - [29/Nov/2024 23:39:46] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:39:46,426 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:39:46,843 - INFO - 127.0.0.1 - - [29/Nov/2024 23:39:46] "[35m[1mGET /student HTTP/1.1[0m" 500 -
+2024-11-29 23:39:47,107 - INFO - 127.0.0.1 - - [29/Nov/2024 23:39:47] "[36mGET /student?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-29 23:39:47,108 - INFO - 127.0.0.1 - - [29/Nov/2024 23:39:47] "[36mGET /student?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-29 23:39:47,140 - INFO - 127.0.0.1 - - [29/Nov/2024 23:39:47] "GET /student?__debugger__=yes&cmd=resource&f=console.png&s=dwOmije2amAhKme31yOc HTTP/1.1" 200 -
+2024-11-29 23:40:38,383 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:40:38,383 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:40:38,385 - INFO -  * Restarting with stat
+2024-11-29 23:40:39,441 - WARNING -  * Debugger is active!
+2024-11-29 23:40:39,451 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:40:41,458 - INFO - Request: GET http://127.0.0.1:5000/student User ID: None Role: None
+2024-11-29 23:40:41,459 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 23:40:41,459 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:41] "[32mGET /student HTTP/1.1[0m" 302 -
+2024-11-29 23:40:41,468 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:40:41,472 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 23:40:41,473 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:41] "GET / HTTP/1.1" 200 -
+2024-11-29 23:40:41,570 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:40:41,674 - INFO - Response: 304 NOT MODIFIED Duration: 0.10s
+2024-11-29 23:40:41,675 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:41] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 23:40:42,279 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:40:42,280 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 23:40:42,280 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:42] "GET / HTTP/1.1" 200 -
+2024-11-29 23:40:42,346 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:40:42,346 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 23:40:42,347 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:42] "GET /static/app.js HTTP/1.1" 200 -
+2024-11-29 23:40:42,616 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:40:42,617 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 23:40:42,617 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:42] "GET / HTTP/1.1" 200 -
+2024-11-29 23:40:42,666 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:40:42,667 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:40:42,667 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:42] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 23:40:46,586 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:40:47,028 - INFO - Response: 200 OK Duration: 0.44s
+2024-11-29 23:40:47,029 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:47] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:40:47,053 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:40:47,552 - INFO - Response: 200 OK Duration: 0.50s
+2024-11-29 23:40:47,552 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:47] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:40:47,649 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:40:47,651 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:40:47,651 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:47] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:40:47,677 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:40:47,678 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:40:47,678 - INFO - 127.0.0.1 - - [29/Nov/2024 23:40:47] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 23:42:26,806 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 23:42:26,806 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 23:42:26,807 - INFO -  * Restarting with stat
+2024-11-29 23:42:28,114 - WARNING -  * Debugger is active!
+2024-11-29 23:42:28,121 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 23:42:28,138 - INFO - Request: GET http://127.0.0.1:5000/student User ID: None Role: None
+2024-11-29 23:42:28,138 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 23:42:28,139 - INFO - 127.0.0.1 - - [29/Nov/2024 23:42:28] "[32mGET /student HTTP/1.1[0m" 302 -
+2024-11-29 23:42:28,180 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 23:42:28,187 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 23:42:28,188 - INFO - 127.0.0.1 - - [29/Nov/2024 23:42:28] "GET / HTTP/1.1" 200 -
+2024-11-29 23:42:28,292 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 23:42:28,388 - INFO - Response: 304 NOT MODIFIED Duration: 0.10s
+2024-11-29 23:42:28,389 - INFO - 127.0.0.1 - - [29/Nov/2024 23:42:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 23:42:33,502 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 23:42:33,896 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-29 23:42:33,897 - INFO - 127.0.0.1 - - [29/Nov/2024 23:42:33] "POST /login HTTP/1.1" 200 -
+2024-11-29 23:42:33,926 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:42:34,291 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-29 23:42:34,291 - INFO - 127.0.0.1 - - [29/Nov/2024 23:42:34] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:42:34,378 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:42:34,382 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:42:34,383 - INFO - Response: 304 NOT MODIFIED Duration: 0.01s
+2024-11-29 23:42:34,383 - INFO - 127.0.0.1 - - [29/Nov/2024 23:42:34] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:42:34,384 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:42:34,385 - INFO - 127.0.0.1 - - [29/Nov/2024 23:42:34] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 23:43:08,758 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:43:09,246 - INFO - Response: 200 OK Duration: 0.49s
+2024-11-29 23:43:09,246 - INFO - 127.0.0.1 - - [29/Nov/2024 23:43:09] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:43:09,339 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:43:09,341 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:43:09,341 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:43:09,342 - INFO - 127.0.0.1 - - [29/Nov/2024 23:43:09] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:43:09,343 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:43:09,343 - INFO - 127.0.0.1 - - [29/Nov/2024 23:43:09] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 23:43:27,135 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:43:27,517 - INFO - Response: 200 OK Duration: 0.38s
+2024-11-29 23:43:27,517 - INFO - 127.0.0.1 - - [29/Nov/2024 23:43:27] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:43:27,602 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:43:27,604 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:43:27,605 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:43:27,606 - INFO - 127.0.0.1 - - [29/Nov/2024 23:43:27] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:43:27,607 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:43:27,607 - INFO - 127.0.0.1 - - [29/Nov/2024 23:43:27] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 23:44:31,079 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:44:31,480 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-29 23:44:31,481 - INFO - 127.0.0.1 - - [29/Nov/2024 23:44:31] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:44:31,594 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:44:31,595 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:44:31,595 - INFO - 127.0.0.1 - - [29/Nov/2024 23:44:31] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:44:31,598 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:44:31,599 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:44:31,599 - INFO - 127.0.0.1 - - [29/Nov/2024 23:44:31] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 23:44:58,119 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:44:58,543 - INFO - Response: 200 OK Duration: 0.42s
+2024-11-29 23:44:58,544 - INFO - 127.0.0.1 - - [29/Nov/2024 23:44:58] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:44:58,612 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:44:58,614 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:44:58,615 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:44:58,615 - INFO - 127.0.0.1 - - [29/Nov/2024 23:44:58] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:44:58,616 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:44:58,616 - INFO - 127.0.0.1 - - [29/Nov/2024 23:44:58] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 23:45:54,991 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:45:55,364 - INFO - Response: 200 OK Duration: 0.37s
+2024-11-29 23:45:55,365 - INFO - 127.0.0.1 - - [29/Nov/2024 23:45:55] "GET /student HTTP/1.1" 200 -
+2024-11-29 23:45:55,452 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:45:55,454 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-29 23:45:55,454 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:45:55,455 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 23:45:55,455 - INFO - 127.0.0.1 - - [29/Nov/2024 23:45:55] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 23:45:55,455 - INFO - 127.0.0.1 - - [29/Nov/2024 23:45:55] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -

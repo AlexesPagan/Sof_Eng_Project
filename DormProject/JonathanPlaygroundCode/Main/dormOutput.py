@@ -76,6 +76,24 @@ def createDormitory(db):
             dormitory[dorm_name] = rooms                # add this room and it's students into the dorm
     return dormitory#, capacity
 
+def findCapicity(db):
+    dorms_ref = db.collection('dorms') # Accessing the dorm collection
+    dorms = dorms_ref.stream() # Get all dorm documents || .stream() gets the data in real time. 
+
+    capacity = {}
+    
+    for dorm_stuff in dorms:
+        dorm_data = dorm_stuff.to_dict()                # this gets the dorm data from the database and puts it into a dictionary
+        dorm_name = dorm_data.get('name')               # Getting the dormitory's name ("Comet Hall")
+
+        perm_capacity = dorm_data.get('capacity')       # this gets the initial capacity of the dorms so we can figure out how many slots are left. 
+        capacity[dorm_name] = perm_capacity             # this keeps track of the capacity in each dorm.
+        for room in dorm_data['rooms']:                 # The dorm_data is in a dictionary that has each dormitory within. The key for these dorms is 'room'
+            if room.get('students') != []:
+                capacity[dorm_name] -= len(room.get('students'))
+
+    return capacity
+
 def applicationNum(db):
     forms_ref = db.collection('form_responses')
     curr_forms = forms_ref.stream()

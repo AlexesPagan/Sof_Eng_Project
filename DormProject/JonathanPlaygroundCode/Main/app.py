@@ -22,10 +22,8 @@ from firebase_admin import credentials, auth, firestore, initialize_app
 from functools import wraps
 # Import wraps from functools to handle route decorators (like login_required)
 
-from dormOutput import createDormitory
-from dormOutput import findStudent
-from dormOutput import applicationNum
-from dormOutput import findStudentAdmin
+from dormOutput import *
+
 
 import os
 # Import os to handle file paths and environment variables
@@ -139,8 +137,11 @@ def student_page():
         return redirect(url_for('index'))
 
     dorm_dict = createDormitory(db) # get the dorm dictionary to use in the next line
+    
+    capacity = findCapicity(db)
+
     room, building, roommates = findStudent(dorm_dict, session.get('ID'))  # here we actually get the student information to display before they log in
-    return render_template('T4_StudentHomepage.html', stuRoom = room, stuBuilding = building, stuRoommates = roommates)
+    return render_template('T4_StudentHomepage.html', stuRoom = room, stuBuilding = building, stuRoommates = roommates, capacity=capacity)
 
 @app.route('/logout', methods=['POST']) # CHANGED THIS TO A POST METHOD BECAUSE IT IS A LOGOUT
 def logout():
@@ -208,12 +209,6 @@ def add_remove_student():
     
     # Return the result as JSON
     return jsonify(result)
-
-
-
-
-
-
 
 
 

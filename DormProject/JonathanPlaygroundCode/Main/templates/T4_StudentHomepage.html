@@ -28,6 +28,7 @@ Jonathan  11/24/24     Got every dorm details, view details button working. So w
 Jonathan  11/24/24     Fixed logout and name not appearing bug in bottom left
 Kyren     11/26/24     Created the dormOutput function and added the cross reference between app.py, dormOutput, and the T4_StudentHomepage
 Kyren     11/28/24     Finalized this interaction and now the information displays properly. 
+Jonathan  11/29/24     Added dorm capacities
 -->
 
 
@@ -95,7 +96,7 @@ Kyren     11/28/24     Finalized this interaction and now the information displa
           <div class="card shadow-sm"> 
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/d6RjnKd/image-removebg-preview-1-Photoroom-upscaled.png" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;"> Moonlight Hall</h5>
+              <h5 style="text-align: center;"> Moonlight Hall<br /> Capacity: {{ capacity['Moonlight Hall'] }}/75 </h5>
               <p class="card-text"> This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group" id="Dorm_1_Details_Button">
@@ -109,7 +110,7 @@ Kyren     11/28/24     Finalized this interaction and now the information displa
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;">Solstice Hall</h5>
+              <h5 style="text-align: center;">Solstice Hall<br /> Capacity: {{ capacity['Solstice Hall']}}/75 </h5>
               <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -123,7 +124,7 @@ Kyren     11/28/24     Finalized this interaction and now the information displa
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/swmjSjY/Solstice-hall-is-a-6-floor-tower-style-dorm-that-can-fit-up-to-45-students-Room-assignments-consist.png" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;">Nebula Hall</h5>
+              <h5 style="text-align: center;">Nebula Hall<br /> Capacity: {{ capacity['Nebula Hall'] }}/75 </h5>
               <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -137,7 +138,7 @@ Kyren     11/28/24     Finalized this interaction and now the information displa
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;">Eclipse Hall</h5>
+              <h5 style="text-align: center;">Eclipse Hall<br /> Capacity: {{ capacity['Eclipse Hall'] }}/75 </h5>
               <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -151,7 +152,7 @@ Kyren     11/28/24     Finalized this interaction and now the information displa
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;">Comet Hall</h5>
+              <h5 style="text-align: center;">Comet Hall<br /> Capacity: {{ capacity['Comet Hall'] }}/75 </h5>
               <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -165,7 +166,7 @@ Kyren     11/28/24     Finalized this interaction and now the information displa
           <div class="card shadow-sm">
             <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Test Dormitory 1" width="100%" height="225">
             <div class="card-body">
-              <h5 style="text-align: center;">Aurora Hall</h5>
+              <h5 style="text-align: center;">Aurora Hall<br /> Capacity: {{ capacity['Aurora Hall'] }}/75 </h5>
               <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -335,6 +336,7 @@ Kyren     11/28/24     Finalized this interaction and now the information displa
         </div>
       </div>
     </div>
+
 
 
     <!-- THESE ARE THE BUTTONS ON THE OVERVIEW MENU -->
