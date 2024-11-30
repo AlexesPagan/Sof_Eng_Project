@@ -26,6 +26,8 @@ Kyren     11/10/24     Began to use and slightly modified Alexes' code for the c
 Kyren     11/24/24     Added the Help page, looked into further admin implementation (Fixed this with Jonathan), slightly reworked dorm details, small bug fixes. 
 Jonathan  11/24/24     Got every dorm details, view details button working. So when view details are picked on a roomtype, the details pop up
 Jonathan  11/24/24     Fixed logout and name not appearing bug in bottom left
+Kyren     11/26/24     Created the dormOutput function and added the cross reference between app.py, dormOutput, and the T4_StudentHomepage
+Kyren     11/28/24     Finalized this interaction and now the information displays properly. 
 -->
 
 
@@ -63,11 +65,13 @@ Jonathan  11/24/24     Fixed logout and name not appearing bug in bottom left
 
     <!-- THIS IS THE ACTUAL OVERVIEW PAGE THAT IS FIRST DISPLAYED -->
     <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="overview-page"> <!-- p is for paragraph, mb is for margin-bottom -->
-      <h1 class="display-5 fw-bold" style="font-family: 'Georgia', serif;">Overview</h1> 
-      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Room Style:</h2> 
-      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">** Add room style here **</p>
+      <h1 class="display-5 fw-bold" style="font-family: 'Georgia', serif;">Overview for {{session['name']}}</h1> 
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Building:</h2> 
+      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">{{ stuBuilding }}</p>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Room:</h2> <!-- md is for the break point of the text -->
+      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">{{ stuRoom }}</p>
       <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Roommates:</h2> <!-- md is for the break point of the text -->
-      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">** Add suitemates here **</p>
+      <p class="col-md-8" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">{{ stuRoommates }}</p>  
     </div>
 
 
@@ -331,8 +335,6 @@ Jonathan  11/24/24     Fixed logout and name not appearing bug in bottom left
         </div>
       </div>
     </div>
-    
-    
 
 
     <!-- THESE ARE THE BUTTONS ON THE OVERVIEW MENU -->
@@ -377,9 +379,6 @@ Jonathan  11/24/24     Fixed logout and name not appearing bug in bottom left
           {{session['name']}}
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Profile</a></li>
-          <li><a class="dropdown-item" href="#" style="color: #1a2f4a;">Settings</a></li>
-          <li><hr class="dropdown-divider"></li>
           <li>
             <form action="{{ url_for('logout') }}" method="POST" style="margin: 0;">
                 <button type="submit" class="dropdown-item">Sign Out</button>
@@ -394,7 +393,7 @@ Jonathan  11/24/24     Fixed logout and name not appearing bug in bottom left
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- JAVASCRIPT LINK -->
-    <script src="{{ url_for('static', filename='HomePageScript.js') }}"></script>
+    <script src="{{ url_for('static', filename='StudentHomePageScript.js') }}"></script>
 
 
   </body>

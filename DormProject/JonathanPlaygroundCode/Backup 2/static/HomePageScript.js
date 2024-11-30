@@ -70,15 +70,3 @@ document.getElementById('overviewButton').addEventListener('click', function(){
 document.getElementById('helpButton').addEventListener('click', function(){
   toggleButton('help-page')
 })
-
-document.getElementById('SingleRoomButton').addEventListener('click', function() {
-  toggleButton('SingleRoomDetails');
-});
-
-document.getElementById('DoubleRoomButton').addEventListener('click',function(){
-  toggleButton('DoubleRoomDetails')
-});
-
-document.getElementById('SuiteRoomButton').addEventListener('click',function(){
-  toggleButton('SuiteRoomDetails')
-});

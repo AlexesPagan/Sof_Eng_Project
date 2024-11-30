@@ -1,1 +1,0 @@
-This is where the individual, whose name is mentioned in the folder, will work on general code and tasks.
