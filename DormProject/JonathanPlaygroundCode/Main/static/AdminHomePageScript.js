@@ -44,29 +44,48 @@ function toggleButton(element){
 
 // In the admin page specifically... (I (Kyren) got this code from Jonathan)
 
-//This breaks the code....
-function validate(ID, dorm, room){
-  fetch('/validateStu',{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body:JSON().stringify({
-      ID: ID,
-      dorm: dorm,
-      room: room
+// Define sendData function
+function sendData(ID, dorm, room, choice) {
+    fetch('/validateStu', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ID: ID,
+        dorm: dorm,
+        room: room,
+        choice: choice
+      })
     })
-  })
-  .then(response=>response.json())
-  .then(result=>{console.log('Response from flask:', result);
-  })
-  .catch(error=>{console.error('Error:', error)
-  })
+    .then(response => response.json())
+    .then(result => {
+      const messageElement = document.getElementById('studentMessage');  // Reference the modal message element
+      if (result == true) {
+        console.log('Student found:', result);
+        messageElement.textContent = `Student ${ID} found in ${dorm} ${room}. Action: ${choice}`;
+        showModal();
+      } else {
+        console.log('Student found:', result);
+        messageElement.textContent = `Student ${ID} not found in ${dorm} ${room}. Please try again.`;
+        showModal();
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      const messageElement = document.getElementById('studentMessage');
+      messageElement.textContent = 'An error occurred while processing your request. Please try again later.';
+      showModal();
+    });
 }
 
+// Function to show the modal
+function showModal() {
+  const modal = new bootstrap.Modal(document.getElementById('studentModal'));
+  modal.show();
+}
 
-
-// Actual button clicks, using the general function created
+    // Actual button clicks, using the general function created
 
 
 document.getElementById('addRemoveButton').addEventListener('click',function(){

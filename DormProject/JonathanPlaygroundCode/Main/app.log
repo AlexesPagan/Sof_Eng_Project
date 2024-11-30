@@ -1409,3 +1409,483 @@
 2024-11-29 22:11:27,518 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
 2024-11-29 22:11:27,519 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
 2024-11-29 22:11:27,520 - INFO - 127.0.0.1 - - [29/Nov/2024 22:11:27] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:14:37,374 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:14:37,374 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:14:37,376 - INFO -  * Restarting with stat
+2024-11-29 22:14:38,527 - WARNING -  * Debugger is active!
+2024-11-29 22:14:38,532 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:14:39,665 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:14:39,673 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:14:39,674 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:39] "GET / HTTP/1.1" 200 -
+2024-11-29 22:14:39,828 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:14:39,917 - INFO - Response: 304 NOT MODIFIED Duration: 0.09s
+2024-11-29 22:14:39,918 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:39] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:14:41,466 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:14:41,467 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 22:14:41,467 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:41] "GET / HTTP/1.1" 200 -
+2024-11-29 22:14:41,580 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:14:41,582 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:14:41,582 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:41] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:14:45,641 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:14:45,890 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-29 22:14:45,891 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:45] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:14:45,916 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:14:46,077 - INFO - Response: 200 OK Duration: 0.16s
+2024-11-29 22:14:46,078 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:46] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:14:46,211 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:14:46,212 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:14:46,212 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:46] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:14:46,247 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:14:46,294 - INFO - Response: 200 OK Duration: 0.05s
+2024-11-29 22:14:46,294 - INFO - 127.0.0.1 - - [29/Nov/2024 22:14:46] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:16:40,108 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:16:40,194 - INFO - Response: 200 OK Duration: 0.09s
+2024-11-29 22:16:40,195 - INFO - 127.0.0.1 - - [29/Nov/2024 22:16:40] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:16:40,266 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:16:40,268 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:16:40,269 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:16:40,269 - INFO - 127.0.0.1 - - [29/Nov/2024 22:16:40] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:16:40,313 - INFO - Response: 200 OK Duration: 0.04s
+2024-11-29 22:16:40,314 - INFO - 127.0.0.1 - - [29/Nov/2024 22:16:40] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:24:17,093 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 22:24:17,161 - INFO -  * Restarting with stat
+2024-11-29 22:24:18,488 - WARNING -  * Debugger is active!
+2024-11-29 22:24:18,500 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:28:19,547 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:28:19,547 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:28:19,550 - INFO -  * Restarting with stat
+2024-11-29 22:28:20,680 - WARNING -  * Debugger is active!
+2024-11-29 22:28:20,688 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:28:21,104 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:28:21,110 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:28:21,110 - INFO - 127.0.0.1 - - [29/Nov/2024 22:28:21] "GET / HTTP/1.1" 200 -
+2024-11-29 22:28:21,195 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:28:21,290 - INFO - Response: 304 NOT MODIFIED Duration: 0.10s
+2024-11-29 22:28:21,291 - INFO - 127.0.0.1 - - [29/Nov/2024 22:28:21] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:28:28,674 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:28:28,943 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-29 22:28:28,943 - INFO - 127.0.0.1 - - [29/Nov/2024 22:28:28] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:28:28,972 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:28:29,071 - INFO - Response: 200 OK Duration: 0.10s
+2024-11-29 22:28:29,072 - INFO - 127.0.0.1 - - [29/Nov/2024 22:28:29] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:28:29,168 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:28:29,169 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:28:29,169 - INFO - 127.0.0.1 - - [29/Nov/2024 22:28:29] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:28:29,215 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:28:29,271 - INFO - Response: 200 OK Duration: 0.06s
+2024-11-29 22:28:29,271 - INFO - 127.0.0.1 - - [29/Nov/2024 22:28:29] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:28:56,776 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:28:56,777 - INFO - Response: 404 NOT FOUND Duration: 0.00s
+2024-11-29 22:28:56,777 - INFO - 127.0.0.1 - - [29/Nov/2024 22:28:56] "[33mPOST /validateStu HTTP/1.1[0m" 404 -
+2024-11-29 22:30:21,123 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 22:30:21,196 - INFO -  * Restarting with stat
+2024-11-29 22:30:29,213 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:30:29,213 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:30:29,216 - INFO -  * Restarting with stat
+2024-11-29 22:30:30,445 - WARNING -  * Debugger is active!
+2024-11-29 22:30:30,452 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:30:35,715 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:30:35,724 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:30:35,725 - INFO - 127.0.0.1 - - [29/Nov/2024 22:30:35] "GET / HTTP/1.1" 200 -
+2024-11-29 22:30:35,789 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:30:35,899 - INFO - Response: 304 NOT MODIFIED Duration: 0.11s
+2024-11-29 22:30:35,899 - INFO - 127.0.0.1 - - [29/Nov/2024 22:30:35] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:30:42,615 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:30:42,892 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-29 22:30:42,893 - INFO - 127.0.0.1 - - [29/Nov/2024 22:30:42] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:30:42,911 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:30:43,019 - INFO - Response: 200 OK Duration: 0.11s
+2024-11-29 22:30:43,019 - INFO - 127.0.0.1 - - [29/Nov/2024 22:30:43] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:30:43,076 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:30:43,077 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:30:43,077 - INFO - 127.0.0.1 - - [29/Nov/2024 22:30:43] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:30:43,094 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:30:43,097 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 22:30:43,098 - INFO - 127.0.0.1 - - [29/Nov/2024 22:30:43] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:31:06,658 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:31:06,660 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:31:06,660 - INFO - 127.0.0.1 - - [29/Nov/2024 22:31:06] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:31:07,064 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:31:07,065 - INFO - Response: 404 NOT FOUND Duration: 0.00s
+2024-11-29 22:31:07,065 - INFO - 127.0.0.1 - - [29/Nov/2024 22:31:07] "[33mPOST /validateStu HTTP/1.1[0m" 404 -
+2024-11-29 22:31:07,896 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:31:07,897 - INFO - Response: 404 NOT FOUND Duration: 0.00s
+2024-11-29 22:31:07,897 - INFO - 127.0.0.1 - - [29/Nov/2024 22:31:07] "[33mPOST /validateStu HTTP/1.1[0m" 404 -
+2024-11-29 22:34:35,329 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 22:34:35,468 - INFO -  * Restarting with stat
+2024-11-29 22:34:36,688 - WARNING -  * Debugger is active!
+2024-11-29 22:34:36,692 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:35:23,306 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 22:35:23,409 - INFO -  * Restarting with stat
+2024-11-29 22:35:24,504 - WARNING -  * Debugger is active!
+2024-11-29 22:35:24,510 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:36:03,934 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 22:36:04,043 - INFO -  * Restarting with stat
+2024-11-29 22:36:16,110 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:36:16,111 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:36:16,112 - INFO -  * Restarting with stat
+2024-11-29 22:36:17,031 - WARNING -  * Debugger is active!
+2024-11-29 22:36:17,042 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:36:18,001 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: None Role: None
+2024-11-29 22:36:18,002 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 22:36:18,002 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:18] "[32mGET /admin HTTP/1.1[0m" 302 -
+2024-11-29 22:36:18,015 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:36:18,023 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:36:18,024 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:18] "GET / HTTP/1.1" 200 -
+2024-11-29 22:36:18,112 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:36:18,201 - INFO - Response: 304 NOT MODIFIED Duration: 0.09s
+2024-11-29 22:36:18,201 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:18] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:36:25,412 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:36:25,727 - INFO - Response: 200 OK Duration: 0.31s
+2024-11-29 22:36:25,728 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:25] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:36:25,760 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:36:25,854 - INFO - Response: 200 OK Duration: 0.09s
+2024-11-29 22:36:25,854 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:25] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:36:25,916 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:36:25,917 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:36:25,917 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:25] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:36:25,949 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:36:25,992 - INFO - Response: 200 OK Duration: 0.04s
+2024-11-29 22:36:25,993 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:25] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:36:29,747 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:36:29,973 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:36:29,973 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:29] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:36:50,283 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:36:50,518 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:36:50,518 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:50] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:36:56,596 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:36:56,830 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:36:56,830 - INFO - 127.0.0.1 - - [29/Nov/2024 22:36:56] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:37:00,694 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:37:00,967 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-29 22:37:00,967 - INFO - 127.0.0.1 - - [29/Nov/2024 22:37:00] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:38:07,689 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:38:07,939 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-29 22:38:07,939 - INFO - 127.0.0.1 - - [29/Nov/2024 22:38:07] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:38:09,552 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:38:09,783 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:38:09,783 - INFO - 127.0.0.1 - - [29/Nov/2024 22:38:09] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:38:18,072 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:38:18,274 - INFO - Response: 200 OK Duration: 0.20s
+2024-11-29 22:38:18,274 - INFO - 127.0.0.1 - - [29/Nov/2024 22:38:18] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:38:19,484 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:38:19,711 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:38:19,711 - INFO - 127.0.0.1 - - [29/Nov/2024 22:38:19] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:38:20,734 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:38:21,055 - INFO - Response: 200 OK Duration: 0.32s
+2024-11-29 22:38:21,055 - INFO - 127.0.0.1 - - [29/Nov/2024 22:38:21] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:38:39,672 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 22:38:39,785 - INFO -  * Restarting with stat
+2024-11-29 22:38:41,085 - WARNING -  * Debugger is active!
+2024-11-29 22:38:41,090 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:38:41,102 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:38:41,967 - INFO - Response: 200 OK Duration: 0.86s
+2024-11-29 22:38:41,968 - INFO - 127.0.0.1 - - [29/Nov/2024 22:38:41] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:38:42,134 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:38:42,356 - INFO - Response: 200 OK Duration: 0.22s
+2024-11-29 22:38:42,357 - INFO - 127.0.0.1 - - [29/Nov/2024 22:38:42] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:39:46,122 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:39:46,122 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:39:46,124 - INFO -  * Restarting with stat
+2024-11-29 22:39:47,305 - WARNING -  * Debugger is active!
+2024-11-29 22:39:47,309 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:39:47,625 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: None Role: None
+2024-11-29 22:39:47,625 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 22:39:47,626 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:47] "[32mGET /admin HTTP/1.1[0m" 302 -
+2024-11-29 22:39:47,635 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:39:47,639 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 22:39:47,640 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:47] "GET / HTTP/1.1" 200 -
+2024-11-29 22:39:47,713 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:39:47,842 - INFO - Response: 304 NOT MODIFIED Duration: 0.13s
+2024-11-29 22:39:47,843 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:47] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:39:51,503 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:39:51,768 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-29 22:39:51,769 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:51] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:39:51,791 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:39:51,912 - INFO - Response: 200 OK Duration: 0.12s
+2024-11-29 22:39:51,912 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:51] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:39:52,003 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:39:52,004 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:39:52,004 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:52] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:39:52,007 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:39:52,010 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 22:39:52,011 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:52] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:39:54,280 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:39:54,534 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-29 22:39:54,535 - INFO - 127.0.0.1 - - [29/Nov/2024 22:39:54] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:40:00,864 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:40:01,125 - INFO - Response: 200 OK Duration: 0.26s
+2024-11-29 22:40:01,125 - INFO - 127.0.0.1 - - [29/Nov/2024 22:40:01] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:41:13,060 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:41:13,382 - INFO - Response: 200 OK Duration: 0.32s
+2024-11-29 22:41:13,382 - INFO - 127.0.0.1 - - [29/Nov/2024 22:41:13] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:41:17,932 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:41:18,166 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:41:18,167 - INFO - 127.0.0.1 - - [29/Nov/2024 22:41:18] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:41:21,990 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:41:22,242 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-29 22:41:22,243 - INFO - 127.0.0.1 - - [29/Nov/2024 22:41:22] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:41:24,008 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:41:24,355 - INFO - Response: 200 OK Duration: 0.35s
+2024-11-29 22:41:24,355 - INFO - 127.0.0.1 - - [29/Nov/2024 22:41:24] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:41:26,452 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:41:26,646 - INFO - Response: 200 OK Duration: 0.19s
+2024-11-29 22:41:26,648 - INFO - 127.0.0.1 - - [29/Nov/2024 22:41:26] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:41:30,443 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:41:30,683 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:41:30,684 - INFO - 127.0.0.1 - - [29/Nov/2024 22:41:30] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:41:33,492 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:41:33,733 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:41:33,733 - INFO - 127.0.0.1 - - [29/Nov/2024 22:41:33] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:44:31,890 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:44:31,890 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:44:31,893 - INFO -  * Restarting with stat
+2024-11-29 22:44:33,070 - WARNING -  * Debugger is active!
+2024-11-29 22:44:33,077 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:44:33,469 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: None Role: None
+2024-11-29 22:44:33,470 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 22:44:33,470 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:33] "[32mGET /admin HTTP/1.1[0m" 302 -
+2024-11-29 22:44:33,477 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:44:33,482 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:44:33,482 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:33] "GET / HTTP/1.1" 200 -
+2024-11-29 22:44:33,541 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:44:33,629 - INFO - Response: 304 NOT MODIFIED Duration: 0.09s
+2024-11-29 22:44:33,630 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:33] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:44:37,753 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:44:38,042 - INFO - Response: 200 OK Duration: 0.29s
+2024-11-29 22:44:38,042 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:38] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:44:38,063 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:44:38,163 - INFO - Response: 200 OK Duration: 0.10s
+2024-11-29 22:44:38,163 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:38] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:44:38,258 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:44:38,259 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:44:38,259 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:38] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:44:38,260 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:44:38,263 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 22:44:38,264 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:38] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:44:40,943 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:44:41,205 - INFO - Response: 200 OK Duration: 0.26s
+2024-11-29 22:44:41,205 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:41] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:44:45,398 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:44:45,624 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:44:45,625 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:45] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:44:50,683 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:44:50,916 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:44:50,916 - INFO - 127.0.0.1 - - [29/Nov/2024 22:44:50] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:45:30,773 - INFO -  * Detected change in 'c:\\Users\\fasan\\Documents\\GitHub_Projects\\Sof_Eng_Project\\DormProject\\JonathanPlaygroundCode\\Main\\app.py', reloading
+2024-11-29 22:45:30,848 - INFO -  * Restarting with stat
+2024-11-29 22:45:31,949 - WARNING -  * Debugger is active!
+2024-11-29 22:45:31,955 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:45:39,625 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:45:39,625 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:45:39,627 - INFO -  * Restarting with stat
+2024-11-29 22:45:40,729 - WARNING -  * Debugger is active!
+2024-11-29 22:45:40,735 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:45:45,432 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:45:45,835 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-29 22:45:45,835 - INFO - 127.0.0.1 - - [29/Nov/2024 22:45:45] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:46:01,978 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:46:02,280 - INFO - Response: 200 OK Duration: 0.30s
+2024-11-29 22:46:02,280 - INFO - 127.0.0.1 - - [29/Nov/2024 22:46:02] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:46:53,994 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:46:53,995 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:46:53,996 - INFO -  * Restarting with stat
+2024-11-29 22:46:55,329 - WARNING -  * Debugger is active!
+2024-11-29 22:46:55,335 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:46:56,316 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: None Role: None
+2024-11-29 22:46:56,317 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 22:46:56,317 - INFO - 127.0.0.1 - - [29/Nov/2024 22:46:56] "[32mGET /admin HTTP/1.1[0m" 302 -
+2024-11-29 22:46:56,324 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:46:56,331 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:46:56,331 - INFO - 127.0.0.1 - - [29/Nov/2024 22:46:56] "GET / HTTP/1.1" 200 -
+2024-11-29 22:46:56,392 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:46:56,510 - INFO - Response: 304 NOT MODIFIED Duration: 0.12s
+2024-11-29 22:46:56,510 - INFO - 127.0.0.1 - - [29/Nov/2024 22:46:56] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:47:01,476 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:47:01,844 - INFO - Response: 200 OK Duration: 0.37s
+2024-11-29 22:47:01,844 - INFO - 127.0.0.1 - - [29/Nov/2024 22:47:01] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:47:01,875 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:47:01,973 - INFO - Response: 200 OK Duration: 0.10s
+2024-11-29 22:47:01,974 - INFO - 127.0.0.1 - - [29/Nov/2024 22:47:01] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:47:02,053 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:47:02,054 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:47:02,055 - INFO - 127.0.0.1 - - [29/Nov/2024 22:47:02] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:47:02,079 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:47:02,130 - INFO - Response: 200 OK Duration: 0.05s
+2024-11-29 22:47:02,131 - INFO - 127.0.0.1 - - [29/Nov/2024 22:47:02] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:47:09,817 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:47:10,039 - INFO - Response: 200 OK Duration: 0.22s
+2024-11-29 22:47:10,039 - INFO - 127.0.0.1 - - [29/Nov/2024 22:47:10] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:48:25,148 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:48:25,374 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:48:25,374 - INFO - 127.0.0.1 - - [29/Nov/2024 22:48:25] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:51:30,295 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:51:30,547 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-29 22:51:30,547 - INFO - 127.0.0.1 - - [29/Nov/2024 22:51:30] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:51:30,647 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:51:30,650 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:51:30,651 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:51:30,651 - INFO - 127.0.0.1 - - [29/Nov/2024 22:51:30] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:51:30,709 - INFO - Response: 200 OK Duration: 0.06s
+2024-11-29 22:51:30,709 - INFO - 127.0.0.1 - - [29/Nov/2024 22:51:30] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:51:46,812 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:51:46,916 - INFO - Response: 200 OK Duration: 0.10s
+2024-11-29 22:51:46,916 - INFO - 127.0.0.1 - - [29/Nov/2024 22:51:46] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:51:46,980 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:51:46,981 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:51:46,982 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:51:46,983 - INFO - 127.0.0.1 - - [29/Nov/2024 22:51:46] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:51:47,017 - INFO - Response: 200 OK Duration: 0.04s
+2024-11-29 22:51:47,017 - INFO - 127.0.0.1 - - [29/Nov/2024 22:51:47] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:52:04,107 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:52:04,187 - INFO - Response: 200 OK Duration: 0.08s
+2024-11-29 22:52:04,188 - INFO - 127.0.0.1 - - [29/Nov/2024 22:52:04] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:52:04,278 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:52:04,279 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:52:04,280 - INFO - 127.0.0.1 - - [29/Nov/2024 22:52:04] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:52:04,282 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:52:04,283 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:52:04,284 - INFO - 127.0.0.1 - - [29/Nov/2024 22:52:04] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-29 22:52:06,112 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:52:06,355 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:52:06,355 - INFO - 127.0.0.1 - - [29/Nov/2024 22:52:06] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:52:13,191 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:52:13,439 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-29 22:52:13,454 - INFO - 127.0.0.1 - - [29/Nov/2024 22:52:13] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:52:19,922 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:52:20,156 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:52:20,156 - INFO - 127.0.0.1 - - [29/Nov/2024 22:52:20] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:52:29,239 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:52:29,474 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:52:29,474 - INFO - 127.0.0.1 - - [29/Nov/2024 22:52:29] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:53:05,877 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:53:05,878 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:53:05,880 - INFO -  * Restarting with stat
+2024-11-29 22:53:07,188 - WARNING -  * Debugger is active!
+2024-11-29 22:53:07,203 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:53:07,378 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: None Role: None
+2024-11-29 22:53:07,378 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 22:53:07,378 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:07] "[32mGET /admin HTTP/1.1[0m" 302 -
+2024-11-29 22:53:07,412 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:53:07,421 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:53:07,421 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:07] "GET / HTTP/1.1" 200 -
+2024-11-29 22:53:07,553 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:53:07,664 - INFO - Response: 304 NOT MODIFIED Duration: 0.11s
+2024-11-29 22:53:07,664 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:07] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:53:11,524 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:53:11,804 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-29 22:53:11,804 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:11] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:53:11,828 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:53:11,929 - INFO - Response: 200 OK Duration: 0.10s
+2024-11-29 22:53:11,945 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:11] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:53:12,021 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:53:12,023 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:53:12,023 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:53:12,023 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:12] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:53:12,025 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 22:53:12,026 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:12] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:53:14,238 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:53:14,458 - INFO - Response: 200 OK Duration: 0.22s
+2024-11-29 22:53:14,458 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:14] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:53:18,416 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:53:18,656 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:53:18,656 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:18] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:53:23,072 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:53:23,304 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:53:23,304 - INFO - 127.0.0.1 - - [29/Nov/2024 22:53:23] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:54:06,597 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:54:06,916 - INFO - Response: 200 OK Duration: 0.32s
+2024-11-29 22:54:06,916 - INFO - 127.0.0.1 - - [29/Nov/2024 22:54:06] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:54:10,323 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:54:10,558 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:54:10,558 - INFO - 127.0.0.1 - - [29/Nov/2024 22:54:10] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:54:13,529 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:54:13,834 - INFO - Response: 200 OK Duration: 0.31s
+2024-11-29 22:54:13,834 - INFO - 127.0.0.1 - - [29/Nov/2024 22:54:13] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:54:15,444 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:54:15,513 - INFO - Response: 200 OK Duration: 0.07s
+2024-11-29 22:54:15,513 - INFO - 127.0.0.1 - - [29/Nov/2024 22:54:15] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:54:15,616 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:54:15,618 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:54:15,620 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:54:15,620 - INFO - 127.0.0.1 - - [29/Nov/2024 22:54:15] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:54:15,670 - INFO - Response: 200 OK Duration: 0.05s
+2024-11-29 22:54:15,670 - INFO - 127.0.0.1 - - [29/Nov/2024 22:54:15] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:54:25,050 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:54:25,050 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:54:25,053 - INFO -  * Restarting with stat
+2024-11-29 22:54:26,312 - WARNING -  * Debugger is active!
+2024-11-29 22:54:26,312 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:55:29,081 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:55:29,483 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-29 22:55:29,483 - INFO - 127.0.0.1 - - [29/Nov/2024 22:55:29] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:55:36,259 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:55:36,473 - INFO - Response: 200 OK Duration: 0.21s
+2024-11-29 22:55:36,473 - INFO - 127.0.0.1 - - [29/Nov/2024 22:55:36] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:55:39,355 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:55:39,591 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:55:39,591 - INFO - 127.0.0.1 - - [29/Nov/2024 22:55:39] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:56:36,055 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:56:36,275 - INFO - Response: 200 OK Duration: 0.22s
+2024-11-29 22:56:36,275 - INFO - 127.0.0.1 - - [29/Nov/2024 22:56:36] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:56:40,802 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:56:41,028 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:56:41,028 - INFO - 127.0.0.1 - - [29/Nov/2024 22:56:41] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:56:44,453 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: None Role: None
+2024-11-29 22:56:44,679 - INFO - Response: 200 OK Duration: 0.23s
+2024-11-29 22:56:44,694 - INFO - 127.0.0.1 - - [29/Nov/2024 22:56:44] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:57:11,539 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-29 22:57:11,539 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-29 22:57:11,540 - INFO -  * Restarting with stat
+2024-11-29 22:57:12,627 - WARNING -  * Debugger is active!
+2024-11-29 22:57:12,645 - INFO -  * Debugger PIN: 218-518-769
+2024-11-29 22:57:13,730 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: None Role: None
+2024-11-29 22:57:13,730 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-29 22:57:13,730 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:13] "[32mGET /admin HTTP/1.1[0m" 302 -
+2024-11-29 22:57:13,751 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-29 22:57:13,758 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-29 22:57:13,759 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:13] "GET / HTTP/1.1" 200 -
+2024-11-29 22:57:13,868 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-29 22:57:13,977 - INFO - Response: 304 NOT MODIFIED Duration: 0.11s
+2024-11-29 22:57:13,977 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:13] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-29 22:57:18,545 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-29 22:57:18,788 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:57:18,788 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:18] "POST /login HTTP/1.1" 200 -
+2024-11-29 22:57:18,819 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:57:18,929 - INFO - Response: 200 OK Duration: 0.11s
+2024-11-29 22:57:18,930 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:18] "GET /admin HTTP/1.1" 200 -
+2024-11-29 22:57:19,061 - INFO - Request: GET http://127.0.0.1:5000/static/HomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:57:19,061 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-29 22:57:19,062 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:19] "[36mGET /static/HomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-29 22:57:19,092 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:57:19,094 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-29 22:57:19,095 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:19] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-29 22:57:21,017 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:57:21,288 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-29 22:57:21,288 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:21] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:57:24,617 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:57:24,923 - INFO - Response: 200 OK Duration: 0.31s
+2024-11-29 22:57:24,923 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:24] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:57:30,728 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:57:30,891 - INFO - Response: 200 OK Duration: 0.16s
+2024-11-29 22:57:30,891 - INFO - 127.0.0.1 - - [29/Nov/2024 22:57:30] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:58:49,550 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:58:49,796 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-29 22:58:49,796 - INFO - 127.0.0.1 - - [29/Nov/2024 22:58:49] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:59:05,858 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:59:06,097 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-29 22:59:06,097 - INFO - 127.0.0.1 - - [29/Nov/2024 22:59:06] "POST /validateStu HTTP/1.1" 200 -
+2024-11-29 22:59:51,024 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-29 22:59:51,350 - INFO - Response: 200 OK Duration: 0.33s
+2024-11-29 22:59:51,350 - INFO - 127.0.0.1 - - [29/Nov/2024 22:59:51] "POST /validateStu HTTP/1.1" 200 -

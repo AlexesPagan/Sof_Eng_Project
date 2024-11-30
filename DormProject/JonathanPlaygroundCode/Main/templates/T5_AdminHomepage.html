@@ -11,6 +11,8 @@ Kyren     11/28/24     Carried over new dorm details to this page.
 Kyren     11/28/24     Adjusted Jack's code due to some errors in the format and worked on user input and overwriting in the Firebase. 
 Kyren     11/29/24     Added more to the overview page and worked in the javascript file to push data to app.py file. 
 Jonathan  11/29/24     Created separate .js file for this homepage
+Jonathan  11/29/24     Fixed function to actually connect this, the js, and the app.py together to get the data. 
+Jonathan  11/29/24     Added student found/not found modal
 -->
 
 
@@ -63,6 +65,25 @@ Jonathan  11/29/24     Created separate .js file for this homepage
         <h2 class="col-md-15 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Current number of applications: {{ forms }}</h2> 
       </div>
     </div>
+
+    <div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="studentModalLabel">Student Status</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- This is where the message will appear -->
+            <p id="studentMessage"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
     <!-- THIS IS THE HELP PAGE -->
     <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="help-page"> <!-- p is for paragraph, mb is for margin-bottom -->

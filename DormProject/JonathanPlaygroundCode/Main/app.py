@@ -151,23 +151,81 @@ def logout():
 def index():
     return render_template('T1_LoginUI.html')
 
-if __name__ == '__main__':
-    app.run(debug=True) # Run the Flask app in debug mode
+
+
 
 @app.route('/validateStu', methods=['POST'])
-def Add_Remove(ID, dorm, room):
-    dorm_dict = createDormitory(db) # get the dorm dictionary to use in the next line
-    result = findStudentAdmin(dorm_dict, ID, room, dorm)
-    return result
+def validate_student():
+    data = request.get_json()
+    ID = data.get('ID')
+    dorm = data.get('dorm')
+    room = data.get('room')
+    
+    # Assuming createDormitory and findStudentAdmin functions exist
+    dorm_dict = createDormitory(db)  # Get the dorm dictionary
+    result = findStudentAdmin(dorm_dict, ID, room, dorm)  # Validate the student
+
+    return jsonify(result)
+
+# @app.route('/Add_Remove', methods=['POST'])
+# def Add_Remove2(ID, dorm, room, choice):
+    # dorm_dict = createDormitory(db) # get the dorm dictionary to use in the next line
+    # result = findStudentAdmin(dorm_dict, ID, room, dorm)
+    # return result
+
+
+# GET THIS INFO FROM JS FILE  
 
 @app.route('/Add_Remove', methods=['POST'])
-def Add_Remove(ID, dorm, room, choice):
-    dorm_dict = createDormitory(db) # get the dorm dictionary to use in the next line
-    result = findStudentAdmin(dorm_dict, ID, room, dorm)
-    return result
+def add_remove_student():
+    # Get the incoming JSON data from the request body
+    data = request.get_json()
+    ID = data.get('ID')
+    dorm = data.get('dorm')
+    room = data.get('room')
+    choice = data.get('choice')  # Add or remove choice
+    
+    # Create the dormitory dictionary (this could be a Firestore query)
+    dorm_dict = createDormitory(db)  # Assuming this function fetches dorm data
+    
+    # Use the findStudentAdmin function to find the student in the dorm/room
+    student = findStudentAdmin(dorm_dict, ID, room, dorm)
+
+    # Depending on the 'choice', either add or remove the student
+    if choice == 'add':
+        # Logic to add the student to the dorm/room
+        result = {"status": "success", "message": f"Student {ID} added to {dorm} {room}"}
+    
+    elif choice == 'remove':
+        # Logic to remove the student from the dorm/room
+        result = {"status": "success", "message": f"Student {ID} removed from {dorm} {room}"}
+        
+    else:
+        result = {"status": "error", "message": "Invalid choice"}
+    
+    # Print the result to the console for debugging
+    print("Result:", result)  # This will print the result to your Flask server's console
+    
+    # Return the result as JSON
+    return jsonify(result)
 
 
-# GET THIS INFO FROM JS FILE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True) # Run the Flask app in debug mode
 
 
 
