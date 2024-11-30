@@ -17,15 +17,21 @@ def countRoommates(logStu, studentsID):
 
 
 #particularly for admin, literally just locating if a student exists. 
-def findStudentAdmin(dormitory, ID_num, roomNum, dorm):
-    for dormName in dormitory:                                                      # access the dorm names from the dormitory library
-        roomNums = dormitory[dormName]                                              # unpacks the occupied rooms from the dormitory library
-        for room in roomNums:                                                       # access the individual room numbers 
-            students_ID = roomNums[room]                                            # unpacks the student IDs from the occupied rooms
-            for stu_ID in students_ID:                                              # for each ID in th student IDs previously unpacked...
-                if (stu_ID == ID_num and room == roomNum and dormName == dorm):                            # check to see if the ID matches the one we're looking for
-                    return True
-    return False    
+def findStudentAdmin(dormitory, ID_num, roomNum, dorm, action):
+    perm_capacity = 0
+    curr_capacity = 0
+    for dormName in dormitory:                                                                             # access the dorm names from the dormitory library
+        roomNums = dormitory[dormName]                                                                     # unpacks the occupied rooms from the dormitory library
+        for room in roomNums:                                                                              # access the individual room numbers 
+            students_ID = roomNums[room]                                                                   # unpacks the student IDs from the occupied rooms
+            for stu_ID in students_ID:                                                                     # for each ID in th student IDs previously unpacked...
+                if (stu_ID == ID_num and room == roomNum and dormName == dorm and action == 'remove'):     # check to see if the ID matches the one we're looking for and the action is remove
+                    return True                                                                            # greenlight to move to next step
+                elif (stu_ID == ID_num and action == 'add'):                                               # if the student exists and the action was add...
+                    return False                                                                           # red light, they need to remove the student first
+    if (action == 'add'):
+        return True
+    return False
 
 
 # This finds a specific student in a room (This is the cross-check)
@@ -74,14 +80,34 @@ def createDormitory(db):
                     students.append(stu.get("ID"))      # put their student ID into the room
                 rooms[dorm_rooms] = students            # put this list of students into their respective room        
             dormitory[dorm_name] = rooms                # add this room and it's students into the dorm
-    return dormitory#, capacity
+    return dormitory
+
+def findCapicity(db):
+    dorms_ref = db.collection('dorms') # Accessing the dorm collection
+    dorms = dorms_ref.stream() # Get all dorm documents || .stream() gets the data in real time. 
+
+    capacity = {}
+    
+    for dorm_stuff in dorms:
+        dorm_data = dorm_stuff.to_dict()                # this gets the dorm data from the database and puts it into a dictionary
+        dorm_name = dorm_data.get('name')               # Getting the dormitory's name ("Comet Hall")
+
+        perm_capacity = dorm_data.get('capacity')       # this gets the initial capacity of the dorms so we can figure out how many slots are left. 
+        capacity[dorm_name] = perm_capacity             # this keeps track of the capacity in each dorm.
+        for room in dorm_data['rooms']:                 # The dorm_data is in a dictionary that has each dormitory within. The key for these dorms is 'room'
+            if room.get('students') != []:
+                capacity[dorm_name] -= len(room.get('students'))
+
+    return capacity
+
 
 def applicationNum(db):
     forms_ref = db.collection('form_responses')
     curr_forms = forms_ref.stream()
+    num_forms = 0
     for forms in curr_forms:
-        all_forms = forms.to_dict()
-    return(len(all_forms))
+        num_forms += 1
+    return(num_forms)
 
 
 # TESTING CODE #
@@ -92,6 +118,10 @@ def applicationNum(db):
 #stuRoom, stuBuilding, stuRoommates = findStudent(dormitory, 'H400000000')
 #print (stuBuilding, stuRoom, stuRoommates) 
 
-#applicationNum(db)
+#number = applicationNum(db)
+#print(number)
 
-#print(findStudentAdmin(dormitory, 'H900000000', 'Rm11', 'Comet Hall' ))
+#print(findStudentAdmin(dormitory, 'H998877665', 'Rm06', 'Comet Hall', 'add'))
+#print(findStudentAdmin(dormitory, 'H998877666', 'Rm06', 'Comet Hall', 'add'))
+#print(findStudentAdmin(dormitory, 'H998877665', 'Rm06', 'Comet Hall', 'remove'))
+#print(findStudentAdmin(dormitory, 'H998877666', 'Rm06', 'Comet Hall', 'remove'))

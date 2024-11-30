@@ -1,3 +1,5 @@
+import sys
+
 import firebase_admin
 from flask import Flask, request, jsonify, session, redirect,render_template, url_for, g
 # Import necessary modules from Flask: 
@@ -22,10 +24,8 @@ from firebase_admin import credentials, auth, firestore, initialize_app
 from functools import wraps
 # Import wraps from functools to handle route decorators (like login_required)
 
-from dormOutput import createDormitory
-from dormOutput import findStudent
-from dormOutput import applicationNum
-from dormOutput import findStudentAdmin
+from dormOutput import *
+
 
 import os
 # Import os to handle file paths and environment variables
@@ -35,7 +35,7 @@ import logging
 
 import time  # Import time for measuring request duration
 
-
+from dataAlexes import add_or_remove_student
 
 
 # Initialize a Flask app, setting the static file directory to 'static'
@@ -129,7 +129,8 @@ def admin_page():
     if session['role'] != 'admin': # If the logged-in user is not an admin, redirect them to the index (login) page
         return redirect(url_for('index'))
     num_forms = applicationNum(db)
-    return render_template('T5_AdminHomepage.html', forms = num_forms)
+    capacity = findCapicity(db)
+    return render_template('T5_AdminHomepage.html', forms = num_forms, capacity = capacity)
     
 
 @app.route('/student')
@@ -139,8 +140,11 @@ def student_page():
         return redirect(url_for('index'))
 
     dorm_dict = createDormitory(db) # get the dorm dictionary to use in the next line
+    
+    capacity = findCapicity(db)
+
     room, building, roommates = findStudent(dorm_dict, session.get('ID'))  # here we actually get the student information to display before they log in
-    return render_template('T4_StudentHomepage.html', stuRoom = room, stuBuilding = building, stuRoommates = roommates)
+    return render_template('T4_StudentHomepage.html', stuRoom = room, stuBuilding = building, stuRoommates = roommates, capacity=capacity)
 
 @app.route('/logout', methods=['POST']) # CHANGED THIS TO A POST METHOD BECAUSE IT IS A LOGOUT
 def logout():
@@ -151,20 +155,25 @@ def logout():
 def index():
     return render_template('T1_LoginUI.html')
 
+@app.route('/validateStu', methods=['POST'])
+def validate_student():
+    data = request.get_json()
+    ID = data.get('ID')
+    dorm = data.get('dorm')
+    room = data.get('room')
+    choice = data.get('choice')
+    print(choice)
+    
+    # Assuming createDormitory and findStudentAdmin functions exist
+    dorm_dict = createDormitory(db)  # Get the dorm dictionary
+    result = findStudentAdmin(dorm_dict, ID, room, dorm, choice)  # Validate the student            # IN THIS FUNCTION A RESULT VALUE OF TRUE
+    print(result)                                                                                   # MEANS WE CAN PROGRESS TO THE NEXT STEP
+    if ((choice == 'remove' or choice == 'add') and result == True):
+        add_or_remove_student(dorm, room, ID, choice, db)
+    return jsonify(result)
+
 if __name__ == '__main__':
     app.run(debug=True) # Run the Flask app in debug mode
-
-@app.route('/validateStu', methods=['POST'])
-def Add_Remove(ID, dorm, room):
-    dorm_dict = createDormitory(db) # get the dorm dictionary to use in the next line
-    result = findStudentAdmin(dorm_dict, ID, room, dorm)
-    return result
-
-#@app.route('/Add_Remove', methods=['POST'])
-#def Add_Remove(ID, dorm, room, choice):
-#    dorm_dict = createDormitory(db) # get the dorm dictionary to use in the next line
-#    result = findStudentAdmin(dorm_dict, ID, room, dorm)
-#    return result
 
 
 
