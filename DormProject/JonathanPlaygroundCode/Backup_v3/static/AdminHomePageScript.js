@@ -42,65 +42,58 @@ function toggleButton(element){
 }
 
 
-// In the admin page specifically... (I (Kyren) got this code from Jonathan)
 
 // Define sendData function
 function sendData(ID, dorm, room, choice) {
-  fetch('/validateStu', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      ID: ID,
-      dorm: dorm,
-      room: room,
-      choice: choice.toLowerCase()
+    fetch('/validateStu', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ID: ID,
+        dorm: dorm,
+        room: room,
+        choice: choice
+      })
     })
-  })
-  .then(response => response.json())
-  .then(result => {
-    const messageElement = document.getElementById('studentMessage');  // Reference the modal message element
-    if (result == true) {
-      console.log('Student found:', result);
-      messageElement.textContent = `Student ${ID} found in ${dorm} ${room}. Action: ${choice}`;
+    .then(response => response.json())
+    .then(result => {
+      const messageElement = document.getElementById('studentMessage');  // Reference the modal message element
+      if (result == true) {
+        console.log('Student found:', result);
+        messageElement.textContent = `Student ${ID} found in ${dorm} ${room}. Action: ${choice}`;
+        showModal();
+      } else {
+        console.log('Student found:', result);
+        messageElement.textContent = `Student ${ID} not found in ${dorm} ${room}. Please try again.`;
+        showModal();
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      const messageElement = document.getElementById('studentMessage');
+      messageElement.textContent = 'An error occurred while processing your request. Please try again later.';
       showModal();
-    } else if (result == false && choice == 'add') {
-      console.log('Student found:', result);
-      messageElement.textContent = `Student ${ID} found in another dorm. Please remove them and then try again`;
-      showModal();
-    } else {
-      console.log('Student found:', result);
-      messageElement.textContent = `Student ${ID} not found in ${dorm} ${room}. Please try again.`;
-      showModal();
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    const messageElement = document.getElementById('studentMessage');
-    messageElement.textContent = 'An error occurred while processing your request. Please try again later.';
-    showModal();
-  });
+    });
 }
 
 // Function to show the modal
 function showModal() {
-const modal = new bootstrap.Modal(document.getElementById('studentModal'));
-modal.show();
+  const modal = new bootstrap.Modal(document.getElementById('studentModal'));
+  modal.show();
 }
 
-
-
-// Actual button clicks, using the general function created
+    // Actual button clicks, using the general function created
 
 
 document.getElementById('addRemoveButton').addEventListener('click',function(){
-    //console.log("in function!")
+    console.log("in function!")
     stuID = document.getElementById("StuIDInput").value; // You use the .value key to get the value entered by the user in the text element
     building = document.getElementById("DormHallInput").value;
     room = document.getElementById("RoomNumInput").value;
     choice = (document.getElementById("AddDeleteInput")).value;
-    //console.log(stuID, building, room, choice)
+    console.log(stuID, building, room, choice)
     sendData(stuID, building, room, choice)
   })
   
@@ -115,10 +108,6 @@ document.getElementById('Dorm_1_Details_Button').addEventListener('click', funct
 
 document.getElementById('overviewButton').addEventListener('click', function(){
   toggleButton('overview-page')
-})
-
-document.getElementById('studentResponsesButton').addEventListener('click', function(){
-  toggleButton('stu-resp-page')
 })
 
 document.getElementById('helpButton').addEventListener('click', function(){

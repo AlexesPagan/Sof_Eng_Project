@@ -1,5 +1,3 @@
-import sys
-
 import firebase_admin
 from flask import Flask, request, jsonify, session, redirect,render_template, url_for, g
 # Import necessary modules from Flask: 
@@ -35,7 +33,7 @@ import logging
 
 import time  # Import time for measuring request duration
 
-from dataAlexes import add_or_remove_student
+
 
 
 # Initialize a Flask app, setting the static file directory to 'static'
@@ -129,8 +127,7 @@ def admin_page():
     if session['role'] != 'admin': # If the logged-in user is not an admin, redirect them to the index (login) page
         return redirect(url_for('index'))
     num_forms = applicationNum(db)
-    capacity = findCapicity(db)
-    return render_template('T5_AdminHomepage.html', forms = num_forms, capacity = capacity)
+    return render_template('T5_AdminHomepage.html', forms = num_forms)
     
 
 @app.route('/student')
@@ -155,22 +152,66 @@ def logout():
 def index():
     return render_template('T1_LoginUI.html')
 
+
+
+
 @app.route('/validateStu', methods=['POST'])
 def validate_student():
     data = request.get_json()
     ID = data.get('ID')
     dorm = data.get('dorm')
     room = data.get('room')
-    choice = data.get('choice')
-    print(choice)
     
     # Assuming createDormitory and findStudentAdmin functions exist
     dorm_dict = createDormitory(db)  # Get the dorm dictionary
-    result = findStudentAdmin(dorm_dict, ID, room, dorm, choice)  # Validate the student            # IN THIS FUNCTION A RESULT VALUE OF TRUE
-    print(result)                                                                                   # MEANS WE CAN PROGRESS TO THE NEXT STEP
-    if ((choice == 'remove' or choice == 'add') and result == True):
-        add_or_remove_student(dorm, room, ID, choice, db)
+    result = findStudentAdmin(dorm_dict, ID, room, dorm)  # Validate the student
+
     return jsonify(result)
+
+
+# GET THIS INFO FROM JS FILE  
+
+@app.route('/Add_Remove', methods=['POST'])
+def add_remove_student():
+    # Get the incoming JSON data from the request body
+    data = request.get_json()
+    ID = data.get('ID')
+    dorm = data.get('dorm')
+    room = data.get('room')
+    choice = data.get('choice')  # Add or remove choice
+    
+    # Create the dormitory dictionary (this could be a Firestore query)
+    dorm_dict = createDormitory(db)  # Assuming this function fetches dorm data
+    
+    # Use the findStudentAdmin function to find the student in the dorm/room
+    student = findStudentAdmin(dorm_dict, ID, room, dorm)
+
+    # Depending on the 'choice', either add or remove the student
+    if choice == 'add':
+        # Logic to add the student to the dorm/room
+        result = {"status": "success", "message": f"Student {ID} added to {dorm} {room}"}
+    
+    elif choice == 'remove':
+        # Logic to remove the student from the dorm/room
+        result = {"status": "success", "message": f"Student {ID} removed from {dorm} {room}"}
+        
+    else:
+        result = {"status": "error", "message": "Invalid choice"}
+    
+    # Print the result to the console for debugging
+    print("Result:", result)  # This will print the result to your Flask server's console
+    
+    # Return the result as JSON
+    return jsonify(result)
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True) # Run the Flask app in debug mode

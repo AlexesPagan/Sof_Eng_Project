@@ -42,30 +42,6 @@ function toggleButton(element){
 }
 
 
-// In the admin page specifically... (I (Kyren) got this code from Jonathan)
-
-//This breaks the code....
-/*function validate(ID, dorm, room){
-  fetch('/validateStu',{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body:JSON().stringify({
-      ID: ID,
-      dorm: dorm,
-      room: room
-    })
-  })
-  .then(response=>response.json())
-  .then(result=>{console.log('Response from flask:', result);
-  })
-  .catch(error=>{console.error('Error:', error)
-  })
-}*/
-
-
-
 // Actual button clicks, using the general function created
 
 // Actual button clicks, using the general function created
@@ -100,15 +76,5 @@ document.getElementById('DoubleRoomButton').addEventListener('click',function(){
 document.getElementById('SuiteRoomButton').addEventListener('click',function(){
   toggleButton('SuiteRoomDetails')
 });
-
-document.getElementById('addRemoveButton').addEventListener('click',function(){
-  console.log("in function!")
-  stuID = document.getElementById("StuIDInput").value; // You use the .value key to get the value entered by the user in the text element
-  building = document.getElementById("DormHallInput").value;
-  room = document.getElementById("RoomNumInput").value;
-  choice = (document.getElementById("AddDeleteInput")).value;
-  console.log(stuID, building, room, choice)
-  sendData(stuID, building, room, choice)
-})
 
 
