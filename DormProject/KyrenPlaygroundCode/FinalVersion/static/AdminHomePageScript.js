@@ -128,6 +128,10 @@ document.getElementById('Dorm_5_Details_Button').addEventListener('click', funct
   toggleButton('DD-Dorm-Page')
 });
 
+document.getElementById('Dorm_6_Details_Button').addEventListener('click', function(){
+  toggleButton('DD-Dorm-Page')
+});
+
 document.getElementById('overviewButton').addEventListener('click', function(){
   toggleButton('overview-page')
 })
