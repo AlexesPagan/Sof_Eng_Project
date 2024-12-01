@@ -12,19 +12,21 @@
 
     /*Carousel CSS */
     .carousel {
-      margin-top: 10px; /* Adjust this to move the carousel closer to the top */
+      top: 10px; /* Adjust this to move the carousel closer to the top */
     }
 
     .carousel-control-prev-icon{
       background-color: #f1d2f5; 
       border-radius: 80%;  /* Makes it round edged, as opposed to straight. Used in temp uni tab */
-      margin-top: 40px;
+      top: 20px;
+      position: absolute;
     }
 
     .carousel-control-next-icon {
       background-color:#f1d2f5; 
       border-radius: 80%; /* Makes it round edged, as opposed to straight. Used in temp uni tab */
-      margin-top: 40px;
+      top: 20px;
+      position: relative;
     }
 
     .carousel-indicators [data-bs-target] {
@@ -119,7 +121,84 @@
       overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
       padding: 10px;
     }
+
+
+    #DD-Dorm-2-Page {
+      visibility: hidden;
+      margin: 0 auto;
+      margin-left: 280px;
+      margin-bottom: 200px;
+      margin-top: -200px;
+      position: relative;
+      bottom: 580px; /* Moves carosuel up and down */
+      width: 80%; /* Width */
+      max-width: 1200px; /* Cap the width for larger screens */
+      max-height: 90vh; /* Limit the height to 90% of the viewport */
+      overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
+      padding: 10px;
+    }
+
+
+    #DD-Dorm-3-Page {
+      visibility: hidden;
+      margin: 0 auto;
+      margin-left: 280px;
+      margin-bottom: 200px;
+      margin-top: -200px;
+      position: relative;
+      bottom: 580px; /* Moves carosuel up and down */
+      width: 80%; /* Width */
+      max-width: 1200px; /* Cap the width for larger screens */
+      max-height: 90vh; /* Limit the height to 90% of the viewport */
+      overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
+      padding: 10px;
+    }
     
+
+    #DD-Dorm-4-Page {
+      visibility: hidden;
+      margin: 0 auto;
+      margin-left: 280px;
+      margin-bottom: 200px;
+      margin-top: -200px;
+      position: relative;
+      bottom: 580px; /* Moves carosuel up and down */
+      width: 80%; /* Width */
+      max-width: 1200px; /* Cap the width for larger screens */
+      max-height: 90vh; /* Limit the height to 90% of the viewport */
+      overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
+      padding: 10px;
+    }
+
+    #DD-Dorm-5-Page {
+      visibility: hidden;
+      margin: 0 auto;
+      margin-left: 280px;
+      margin-bottom: 200px;
+      margin-top: -200px;
+      position: relative;
+      bottom: 580px; /* Moves carosuel up and down */
+      width: 80%; /* Width */
+      max-width: 1200px; /* Cap the width for larger screens */
+      max-height: 90vh; /* Limit the height to 90% of the viewport */
+      overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
+      padding: 10px;
+    }
+    
+    #DD-Dorm-6-Page {
+      visibility: hidden;
+      margin: 0 auto;
+      margin-left: 280px;
+      margin-bottom: 200px;
+      margin-top: -200px;
+      position: relative;
+      bottom: 580px; /* Moves carosuel up and down */
+      width: 80%; /* Width */
+      max-width: 1200px; /* Cap the width for larger screens */
+      max-height: 90vh; /* Limit the height to 90% of the viewport */
+      overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
+      padding: 10px;
+    }
     #dorm-application{
       visibility: hidden;
       margin:auto;

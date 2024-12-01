@@ -2,3 +2,947 @@
  * Running on http://127.0.0.1:5000
 2024-11-30 18:04:12,898 - INFO - [33mPress CTRL+C to quit[0m
 2024-11-30 18:04:12,900 - INFO -  * Restarting with stat
+2024-11-30 18:04:14,015 - WARNING -  * Debugger is active!
+2024-11-30 18:04:14,025 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 18:04:33,794 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 18:04:33,819 - INFO - Response: 200 OK Duration: 0.03s
+2024-11-30 18:04:33,819 - INFO - 127.0.0.1 - - [30/Nov/2024 18:04:33] "GET / HTTP/1.1" 200 -
+2024-11-30 18:04:33,883 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 18:04:34,017 - INFO - Response: 304 NOT MODIFIED Duration: 0.13s
+2024-11-30 18:04:34,017 - INFO - 127.0.0.1 - - [30/Nov/2024 18:04:34] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:04:34,046 - INFO - Request: GET http://127.0.0.1:5000/favicon.ico User ID: None Role: None
+2024-11-30 18:04:34,046 - INFO - Response: 404 NOT FOUND Duration: 0.00s
+2024-11-30 18:04:34,046 - INFO - 127.0.0.1 - - [30/Nov/2024 18:04:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-30 18:05:12,445 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 18:05:13,041 - INFO - Response: 200 OK Duration: 0.60s
+2024-11-30 18:05:13,043 - INFO - 127.0.0.1 - - [30/Nov/2024 18:05:13] "POST /login HTTP/1.1" 200 -
+2024-11-30 18:05:13,066 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:05:13,422 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 18:05:13,422 - INFO - 127.0.0.1 - - [30/Nov/2024 18:05:13] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:05:13,479 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:05:13,483 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:05:13,483 - INFO - 127.0.0.1 - - [30/Nov/2024 18:05:13] "GET /static/StudentHomePageStyleSheet.css HTTP/1.1" 200 -
+2024-11-30 18:05:13,504 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:05:13,505 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:05:13,506 - INFO - 127.0.0.1 - - [30/Nov/2024 18:05:13] "GET /static/StudentHomePageScript.js HTTP/1.1" 200 -
+2024-11-30 18:07:28,122 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:07:28,122 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 18:07:28,123 - INFO - 127.0.0.1 - - [30/Nov/2024 18:07:28] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-11-30 18:07:28,132 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 18:07:28,132 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:07:28,132 - INFO - 127.0.0.1 - - [30/Nov/2024 18:07:28] "GET / HTTP/1.1" 200 -
+2024-11-30 18:07:28,191 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 18:07:28,192 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:07:28,192 - INFO - 127.0.0.1 - - [30/Nov/2024 18:07:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:07:38,094 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 18:07:38,308 - INFO - Response: 200 OK Duration: 0.21s
+2024-11-30 18:07:38,309 - INFO - 127.0.0.1 - - [30/Nov/2024 18:07:38] "POST /login HTTP/1.1" 200 -
+2024-11-30 18:07:38,327 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:07:38,596 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-30 18:07:38,596 - INFO - 127.0.0.1 - - [30/Nov/2024 18:07:38] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:07:38,648 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:07:38,650 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:07:38,651 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:07:38,652 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:07:38,653 - INFO - 127.0.0.1 - - [30/Nov/2024 18:07:38] "GET /static/AdminHomePageStyleSheet.css HTTP/1.1" 200 -
+2024-11-30 18:07:38,653 - INFO - 127.0.0.1 - - [30/Nov/2024 18:07:38] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-11-30 18:09:28,476 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:09:28,945 - INFO - Response: 200 OK Duration: 0.47s
+2024-11-30 18:09:28,945 - INFO - 127.0.0.1 - - [30/Nov/2024 18:09:28] "POST /validateStu HTTP/1.1" 200 -
+2024-11-30 18:10:20,593 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:10:20,831 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-30 18:10:20,831 - INFO - 127.0.0.1 - - [30/Nov/2024 18:10:20] "POST /validateStu HTTP/1.1" 200 -
+2024-11-30 18:11:00,331 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:11:00,577 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-30 18:11:00,577 - INFO - 127.0.0.1 - - [30/Nov/2024 18:11:00] "POST /validateStu HTTP/1.1" 200 -
+2024-11-30 18:11:15,363 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:11:15,603 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-30 18:11:15,603 - INFO - 127.0.0.1 - - [30/Nov/2024 18:11:15] "POST /validateStu HTTP/1.1" 200 -
+2024-11-30 18:11:49,906 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:11:50,178 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-30 18:11:50,179 - INFO - 127.0.0.1 - - [30/Nov/2024 18:11:50] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:11:50,262 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:11:50,264 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:11:50,264 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:11:50,265 - INFO - 127.0.0.1 - - [30/Nov/2024 18:11:50] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:11:50,265 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:11:50,265 - INFO - 127.0.0.1 - - [30/Nov/2024 18:11:50] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:13:24,100 - INFO - Request: GET http://127.0.0.1:5000/ User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:13:24,101 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:13:24,101 - INFO - 127.0.0.1 - - [30/Nov/2024 18:13:24] "GET / HTTP/1.1" 200 -
+2024-11-30 18:13:24,156 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:13:24,157 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:13:24,157 - INFO - 127.0.0.1 - - [30/Nov/2024 18:13:24] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:13:28,195 - INFO - Request: GET http://127.0.0.1:5000/ User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:13:28,195 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:13:28,195 - INFO - 127.0.0.1 - - [30/Nov/2024 18:13:28] "GET / HTTP/1.1" 200 -
+2024-11-30 18:13:28,263 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:13:28,264 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:13:28,265 - INFO - 127.0.0.1 - - [30/Nov/2024 18:13:28] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:13:39,382 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:13:39,881 - INFO - Response: 200 OK Duration: 0.50s
+2024-11-30 18:13:39,882 - INFO - 127.0.0.1 - - [30/Nov/2024 18:13:39] "POST /validateStu HTTP/1.1" 200 -
+2024-11-30 18:14:30,087 - INFO - Request: GET http://127.0.0.1:5000/ User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:14:30,088 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:14:30,088 - INFO - 127.0.0.1 - - [30/Nov/2024 18:14:30] "GET / HTTP/1.1" 200 -
+2024-11-30 18:14:30,186 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:14:30,186 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:14:30,186 - INFO - 127.0.0.1 - - [30/Nov/2024 18:14:30] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:14:37,461 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:14:37,712 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-30 18:14:37,712 - INFO - 127.0.0.1 - - [30/Nov/2024 18:14:37] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:14:37,753 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:14:37,753 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:14:37,753 - INFO - 127.0.0.1 - - [30/Nov/2024 18:14:37] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:14:37,753 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:14:37,753 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:14:37,766 - INFO - 127.0.0.1 - - [30/Nov/2024 18:14:37] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:15:48,138 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:15:48,605 - INFO - Response: 200 OK Duration: 0.47s
+2024-11-30 18:15:48,605 - INFO - 127.0.0.1 - - [30/Nov/2024 18:15:48] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:15:48,654 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:15:48,654 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:15:48,654 - INFO - 127.0.0.1 - - [30/Nov/2024 18:15:48] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:15:48,673 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:15:48,674 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:15:48,675 - INFO - 127.0.0.1 - - [30/Nov/2024 18:15:48] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:16:24,201 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:16:24,483 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:16:24,483 - INFO - 127.0.0.1 - - [30/Nov/2024 18:16:24] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:16:24,560 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:16:24,567 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:16:24,568 - INFO - Response: 304 NOT MODIFIED Duration: 0.01s
+2024-11-30 18:16:24,569 - INFO - 127.0.0.1 - - [30/Nov/2024 18:16:24] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:16:24,570 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:16:24,570 - INFO - 127.0.0.1 - - [30/Nov/2024 18:16:24] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:16:50,730 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:16:50,991 - INFO - Response: 200 OK Duration: 0.26s
+2024-11-30 18:16:50,991 - INFO - 127.0.0.1 - - [30/Nov/2024 18:16:50] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:16:51,030 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:16:51,032 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:16:51,033 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:16:51,033 - INFO - 127.0.0.1 - - [30/Nov/2024 18:16:51] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:16:51,034 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:16:51,034 - INFO - 127.0.0.1 - - [30/Nov/2024 18:16:51] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:17:05,899 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:06,178 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:17:06,179 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:06] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:17:06,221 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:06,221 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:06,221 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:06,221 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:06,221 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:06] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:17:06,221 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:06] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:17:07,537 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:07,780 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-30 18:17:07,780 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:07] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:17:07,854 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:07,869 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:07,869 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 18:17:07,869 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:07] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:17:07,869 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 18:17:07,869 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:07] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:17:08,244 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:08,468 - INFO - Response: 200 OK Duration: 0.22s
+2024-11-30 18:17:08,468 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:08] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:17:08,505 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:08,521 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:08,521 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 18:17:08,524 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:08] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:17:08,525 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:08,526 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:08] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:17:12,545 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:12,789 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-30 18:17:12,790 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:12] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:17:12,837 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:12,839 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:12,839 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:12,839 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:12,839 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:12] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:17:12,839 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:12] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:17:20,529 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:20,784 - INFO - Response: 200 OK Duration: 0.26s
+2024-11-30 18:17:20,785 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:20] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:17:20,828 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:20,830 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:20,831 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:20,831 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:20] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:17:20,832 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:20,832 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:20] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:17:46,419 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:46,695 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:17:46,696 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:46] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:17:46,769 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:46,770 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:46,771 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:46,771 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:46] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:17:46,772 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:46,772 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:46] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:17:53,884 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:54,169 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:17:54,169 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:54] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:17:54,211 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:54,214 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:17:54,215 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:54,216 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:54] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:17:54,217 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:17:54,218 - INFO - 127.0.0.1 - - [30/Nov/2024 18:17:54] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:18:28,886 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:18:29,148 - INFO - Response: 200 OK Duration: 0.26s
+2024-11-30 18:18:29,148 - INFO - 127.0.0.1 - - [30/Nov/2024 18:18:29] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:18:29,204 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:18:29,204 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:18:29,204 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:18:29,204 - INFO - 127.0.0.1 - - [30/Nov/2024 18:18:29] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:18:29,220 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 18:18:29,220 - INFO - 127.0.0.1 - - [30/Nov/2024 18:18:29] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:19:34,984 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:35,323 - INFO - Response: 200 OK Duration: 0.34s
+2024-11-30 18:19:35,323 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:35] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:19:35,370 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:35,372 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:35,372 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:19:35,372 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:35] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:19:35,375 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:19:35,376 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:35] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:19:52,963 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:53,392 - INFO - Response: 200 OK Duration: 0.43s
+2024-11-30 18:19:53,392 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:53] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:19:53,439 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:53,439 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:53,439 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:19:53,439 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:53] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:19:53,439 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:19:53,439 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:53] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:19:54,381 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:54,670 - INFO - Response: 200 OK Duration: 0.29s
+2024-11-30 18:19:54,671 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:54] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:19:54,706 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:54,706 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:19:54,721 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:54] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:19:54,725 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:19:54,726 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:19:54,728 - INFO - 127.0.0.1 - - [30/Nov/2024 18:19:54] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:20:01,606 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:20:01,886 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:20:01,886 - INFO - 127.0.0.1 - - [30/Nov/2024 18:20:01] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:20:01,934 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:20:01,936 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:20:01,937 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:20:01,938 - INFO - 127.0.0.1 - - [30/Nov/2024 18:20:01] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:20:01,938 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:20:01,939 - INFO - 127.0.0.1 - - [30/Nov/2024 18:20:01] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:20:24,518 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:20:24,792 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-30 18:20:24,792 - INFO - 127.0.0.1 - - [30/Nov/2024 18:20:24] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:20:24,870 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:20:24,873 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:20:24,874 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:20:24,874 - INFO - 127.0.0.1 - - [30/Nov/2024 18:20:24] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:20:24,875 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:20:24,875 - INFO - 127.0.0.1 - - [30/Nov/2024 18:20:24] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:20:25,675 - INFO - Request: POST http://127.0.0.1:5000/validateStu User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:20:25,922 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-30 18:20:25,922 - INFO - 127.0.0.1 - - [30/Nov/2024 18:20:25] "POST /validateStu HTTP/1.1" 200 -
+2024-11-30 18:21:23,046 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:21:23,046 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 18:21:23,046 - INFO - 127.0.0.1 - - [30/Nov/2024 18:21:23] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-11-30 18:21:23,057 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 18:21:23,058 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:21:23,058 - INFO - 127.0.0.1 - - [30/Nov/2024 18:21:23] "GET / HTTP/1.1" 200 -
+2024-11-30 18:21:23,122 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 18:21:23,123 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:21:23,123 - INFO - 127.0.0.1 - - [30/Nov/2024 18:21:23] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:21:27,371 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 18:21:27,586 - INFO - Response: 200 OK Duration: 0.22s
+2024-11-30 18:21:27,587 - INFO - 127.0.0.1 - - [30/Nov/2024 18:21:27] "POST /login HTTP/1.1" 200 -
+2024-11-30 18:21:27,604 - INFO - Request: GET http://127.0.0.1:5000/student User ID: FvrlYIoq5zb83UymJQMn Role: student
+2024-11-30 18:21:27,933 - INFO - Response: 200 OK Duration: 0.33s
+2024-11-30 18:21:27,933 - INFO - 127.0.0.1 - - [30/Nov/2024 18:21:27] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:21:28,006 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: FvrlYIoq5zb83UymJQMn Role: student
+2024-11-30 18:21:28,007 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:21:28,007 - INFO - 127.0.0.1 - - [30/Nov/2024 18:21:28] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:21:28,026 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: FvrlYIoq5zb83UymJQMn Role: student
+2024-11-30 18:21:28,027 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:21:28,028 - INFO - 127.0.0.1 - - [30/Nov/2024 18:21:28] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:22:28,758 - INFO - Request: GET http://127.0.0.1:5000/student User ID: FvrlYIoq5zb83UymJQMn Role: student
+2024-11-30 18:22:29,123 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 18:22:29,123 - INFO - 127.0.0.1 - - [30/Nov/2024 18:22:29] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:22:29,173 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: FvrlYIoq5zb83UymJQMn Role: student
+2024-11-30 18:22:29,176 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: FvrlYIoq5zb83UymJQMn Role: student
+2024-11-30 18:22:29,176 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:22:29,177 - INFO - 127.0.0.1 - - [30/Nov/2024 18:22:29] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:22:29,177 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:22:29,178 - INFO - 127.0.0.1 - - [30/Nov/2024 18:22:29] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:23:11,895 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: FvrlYIoq5zb83UymJQMn Role: student
+2024-11-30 18:23:11,896 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 18:23:11,897 - INFO - 127.0.0.1 - - [30/Nov/2024 18:23:11] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-11-30 18:23:11,906 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 18:23:11,906 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:23:11,906 - INFO - 127.0.0.1 - - [30/Nov/2024 18:23:11] "GET / HTTP/1.1" 200 -
+2024-11-30 18:23:11,970 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 18:23:11,971 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:23:11,972 - INFO - 127.0.0.1 - - [30/Nov/2024 18:23:11] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:23:21,508 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 18:23:21,589 - INFO - Response: 200 OK Duration: 0.08s
+2024-11-30 18:23:21,589 - INFO - 127.0.0.1 - - [30/Nov/2024 18:23:21] "POST /login HTTP/1.1" 200 -
+2024-11-30 18:23:21,608 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:23:21,870 - INFO - Response: 200 OK Duration: 0.26s
+2024-11-30 18:23:21,870 - INFO - 127.0.0.1 - - [30/Nov/2024 18:23:21] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:23:21,919 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:23:21,921 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:23:21,921 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:23:21,922 - INFO - 127.0.0.1 - - [30/Nov/2024 18:23:21] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:23:21,923 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:23:21,923 - INFO - 127.0.0.1 - - [30/Nov/2024 18:23:21] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:24:36,632 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:24:36,913 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:24:36,913 - INFO - 127.0.0.1 - - [30/Nov/2024 18:24:36] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:24:36,959 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:24:36,961 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:24:36,961 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:24:36,961 - INFO - 127.0.0.1 - - [30/Nov/2024 18:24:36] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:24:36,962 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:24:36,962 - INFO - 127.0.0.1 - - [30/Nov/2024 18:24:36] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:24:50,243 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:24:50,513 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-30 18:24:50,514 - INFO - 127.0.0.1 - - [30/Nov/2024 18:24:50] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:24:50,552 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:24:50,554 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:24:50,555 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:24:50,556 - INFO - 127.0.0.1 - - [30/Nov/2024 18:24:50] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:24:50,557 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:24:50,558 - INFO - 127.0.0.1 - - [30/Nov/2024 18:24:50] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:25:18,917 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:19,191 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:25:19,191 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:19] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:25:19,233 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:19,236 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:19,237 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:25:19,238 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:19] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:25:19,239 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:25:19,239 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:19] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:25:36,557 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:36,840 - INFO - Response: 200 OK Duration: 0.28s
+2024-11-30 18:25:36,840 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:36] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:25:36,925 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:36,926 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:36,927 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:25:36,928 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:25:36,929 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:36] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:25:36,929 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:36] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:25:44,893 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:45,134 - INFO - Response: 200 OK Duration: 0.24s
+2024-11-30 18:25:45,134 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:45] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:25:45,239 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:45,241 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:25:45,242 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:25:45,242 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:45] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:25:45,243 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:25:45,244 - INFO - 127.0.0.1 - - [30/Nov/2024 18:25:45] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:26:33,185 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:26:33,185 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 18:26:33,185 - INFO - 127.0.0.1 - - [30/Nov/2024 18:26:33] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-11-30 18:26:33,196 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 18:26:33,197 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:26:33,197 - INFO - 127.0.0.1 - - [30/Nov/2024 18:26:33] "GET / HTTP/1.1" 200 -
+2024-11-30 18:26:33,250 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 18:26:33,252 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:26:33,253 - INFO - 127.0.0.1 - - [30/Nov/2024 18:26:33] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:26:38,574 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 18:26:38,863 - INFO - Response: 200 OK Duration: 0.29s
+2024-11-30 18:26:38,863 - INFO - 127.0.0.1 - - [30/Nov/2024 18:26:38] "POST /login HTTP/1.1" 200 -
+2024-11-30 18:26:38,890 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:26:39,271 - INFO - Response: 200 OK Duration: 0.38s
+2024-11-30 18:26:39,271 - INFO - 127.0.0.1 - - [30/Nov/2024 18:26:39] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:26:39,370 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:26:39,371 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:26:39,372 - INFO - 127.0.0.1 - - [30/Nov/2024 18:26:39] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:26:39,383 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:26:39,384 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:26:39,385 - INFO - 127.0.0.1 - - [30/Nov/2024 18:26:39] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:27:41,246 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:27:41,647 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-30 18:27:41,647 - INFO - 127.0.0.1 - - [30/Nov/2024 18:27:41] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:27:41,756 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:27:41,756 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:27:41,772 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 18:27:41,772 - INFO - 127.0.0.1 - - [30/Nov/2024 18:27:41] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:27:41,773 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 18:27:41,773 - INFO - 127.0.0.1 - - [30/Nov/2024 18:27:41] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:28:07,445 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:07,829 - INFO - Response: 200 OK Duration: 0.38s
+2024-11-30 18:28:07,829 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:07] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:28:07,908 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:07,910 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:07,911 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:28:07,911 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:07] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:28:07,912 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:28:07,912 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:07] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:28:08,845 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:09,181 - INFO - Response: 200 OK Duration: 0.34s
+2024-11-30 18:28:09,181 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:09] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:28:09,238 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:09,239 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:28:09,239 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:09] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:28:09,241 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:09,242 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:28:09,244 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:09] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:28:28,420 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:28,813 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-30 18:28:28,813 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:28] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:28:28,886 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:28,887 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:28:28,888 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:28] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:28:28,890 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:28:28,891 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:28:28,891 - INFO - 127.0.0.1 - - [30/Nov/2024 18:28:28] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:30:44,356 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:30:44,356 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 18:30:44,356 - INFO - 127.0.0.1 - - [30/Nov/2024 18:30:44] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-11-30 18:30:44,366 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 18:30:44,367 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:30:44,367 - INFO - 127.0.0.1 - - [30/Nov/2024 18:30:44] "GET / HTTP/1.1" 200 -
+2024-11-30 18:30:44,466 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 18:30:44,467 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:30:44,467 - INFO - 127.0.0.1 - - [30/Nov/2024 18:30:44] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:32:15,957 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 18:32:16,211 - INFO - Response: 200 OK Duration: 0.25s
+2024-11-30 18:32:16,212 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:16] "POST /login HTTP/1.1" 200 -
+2024-11-30 18:32:16,240 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:32:16,610 - INFO - Response: 200 OK Duration: 0.37s
+2024-11-30 18:32:16,611 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:16] "GET /student HTTP/1.1" 200 -
+2024-11-30 18:32:16,720 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:32:16,721 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:32:16,721 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:16] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:32:16,730 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:32:16,731 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:32:16,731 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:16] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 18:32:21,809 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 18:32:21,809 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 18:32:21,809 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:21] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-11-30 18:32:21,818 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 18:32:21,819 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 18:32:21,819 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:21] "GET / HTTP/1.1" 200 -
+2024-11-30 18:32:21,891 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 18:32:21,892 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:32:21,893 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:21] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 18:32:27,764 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 18:32:27,855 - INFO - Response: 200 OK Duration: 0.09s
+2024-11-30 18:32:27,856 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:27] "POST /login HTTP/1.1" 200 -
+2024-11-30 18:32:27,877 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:32:28,145 - INFO - Response: 200 OK Duration: 0.27s
+2024-11-30 18:32:28,145 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:28] "GET /admin HTTP/1.1" 200 -
+2024-11-30 18:32:28,277 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:32:28,278 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:32:28,278 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:28] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 18:32:28,282 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-11-30 18:32:28,284 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 18:32:28,284 - INFO - 127.0.0.1 - - [30/Nov/2024 18:32:28] "[36mGET /static/AdminHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:11:39,592 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-30 19:11:39,592 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 19:11:39,595 - INFO -  * Restarting with stat
+2024-11-30 19:11:40,926 - WARNING -  * Debugger is active!
+2024-11-30 19:11:40,936 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 19:11:48,988 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 19:11:49,026 - INFO - Response: 200 OK Duration: 0.04s
+2024-11-30 19:11:49,026 - INFO - 127.0.0.1 - - [30/Nov/2024 19:11:49] "GET / HTTP/1.1" 200 -
+2024-11-30 19:11:49,428 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 19:11:49,529 - INFO - Response: 304 NOT MODIFIED Duration: 0.10s
+2024-11-30 19:11:49,529 - INFO - 127.0.0.1 - - [30/Nov/2024 19:11:49] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 19:11:54,800 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 19:11:55,412 - INFO - Response: 200 OK Duration: 0.61s
+2024-11-30 19:11:55,412 - INFO - 127.0.0.1 - - [30/Nov/2024 19:11:55] "POST /login HTTP/1.1" 200 -
+2024-11-30 19:11:55,437 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:11:55,862 - INFO - Response: 200 OK Duration: 0.42s
+2024-11-30 19:11:55,862 - INFO - 127.0.0.1 - - [30/Nov/2024 19:11:55] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:11:55,924 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:11:55,927 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:11:55,927 - INFO - 127.0.0.1 - - [30/Nov/2024 19:11:55] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:11:55,943 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:11:55,990 - INFO - Response: 200 OK Duration: 0.05s
+2024-11-30 19:11:55,990 - INFO - 127.0.0.1 - - [30/Nov/2024 19:11:55] "GET /static/StudentHomePageScript.js HTTP/1.1" 200 -
+2024-11-30 19:46:28,184 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-30 19:46:28,184 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 19:46:28,187 - INFO -  * Restarting with stat
+2024-11-30 19:46:29,248 - WARNING -  * Debugger is active!
+2024-11-30 19:46:29,259 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 19:46:29,272 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 19:46:29,292 - INFO - Response: 200 OK Duration: 0.02s
+2024-11-30 19:46:29,292 - INFO - 127.0.0.1 - - [30/Nov/2024 19:46:29] "GET / HTTP/1.1" 200 -
+2024-11-30 19:46:29,349 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 19:46:29,479 - INFO - Response: 304 NOT MODIFIED Duration: 0.13s
+2024-11-30 19:46:29,479 - INFO - 127.0.0.1 - - [30/Nov/2024 19:46:29] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 19:46:29,517 - INFO - Request: GET http://127.0.0.1:5000/favicon.ico User ID: None Role: None
+2024-11-30 19:46:29,517 - INFO - Response: 404 NOT FOUND Duration: 0.00s
+2024-11-30 19:46:29,517 - INFO - 127.0.0.1 - - [30/Nov/2024 19:46:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-30 19:46:35,549 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 19:46:36,059 - INFO - Response: 200 OK Duration: 0.51s
+2024-11-30 19:46:36,060 - INFO - 127.0.0.1 - - [30/Nov/2024 19:46:36] "POST /login HTTP/1.1" 200 -
+2024-11-30 19:46:36,113 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:46:36,579 - INFO - Response: 200 OK Duration: 0.47s
+2024-11-30 19:46:36,579 - INFO - 127.0.0.1 - - [30/Nov/2024 19:46:36] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:46:36,629 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:46:36,665 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:46:36,665 - INFO - Response: 304 NOT MODIFIED Duration: 0.04s
+2024-11-30 19:46:36,666 - INFO - 127.0.0.1 - - [30/Nov/2024 19:46:36] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:46:36,667 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:46:36,668 - INFO - 127.0.0.1 - - [30/Nov/2024 19:46:36] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:57:03,853 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:04,427 - INFO - Response: 200 OK Duration: 0.57s
+2024-11-30 19:57:04,427 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:04] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:57:04,483 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:04,484 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:57:04,485 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:04] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:57:04,491 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:04,493 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:57:04,494 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:04] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:57:49,373 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:49,724 - INFO - Response: 200 OK Duration: 0.35s
+2024-11-30 19:57:49,725 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:49] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:57:49,832 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:49,833 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:57:49,834 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:49] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:57:49,836 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:49,837 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:57:49,838 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:49] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:57:50,887 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:51,245 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 19:57:51,245 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:51] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:57:51,356 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:51,357 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:57:51,357 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:51] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:57:51,359 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:51,360 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:57:51,360 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:51] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:57:55,183 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:55,559 - INFO - Response: 200 OK Duration: 0.38s
+2024-11-30 19:57:55,560 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:55] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:57:55,644 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:55,644 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 19:57:55,644 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:55] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:57:55,646 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:57:55,648 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:57:55,648 - INFO - 127.0.0.1 - - [30/Nov/2024 19:57:55] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:58:22,510 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:58:22,870 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 19:58:22,871 - INFO - 127.0.0.1 - - [30/Nov/2024 19:58:22] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:58:22,928 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:58:22,928 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:58:22,928 - INFO - 127.0.0.1 - - [30/Nov/2024 19:58:22] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:58:22,928 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:58:22,938 - INFO - Response: 304 NOT MODIFIED Duration: 0.01s
+2024-11-30 19:58:22,939 - INFO - 127.0.0.1 - - [30/Nov/2024 19:58:22] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:58:24,289 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:58:24,611 - INFO - Response: 200 OK Duration: 0.32s
+2024-11-30 19:58:24,611 - INFO - 127.0.0.1 - - [30/Nov/2024 19:58:24] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:58:24,802 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:58:24,804 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:58:24,804 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:58:24,805 - INFO - 127.0.0.1 - - [30/Nov/2024 19:58:24] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:58:24,805 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:58:24,806 - INFO - 127.0.0.1 - - [30/Nov/2024 19:58:24] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 19:59:06,277 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:59:06,765 - INFO - Response: 200 OK Duration: 0.49s
+2024-11-30 19:59:06,766 - INFO - 127.0.0.1 - - [30/Nov/2024 19:59:06] "GET /student HTTP/1.1" 200 -
+2024-11-30 19:59:06,882 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:59:06,883 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 19:59:06,884 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:59:06,884 - INFO - 127.0.0.1 - - [30/Nov/2024 19:59:06] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 19:59:06,885 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 19:59:06,885 - INFO - 127.0.0.1 - - [30/Nov/2024 19:59:06] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:00:21,767 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:22,174 - INFO - Response: 200 OK Duration: 0.41s
+2024-11-30 20:00:22,175 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:22] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:00:22,285 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:22,288 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:22,288 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:00:22,289 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:22] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:00:22,289 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:00:22,290 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:22] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:00:22,754 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:23,133 - INFO - Response: 200 OK Duration: 0.38s
+2024-11-30 20:00:23,133 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:23] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:00:23,195 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:23,198 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:23,199 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:00:23,199 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:23] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:00:23,200 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:00:23,200 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:23] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:00:27,228 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:27,583 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 20:00:27,583 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:27] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:00:27,729 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:27,731 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:27,731 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:00:27,732 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:27] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:00:27,732 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:00:27,733 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:27] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:00:40,890 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-30 20:00:40,890 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 20:00:40,892 - INFO -  * Restarting with stat
+2024-11-30 20:00:41,931 - WARNING -  * Debugger is active!
+2024-11-30 20:00:41,937 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 20:00:41,952 - INFO - Request: GET http://127.0.0.1:5000/student User ID: None Role: None
+2024-11-30 20:00:41,953 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 20:00:41,953 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:41] "[32mGET /student HTTP/1.1[0m" 302 -
+2024-11-30 20:00:41,963 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 20:00:41,968 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-30 20:00:41,969 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:41] "GET / HTTP/1.1" 200 -
+2024-11-30 20:00:42,046 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 20:00:42,132 - INFO - Response: 304 NOT MODIFIED Duration: 0.09s
+2024-11-30 20:00:42,132 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:42] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 20:00:46,474 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 20:00:46,878 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-30 20:00:46,878 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:46] "POST /login HTTP/1.1" 200 -
+2024-11-30 20:00:46,909 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:47,270 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 20:00:47,271 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:47] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:00:47,370 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:47,371 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:00:47,372 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:47] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:00:47,425 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:00:47,490 - INFO - Response: 200 OK Duration: 0.06s
+2024-11-30 20:00:47,490 - INFO - 127.0.0.1 - - [30/Nov/2024 20:00:47] "GET /static/StudentHomePageScript.js HTTP/1.1" 200 -
+2024-11-30 20:01:18,644 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:01:19,079 - INFO - Response: 200 OK Duration: 0.43s
+2024-11-30 20:01:19,079 - INFO - 127.0.0.1 - - [30/Nov/2024 20:01:19] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:01:19,162 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:01:19,178 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:01:19,179 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 20:01:19,180 - INFO - 127.0.0.1 - - [30/Nov/2024 20:01:19] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:01:19,180 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:01:19,181 - INFO - 127.0.0.1 - - [30/Nov/2024 20:01:19] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:01:34,658 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:01:35,056 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-30 20:01:35,056 - INFO - 127.0.0.1 - - [30/Nov/2024 20:01:35] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:01:35,155 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:01:35,158 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:01:35,159 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:01:35,159 - INFO - 127.0.0.1 - - [30/Nov/2024 20:01:35] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:01:35,161 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:01:35,162 - INFO - 127.0.0.1 - - [30/Nov/2024 20:01:35] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:02:17,588 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:02:18,003 - INFO - Response: 200 OK Duration: 0.41s
+2024-11-30 20:02:18,004 - INFO - 127.0.0.1 - - [30/Nov/2024 20:02:18] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:02:18,082 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:02:18,098 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:02:18,098 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-11-30 20:02:18,099 - INFO - 127.0.0.1 - - [30/Nov/2024 20:02:18] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:02:18,099 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:02:18,099 - INFO - 127.0.0.1 - - [30/Nov/2024 20:02:18] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:04:12,108 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:04:12,444 - INFO - Response: 200 OK Duration: 0.34s
+2024-11-30 20:04:12,445 - INFO - 127.0.0.1 - - [30/Nov/2024 20:04:12] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:04:12,533 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:04:12,534 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:04:12,534 - INFO - 127.0.0.1 - - [30/Nov/2024 20:04:12] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:04:12,540 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:04:12,543 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:04:12,544 - INFO - 127.0.0.1 - - [30/Nov/2024 20:04:12] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:04:35,387 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:04:35,388 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:04:35,388 - INFO - 127.0.0.1 - - [30/Nov/2024 20:04:35] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:04:52,778 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:04:53,209 - INFO - Response: 200 OK Duration: 0.43s
+2024-11-30 20:04:53,209 - INFO - 127.0.0.1 - - [30/Nov/2024 20:04:53] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:04:53,272 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:04:53,274 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:04:53,274 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:04:53,275 - INFO - 127.0.0.1 - - [30/Nov/2024 20:04:53] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:04:53,275 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:04:53,276 - INFO - 127.0.0.1 - - [30/Nov/2024 20:04:53] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:05:02,423 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-30 20:05:02,424 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 20:05:02,426 - INFO -  * Restarting with stat
+2024-11-30 20:05:03,661 - WARNING -  * Debugger is active!
+2024-11-30 20:05:03,665 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 20:05:12,012 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 20:05:12,018 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-30 20:05:12,018 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:12] "GET / HTTP/1.1" 200 -
+2024-11-30 20:05:12,088 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 20:05:12,162 - INFO - Response: 304 NOT MODIFIED Duration: 0.07s
+2024-11-30 20:05:12,162 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:12] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 20:05:18,482 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 20:05:18,865 - INFO - Response: 200 OK Duration: 0.38s
+2024-11-30 20:05:18,865 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:18] "POST /login HTTP/1.1" 200 -
+2024-11-30 20:05:18,889 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:19,224 - INFO - Response: 200 OK Duration: 0.33s
+2024-11-30 20:05:19,224 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:19] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:05:19,314 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:19,314 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:05:19,315 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:19] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:05:19,384 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:19,384 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:05:19,385 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:19] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:05:49,382 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:49,743 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 20:05:49,744 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:49] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:05:49,873 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:49,875 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:05:49,876 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:49] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:05:49,877 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:49,878 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:05:49,879 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:49] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:05:56,728 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:57,231 - INFO - Response: 200 OK Duration: 0.50s
+2024-11-30 20:05:57,231 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:57] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:05:57,342 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:57,343 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:05:57,344 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:57] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:05:57,346 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:05:57,347 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:05:57,348 - INFO - 127.0.0.1 - - [30/Nov/2024 20:05:57] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:06:38,921 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:06:39,307 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-30 20:06:39,308 - INFO - 127.0.0.1 - - [30/Nov/2024 20:06:39] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:06:39,364 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:06:39,365 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:06:39,367 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:06:39,367 - INFO - 127.0.0.1 - - [30/Nov/2024 20:06:39] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:06:39,368 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:06:39,368 - INFO - 127.0.0.1 - - [30/Nov/2024 20:06:39] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:09:51,224 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:09:51,586 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 20:09:51,586 - INFO - 127.0.0.1 - - [30/Nov/2024 20:09:51] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:09:51,634 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:09:51,648 - INFO - Response: 304 NOT MODIFIED Duration: 0.01s
+2024-11-30 20:09:51,648 - INFO - 127.0.0.1 - - [30/Nov/2024 20:09:51] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:09:51,650 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:09:51,651 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:09:51,651 - INFO - 127.0.0.1 - - [30/Nov/2024 20:09:51] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:10:39,028 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:10:39,420 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-30 20:10:39,421 - INFO - 127.0.0.1 - - [30/Nov/2024 20:10:39] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:10:39,467 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:10:39,467 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:10:39,475 - INFO - 127.0.0.1 - - [30/Nov/2024 20:10:39] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:10:39,477 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:10:39,479 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:10:39,480 - INFO - 127.0.0.1 - - [30/Nov/2024 20:10:39] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:28:21,866 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:28:22,331 - INFO - Response: 200 OK Duration: 0.46s
+2024-11-30 20:28:22,332 - INFO - 127.0.0.1 - - [30/Nov/2024 20:28:22] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:28:22,574 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:28:22,575 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:28:22,576 - INFO - 127.0.0.1 - - [30/Nov/2024 20:28:22] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:28:22,584 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:28:22,586 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:28:22,586 - INFO - 127.0.0.1 - - [30/Nov/2024 20:28:22] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:36:19,285 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:36:19,675 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-30 20:36:19,675 - INFO - 127.0.0.1 - - [30/Nov/2024 20:36:19] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:36:19,742 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:36:19,743 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:36:19,744 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:36:19,745 - INFO - 127.0.0.1 - - [30/Nov/2024 20:36:19] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:36:19,746 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:36:19,747 - INFO - 127.0.0.1 - - [30/Nov/2024 20:36:19] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:36:28,146 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:36:28,595 - INFO - Response: 200 OK Duration: 0.45s
+2024-11-30 20:36:28,595 - INFO - 127.0.0.1 - - [30/Nov/2024 20:36:28] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:36:28,684 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:36:28,686 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:36:28,686 - INFO - 127.0.0.1 - - [30/Nov/2024 20:36:28] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:36:28,689 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:36:28,693 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:36:28,695 - INFO - 127.0.0.1 - - [30/Nov/2024 20:36:28] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:43:03,426 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:43:03,871 - INFO - Response: 200 OK Duration: 0.44s
+2024-11-30 20:43:03,872 - INFO - 127.0.0.1 - - [30/Nov/2024 20:43:03] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:43:04,012 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:43:04,014 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:43:04,015 - INFO - 127.0.0.1 - - [30/Nov/2024 20:43:04] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:43:04,016 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:43:04,018 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:43:04,019 - INFO - 127.0.0.1 - - [30/Nov/2024 20:43:04] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:56:08,027 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:56:08,580 - INFO - Response: 200 OK Duration: 0.55s
+2024-11-30 20:56:08,581 - INFO - 127.0.0.1 - - [30/Nov/2024 20:56:08] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:56:08,727 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:56:08,729 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:56:08,730 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:56:08,731 - INFO - 127.0.0.1 - - [30/Nov/2024 20:56:08] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:56:08,731 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:56:08,732 - INFO - 127.0.0.1 - - [30/Nov/2024 20:56:08] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:56:48,504 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:56:48,907 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-30 20:56:48,908 - INFO - 127.0.0.1 - - [30/Nov/2024 20:56:48] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:56:49,015 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:56:49,016 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:56:49,017 - INFO - 127.0.0.1 - - [30/Nov/2024 20:56:49] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:56:49,019 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:56:49,021 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:56:49,022 - INFO - 127.0.0.1 - - [30/Nov/2024 20:56:49] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 20:58:38,504 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:58:39,033 - INFO - Response: 200 OK Duration: 0.53s
+2024-11-30 20:58:39,033 - INFO - 127.0.0.1 - - [30/Nov/2024 20:58:39] "GET /student HTTP/1.1" 200 -
+2024-11-30 20:58:39,167 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:58:39,168 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 20:58:39,169 - INFO - 127.0.0.1 - - [30/Nov/2024 20:58:39] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 20:58:39,172 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 20:58:39,176 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 20:58:39,176 - INFO - 127.0.0.1 - - [30/Nov/2024 20:58:39] "GET /static/StudentHomePageScript.js HTTP/1.1" 200 -
+2024-11-30 22:54:49,613 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-30 22:54:49,613 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 22:54:49,616 - INFO -  * Restarting with stat
+2024-11-30 22:54:51,578 - WARNING -  * Debugger is active!
+2024-11-30 22:54:51,588 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 22:55:01,801 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 22:55:01,807 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-30 22:55:01,808 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:01] "GET / HTTP/1.1" 200 -
+2024-11-30 22:55:01,989 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 22:55:02,083 - INFO - Response: 304 NOT MODIFIED Duration: 0.09s
+2024-11-30 22:55:02,084 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:02] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 22:55:02,143 - INFO - Request: GET http://127.0.0.1:5000/favicon.ico User ID: None Role: None
+2024-11-30 22:55:02,144 - INFO - Response: 404 NOT FOUND Duration: 0.00s
+2024-11-30 22:55:02,144 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-30 22:55:27,840 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 22:55:27,842 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 22:55:28,650 - INFO - Response: 200 OK Duration: 0.81s
+2024-11-30 22:55:28,651 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:28] "POST /login HTTP/1.1" 200 -
+2024-11-30 22:55:28,672 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:55:28,760 - INFO - Response: 200 OK Duration: 0.92s
+2024-11-30 22:55:28,761 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:28] "POST /login HTTP/1.1" 200 -
+2024-11-30 22:55:28,785 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:55:29,305 - INFO - Response: 200 OK Duration: 0.63s
+2024-11-30 22:55:29,306 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:29] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:55:29,417 - INFO - Response: 200 OK Duration: 0.63s
+2024-11-30 22:55:29,417 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:29] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:55:29,489 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:55:29,491 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:55:29,491 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:29] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:55:29,512 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:55:29,514 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:55:29,514 - INFO - 127.0.0.1 - - [30/Nov/2024 22:55:29] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:56:33,615 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:56:34,119 - INFO - Response: 200 OK Duration: 0.50s
+2024-11-30 22:56:34,120 - INFO - 127.0.0.1 - - [30/Nov/2024 22:56:34] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:56:34,276 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:56:34,279 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:56:34,280 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:56:34,280 - INFO - 127.0.0.1 - - [30/Nov/2024 22:56:34] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:56:34,281 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:56:34,282 - INFO - 127.0.0.1 - - [30/Nov/2024 22:56:34] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:56:48,788 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:56:49,148 - INFO - Response: 200 OK Duration: 0.36s
+2024-11-30 22:56:49,149 - INFO - 127.0.0.1 - - [30/Nov/2024 22:56:49] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:56:49,229 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:56:49,229 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:56:49,230 - INFO - 127.0.0.1 - - [30/Nov/2024 22:56:49] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:56:49,232 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:56:49,233 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:56:49,233 - INFO - 127.0.0.1 - - [30/Nov/2024 22:56:49] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:56:59,964 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-30 22:56:59,964 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 22:56:59,965 - INFO -  * Restarting with stat
+2024-11-30 22:57:01,088 - WARNING -  * Debugger is active!
+2024-11-30 22:57:01,095 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 22:57:01,249 - INFO - Request: GET http://127.0.0.1:5000/student User ID: None Role: None
+2024-11-30 22:57:01,249 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 22:57:01,250 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:01] "[32mGET /student HTTP/1.1[0m" 302 -
+2024-11-30 22:57:01,263 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 22:57:01,267 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 22:57:01,267 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:01] "GET / HTTP/1.1" 200 -
+2024-11-30 22:57:01,376 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 22:57:01,446 - INFO - Response: 304 NOT MODIFIED Duration: 0.07s
+2024-11-30 22:57:01,447 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:01] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 22:57:04,914 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 22:57:05,555 - INFO - Response: 200 OK Duration: 0.64s
+2024-11-30 22:57:05,556 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:05] "POST /login HTTP/1.1" 200 -
+2024-11-30 22:57:05,587 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:05,991 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-30 22:57:05,992 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:05] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:57:06,067 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:06,068 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:57:06,069 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:06] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:57:06,106 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:06,107 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:57:06,108 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:06] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:57:31,085 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:31,420 - INFO - Response: 200 OK Duration: 0.34s
+2024-11-30 22:57:31,420 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:31] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:57:31,478 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:31,479 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:57:31,479 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:31] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:57:31,485 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:31,486 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:57:31,486 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:31] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:57:54,164 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:54,546 - INFO - Response: 200 OK Duration: 0.38s
+2024-11-30 22:57:54,546 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:54] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:57:54,648 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:54,649 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:57:54,651 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:57:54,651 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:54] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:57:54,652 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:57:54,652 - INFO - 127.0.0.1 - - [30/Nov/2024 22:57:54] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:58:11,091 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:11,464 - INFO - Response: 200 OK Duration: 0.37s
+2024-11-30 22:58:11,464 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:11] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:58:11,540 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:11,541 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:58:11,542 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:11] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:58:11,544 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:11,546 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:58:11,547 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:11] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:58:22,141 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:22,529 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-30 22:58:22,530 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:22] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:58:22,596 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:22,598 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:22,599 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:58:22,599 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:22] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:58:22,600 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:58:22,600 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:22] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:58:42,964 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:43,312 - INFO - Response: 200 OK Duration: 0.35s
+2024-11-30 22:58:43,312 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:43] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:58:43,389 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:43,390 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:58:43,390 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:43] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:58:43,392 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:58:43,393 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:58:43,393 - INFO - 127.0.0.1 - - [30/Nov/2024 22:58:43] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 22:58:56,948 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-30 22:58:56,949 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 22:58:56,950 - INFO -  * Restarting with stat
+2024-11-30 22:58:58,048 - WARNING -  * Debugger is active!
+2024-11-30 22:58:58,053 - INFO -  * Debugger PIN: 218-518-769
+2024-11-30 22:59:12,964 - INFO - Request: GET http://127.0.0.1:5000/student User ID: None Role: None
+2024-11-30 22:59:12,964 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-11-30 22:59:12,965 - INFO - 127.0.0.1 - - [30/Nov/2024 22:59:12] "[32mGET /student HTTP/1.1[0m" 302 -
+2024-11-30 22:59:13,080 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-11-30 22:59:13,085 - INFO - Response: 200 OK Duration: 0.00s
+2024-11-30 22:59:13,085 - INFO - 127.0.0.1 - - [30/Nov/2024 22:59:13] "GET / HTTP/1.1" 200 -
+2024-11-30 22:59:13,185 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-11-30 22:59:13,258 - INFO - Response: 304 NOT MODIFIED Duration: 0.07s
+2024-11-30 22:59:13,258 - INFO - 127.0.0.1 - - [30/Nov/2024 22:59:13] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-11-30 22:59:16,338 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-11-30 22:59:16,738 - INFO - Response: 200 OK Duration: 0.40s
+2024-11-30 22:59:16,739 - INFO - 127.0.0.1 - - [30/Nov/2024 22:59:16] "POST /login HTTP/1.1" 200 -
+2024-11-30 22:59:16,771 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:59:17,141 - INFO - Response: 200 OK Duration: 0.37s
+2024-11-30 22:59:17,141 - INFO - 127.0.0.1 - - [30/Nov/2024 22:59:17] "GET /student HTTP/1.1" 200 -
+2024-11-30 22:59:17,244 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:59:17,245 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:59:17,246 - INFO - 127.0.0.1 - - [30/Nov/2024 22:59:17] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-11-30 22:59:17,264 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 22:59:17,265 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 22:59:17,266 - INFO - 127.0.0.1 - - [30/Nov/2024 22:59:17] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 23:00:50,366 - INFO - Request: GET http://127.0.0.1:5000/student User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 23:00:50,753 - INFO - Response: 200 OK Duration: 0.39s
+2024-11-30 23:00:50,754 - INFO - 127.0.0.1 - - [30/Nov/2024 23:00:50] "GET /student HTTP/1.1" 200 -
+2024-11-30 23:00:50,817 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 23:00:50,820 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript.js User ID: 9uzsttXXrisHHQBJTIOG Role: student
+2024-11-30 23:00:50,821 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-11-30 23:00:50,822 - INFO - 127.0.0.1 - - [30/Nov/2024 23:00:50] "[36mGET /static/StudentHomePageScript.js HTTP/1.1[0m" 304 -
+2024-11-30 23:00:50,829 - INFO - Response: 200 OK Duration: 0.01s
+2024-11-30 23:00:50,829 - INFO - 127.0.0.1 - - [30/Nov/2024 23:00:50] "GET /static/StudentHomePageStyleSheet.css HTTP/1.1" 200 -

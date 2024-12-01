@@ -12,19 +12,22 @@
 
     /*Carousel CSS */
     .carousel {
-      margin-top: 10px; /* Adjust this to move the carousel closer to the top */
+      top: 0px; /* Adjust this to move the carousel closer to the top */
+      position: absolute;
     }
 
     .carousel-control-prev-icon{
       background-color: #f1d2f5; 
       border-radius: 80%;  /* Makes it round edged, as opposed to straight. Used in temp uni tab */
-      margin-top: 40px;
+      top: 400px;
+      position: absolute;
     }
 
     .carousel-control-next-icon {
       background-color:#f1d2f5; 
       border-radius: 80%; /* Makes it round edged, as opposed to straight. Used in temp uni tab */
-      margin-top: 40px;
+      top: 400px;
+      position: absolute;
     }
 
     .carousel-indicators [data-bs-target] {

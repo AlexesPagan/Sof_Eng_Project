@@ -53,6 +53,26 @@ document.getElementById('Dorm_1_Details_Button').addEventListener('click', funct
   toggleButton('DD-Dorm-1-Page')
 });
 
+document.getElementById('Dorm_2_Details_Button').addEventListener('click', function(){
+  toggleButton('DD-Dorm-1-Page')
+});
+
+document.getElementById('Dorm_3_Details_Button').addEventListener('click', function(){
+  toggleButton('DD-Dorm-1-Page')
+});
+
+document.getElementById('Dorm_4_Details_Button').addEventListener('click', function(){
+  toggleButton('DD-Dorm-1-Page')
+});
+
+document.getElementById('Dorm_5_Details_Button').addEventListener('click', function(){
+  toggleButton('DD-Dorm-1-Page')
+});
+
+document.getElementById('Dorm_6_Details_Button').addEventListener('click', function(){
+  toggleButton('DD-Dorm-1-Page')
+});
+
 document.getElementById('dormApplicationButton').addEventListener('click',function(){
   toggleButton('dorm-application')
 });
