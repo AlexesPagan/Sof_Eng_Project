@@ -1,0 +1,175 @@
+/* General Body Styling */
+body {
+    overflow-x: hidden;
+    background-color: white;
+    background-size: 100vw 100vh;
+    font-family: Georgia, serif;
+}
+.content-section {
+    display: none; /* Hide all sections by default */
+  }
+
+  .content-section.active {
+    display: block; /* Show the active section */
+  }
+  .main-content {
+    margin-left: 250px; /* Adjust based on the width of the fixed menu */
+    padding: 20px;
+  }
+/* Temporary University Banner */
+.temp-university-banner {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    background-color: #dcecf1;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #1a2f4a;
+    z-index: 1030; /* Ensure it stays above other elements */
+}
+
+/* Footer Styling */
+.footer {
+    position: fixed;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    z-index: 1030; /* Ensure it stays above other elements */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background-color: #dcecf1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    overflow-y: auto;
+    z-index: 1020; /* Below the banner and footer */
+}
+
+.sidebar img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.sidebar .nav-link {
+    color: #1a2f4a !important;
+    font-family: Georgia, serif;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    padding-left: 22px;
+    margin-bottom: 15px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #caced1;
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 230px; /* Same as sidebar width */
+    padding: 1rem;
+}
+
+/* Overview and Help Pages */
+.page-section {
+    padding: 5rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #f8f9fa; /* Equivalent to bg-body-tertiary */
+    border-radius: 0.5rem;
+}
+
+.page-section h1,
+.page-section h2 {
+    font-family: 'Georgia', serif;
+}
+
+.page-section p {
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+/* Dorm Details */
+#dorm-details .card-img-top {
+    object-fit: cover;
+}
+
+/* Carousel Customizations */
+#myCarousel .carousel-caption {
+    font-family: Georgia, serif;
+    font-size: large;
+}
+
+#myCarousel .btn-secondary {
+    background-color: #d2c6d3;
+    color: #1a2f4a;
+}
+
+#myCarousel .carousel-control-prev-icon,
+#myCarousel .carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+
+/* Dropup Button Styling */
+.fixed-bottom-left {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1030;
+}
+
+.fixed-bottom-left .btn-group .btn-secondary {
+    background-color: #d2c6d3;
+    color: #1a2f4a;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.fixed-bottom-left .dropdown-menu {
+    background-color: #fff;
+}
+
+.fixed-bottom-left .dropdown-item {
+    color: #1a2f4a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .temp-university-banner {
+        position: relative;
+        top: 10px;
+        right: 10px;
+    }
+    .footer {
+        position: relative;
+    }
+}
