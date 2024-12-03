@@ -1,0 +1,505 @@
+<!-- REVISION HISTORY  
+
+Jonathan  10/14/24     Created Framework, basic HTML set up
+Jonathan  10/14/24     Made changes to studentHomepage templete to make it matchup for an admins use instead.
+Kyren     11/10/24     Carried over necessary divs from student homepage for easy setup.
+Kyren     11/24/24     Added the Help page and worked with Jonathan to fix the admin student intergration.
+Jack      11/26/24     Added textboxes and a dropdown to search for students
+Jack      11/26/24     Fixed minor spelling errors
+Kyren     11/28/24     Fixed a minor issue with the padding on the overview page and added functionality with dormOutput script
+Kyren     11/28/24     Carried over new dorm details to this page. 
+Kyren     11/28/24     Adjusted Jack's code due to some errors in the format and worked on user input and overwriting in the Firebase. 
+Kyren     11/29/24     Added more to the overview page and worked in the javascript file to push data to app.py file. 
+Jonathan  11/29/24     Created separate .js file for this homepage
+Jonathan  11/29/24     Fixed function to actually connect this, the js, and the app.py together to get the data. 
+Jonathan  11/29/24     Added student found/not found modal
+Kyren     11/29/24     Carried over final details from student homepage and created a separate .css file for this homepage
+Kyren     11/30/24     Ensured that the inputs from the admin add/remove worked with the backend script from Alexes!
+Jonathan  11/30/24     Redesigned Overview visuals, Help, Application menus
+Kyren     12/01/24     Finished up Dorm Details (added new pictures, modals, and adjusted css and js files) [DONE!]
+-->
+
+
+
+<!-- shift+1 enter to get the following code. This is preliminary setup -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin HomePage</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ url_for('static', filename='AdminHomePageStyleSheet.css') }}">
+    </head>
+<body>
+
+  <body style="overflow-x: hidden;">
+    <div style="position: absolute; top: 30px; right: 40px; background-color: #dcecf1; padding: 10px 20px; font-family: Georgia, serif; font-size: large; font-weight: bold; border-radius: 10px; color: #1a2f4a;">
+      Temporary University
+    </div>
+    <Body style = "background-color:white" style="background-size: 100vw 100vh;"></Body> <!-- Litterally just the white-ish background -->
+    <div>
+      <p style=" position: fixed; bottom: 8px; left: 0; width: 100%; text-align: center;font-family: 'Georgia', serif;">© Bootstrap 2017–2024.</p> <!-- Keeps the Copyright stuck to the bottom center of page, no matter user view port.-->
+    </div>      
+  </body>
+        
+    <!-- THIS IS THE ACTUAL OVERVIEW PAGE THAT IS FIRST DISPLAYED -->
+    <div class="p-2 mb-4 bg-body-tertiary rounded-3" id="overview-page" style="background-color: #dcecf1 !important; font-family: Georgia, serif; font-size: large; font-weight: bold; color: #1a2f4a"> <!-- p is for paragraph, mb is for margin-bottom -->
+      <div class="container-fluid py-5"> <!-- py sets vertical padding (padding top and bottom) to the same value -->
+        <h1 class="display-5 fw-bold" style="font-family: 'Georgia', serif;">Overview for {{ session['name'] }}</h1>
+        <h2 class="col-md-15 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Add or remove students from a dorm:</h2> 
+        <h3 class="col-md-15 fw-bold" style="font-family: 'Georgia', serif; font-size: 16px !important;">For instructions, access the help page.</h3>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="StuIDInput">
+          <label for="StuIDInput">Student ID</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id=DormHallInput>
+          <label for="DormHallInput">Dorm Hall</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="RoomNumInput">
+          <label for="RoomNumInput">Room Number</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="AddDeleteInput">
+          <label for="AddDeleteInput">"Add" or "Remove"</label>
+        </div>
+        <button type="button" class="btn" style="background-color:#d2c6d3;" id="addRemoveButton">Submit</button> 
+        <h2 class="col-md-15 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Current number of applications: {{ forms }}</h2> 
+      </div>
+    </div>
+
+    <div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="studentModalLabel">Student Status</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- This is where the message will appear -->
+            <p id="studentMessage"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- THIS IS THE HELP PAGE -->
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="help-page" style="background-color: #dcecf1 !important; font-family: Georgia, serif; font-size: large; color: #1a2f4a"> <!-- p is for paragraph, mb is for margin-bottom -->
+      <h1 class="display-5 fw-bold" style="font-family: 'Georgia', serif;">Help:</h1> 
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Overview:</h2> 
+      <p class="col-md-12" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">The overview page allows you to add a student to  or remove a student from a room. If you wish to remove a student, input their current information and then submit. This will remove them from their dorm. If you wish to add a student, please remove the student from their current room and then add the student to another room.</p>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Dorm Application:</h2> <!-- md is for the break point of the text -->
+      <p class="col-md-12" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">The dorm application page gives you access to the student's responses. Because we utilize a Google Form to take in student responses, you will be redirected to a Google Sheet for viewing. </p>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Dorm Details:</h2> 
+      <p class="col-md-12" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">The dorm details page gives you insight into what the rooms look like within the different halls. Should you wish to change this information, please contact one of the developers.</p>
+    </div>
+
+    
+    <!-- THIS IS THE STUDENT RESPONSES PAGE -->
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="stu-resp-page" style="background-color: #dcecf1 !important; font-family: Georgia, serif; font-size: large; color: #1a2f4a"> <!-- p is for paragraph, mb is for margin-bottom -->
+      <h1 class="display-5 fw-bold" style="font-family: 'Georgia', serif;">Student Responses:</h1> 
+      <h2 class="col-md-15 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Current number of applications: {{ forms }}</h2>
+      <h2 class="col-md-8 fw-bold" style="font-family: 'Georgia', serif; font-size: 27px !important;">Google Form:</h2> 
+      <p class="col-md-12" style="font-family: 'Georgia', serif; text-indent: 20px; font-size: 20px !important;">Below you may access the Goolge Form to see the student respones</p>
+      <a href="https://docs.google.com/spreadsheets/d/1kpBhtB6TSBuD-w0E2-VXqHMuwDiaVatLNLg9bSq2wRg/edit?usp=sharing" target="_blank"> <!-- Target-->
+        <button type="button" class="btn btn-link" style="font-family: 'Georgia', serif; font-size: 20px style">Link</button>
+      </a>
+    </div>
+
+
+    <!-- THIS IS THE DORM DETAILS HTML -->
+    <div class="container" id="dorm-details">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="padding-left: 220px;">
+        <div class="col">
+          <div class="card shadow-sm"> 
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/d6RjnKd/image-removebg-preview-1-Photoroom-upscaled.png" alt="Image of Moonlight Hall" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;"> Moonlight Hall<br /> Capacity: {{ capacity['Moonlight Hall'] }}/75 </h5>
+              <p class="card-text"> This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group" id="Dorm_1_Details_Button">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/Gndzbyf/DALL-E-2024-10-21-23-03-22-A-modern-and-realistic-five-story-dorm-building-inspired-by-Aurora-Hall-w.webp" alt="Image of Solstice Hall" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Solstice Hall<br /> Capacity: {{ capacity['Solstice Hall']}}/75 </h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group" id="Dorm_2_Details_Button">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/swmjSjY/Solstice-hall-is-a-6-floor-tower-style-dorm-that-can-fit-up-to-45-students-Room-assignments-consist.png" alt="Image of Nebula Hall" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Nebula Hall<br /> Capacity: {{ capacity['Nebula Hall'] }}/75 </h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group" id="Dorm_3_Details_Button">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/n0WCF0f/Eclipse.jpg" alt="Image of Eclipse Hall" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Eclipse Hall<br /> Capacity: {{ capacity['Eclipse Hall'] }}/75 </h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group" id="Dorm_4_Details_Button">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/RjR3jTR/Comet.jpg" alt="Image of Comet Hall" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Comet Hall<br /> Capacity: {{ capacity['Comet Hall'] }}/75 </h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building does NOT have accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group" id="Dorm_5_Details_Button">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" src="https://i.ibb.co/7yJLWdH/Aurora-2.jpg" alt="Image of Aurora Hall" width="100%" height="225">
+            <div class="card-body">
+              <h5 style="text-align: center;">Aurora Hall<br /> Capacity: {{ capacity['Aurora Hall'] }}/75 </h5>
+              <p class="card-text">This building features 25 suite-style rooms that can fit up to 75 students. Room assignments consist of singles, doubles, triples, quads, and quints. This building has accessable dorming options.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group" id="Dorm_6_Details_Button">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-weight: bold;">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+    <!-- Should there be variation in the rooms between buildings, this code block (lines 207- 442) should be duplicated and the css/ js files adjusted to fit new additions. -->
+
+      <!-- THIS IS THE CODE FOR THE CAROUSEL IN THE DORM DETAIL'S SPECIFIC PAGES-->
+      <div class="container" id="DD-Dorm-Page" style="justify-content: center;">
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" style="font-family: Georgia, serif;">
+          <!--<div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+          </div> -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://i.ibb.co/9TQ7PwS/Single.png" class="d-block w-100" alt="Single Room" style="height: 400px; object-fit: cover;">
+              <div class="container">
+                <div class="carousel-caption text-start" style="font-family: Georgia, serif; font-size: large;">
+                  <h1>Single Room</h1>
+                  <p class=>Includes a twin bed, desk, dresser.... etc etc etc</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/vL6qCSW/Comet-Hall-Interior.png" class="d-block w-100" alt="Double Room" style="height: 400px; object-fit: cover;">
+              <div class="container">
+                <div class="carousel-caption" style="font-family: Georgia, serif; font-size: large;">
+                  <h1>Double Room</h1>
+                  <p>Some representative placeholder content for the second slide of the carousel.</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/ScJQjRY/Triple-Room.jpg" class="d-block w-100" alt="Suite" style="height: 400px; object-fit: cover;">
+              <div class="container">
+                <div class="carousel-caption text-end" style="font-family: Georgia, serif; font-size: large;">
+                  <h1>Triple Room</h1>
+                  <p>Some representative placeholder content for the third slide of this carousel.</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/3dJNP1q/QuadRoom.jpg" class="d-block w-100" alt="Suite" style="height: 400px; object-fit: cover;">
+              <div class="container">
+                <div class="carousel-caption text-end" style="font-family: Georgia, serif; font-size: large;">
+                  <h1>Quad Room</h1>
+                  <p>Some representative placeholder content for the fourth slide of this carousel.</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/wrZdqrq/Quint-Room.jpg" class="d-block w-100" alt="Suite" style="height: 400px; object-fit: cover;">
+              <div class="container">
+                <div class="carousel-caption text-end" style="font-family: Georgia, serif; font-size: large;">
+                  <h1>Quint Room</h1>
+                  <p>Some representative placeholder content for the fifth slide of this carousel.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- These handle the button presses on the actual carousel-->
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev" style="height: 50px; margin-bottom: 10px;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next" style="height: 50px; margin-bottom: 10px;">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <div class="container" style="margin-top: 150px;">
+            <div class="row">
+              <div class="col-lg-4">
+                <img src="https://i.ibb.co/9TQ7PwS/Single.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
+                <h2 class="fw-norml"> Single </h2>
+                <p>Random Text About The Single.</p>
+                <button class="btn btn-secondary view-details-btn" data-bs-toggle="modal" data-bs-target="#SingleRoomDetails" style="background-color: #d2c6d3; color: #1a2f4a;"> View Details »</button>
+              </div>
+              <div class="col-lg-4">
+                <img src="https://i.ibb.co/vL6qCSW/Comet-Hall-Interior.png" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
+                <h2 class="fw-normal">Double</h2>
+                <p>Random Text About The Double.</p>
+                <button class="btn btn-secondary view-details-btn" data-bs-toggle="modal" data-bs-target="#DoubleRoomDetails" style="background-color: #d2c6d3; color: #1a2f4a;"> View Details »</button>
+              </div>
+              <div class="col-lg-4">
+                <img src="https://i.ibb.co/ScJQjRY/Triple-Room.jpg" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
+                <h2 class="fw-normal">Triple</h2>
+                <p>Random Text About The Triple.</p>
+                <button class="btn btn-secondary view-details-btn" data-bs-toggle="modal" data-bs-target="#TripleRoomDetails" style="background-color: #d2c6d3; color: #1a2f4a;"> View Details »</button>
+              </div>
+              <div class="col-lg-4">
+                <img src="https://i.ibb.co/3dJNP1q/QuadRoom.jpg" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
+                <h2 class="fw-normal">Quad</h2>
+                <p>Random Text About The Quad.</p>
+                <button class="btn btn-secondary view-details-btn" data-bs-toggle="modal" data-bs-target="#QuadRoomDetails" style="background-color: #d2c6d3; color: #1a2f4a;"> View Details »</button>
+              </div>
+              <div class="col-lg-4">
+                <img src="https://i.ibb.co/wrZdqrq/Quint-Room.jpg" class="d-block w-100" alt="Single Room" style="border-radius: 10%;">
+                <h2 class="fw-normal">Quint</h2>
+                <p>Random Text About The Quint.</p>
+                <button class="btn btn-secondary view-details-btn" data-bs-toggle="modal" data-bs-target="#QuintRoomDetails" style="background-color: #d2c6d3; color: #1a2f4a;"> View Details »</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single Room Details Modal -->
+      <div id="SingleRoomDetails" class="modal fade" tabindex="-1" aria-labelledby="SingleRoomDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="SingleRoomDetailsLabel">Single Room Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h2 class="fw-bold mb-0">Single</h2>
+              <ul class="list-unstyled">
+                <li class="mb-3">
+                  <strong>Beds:</strong> 1
+                </li>
+                <li class="mb-3">
+                  <strong>Desks:</strong> 1
+                </li>
+                <li class="mb-3">
+                  <strong>Own Bathroom?</strong> No, communal 
+                </li>
+              </ul>
+              <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Double Room Details Modal -->
+      <div id="DoubleRoomDetails" class="modal fade" tabindex="-1" aria-labelledby="DoubleRoomDetailsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="DoubleRoomDetailsLabel">Double Room Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="fw-bold mb-0">Double</h2>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <strong>Beds:</strong> 2
+              </li>
+              <li class="mb-3">
+                <strong>Desks:</strong> 2
+              </li>
+              <li class="mb-3">
+                <strong>Own Bathroom?</strong> Yes
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Triple Room Details Modal -->
+    <div id="TripleRoomDetails" class="modal fade" tabindex="-1" aria-labelledby="TripleRoomDetailsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="TripleRoomDetailsLabel">Triple Room Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="fw-bold mb-0">Triple</h2>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <strong>Beds:</strong> 3
+              </li>
+              <li class="mb-3">
+                <strong>Desks:</strong> 3
+              </li>
+              <li class="mb-3">
+                <strong>Own Bathroom?</strong> Yes
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quad Room Details Modal -->
+    <div id="QuadRoomDetails" class="modal fade" tabindex="-1" aria-labelledby="QuadRoomDetailsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="QuadRoomDetailsLabel">Quad Room Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="fw-bold mb-0">Quad</h2>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <strong>Beds:</strong> 4
+              </li>
+              <li class="mb-3">
+                <strong>Desks:</strong> 4
+              </li>
+              <li class="mb-3">
+                <strong>Own Bathroom?</strong> Yes
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quint Room Details Modal-->
+    <div id="QuintRoomDetails" class="modal fade" tabindex="-1" aria-labelledby="QuintRoomDetailsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="QuintRoomDetailsLabel">Quint Room Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="fw-bold mb-0">Quint</h2>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <strong>Beds:</strong> 5
+              </li>
+              <li class="mb-3">
+                <strong>Desks:</strong> 5
+              </li>
+              <li class="mb-3">
+                <strong>Own Bathroom?</strong> Yes
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THESE ARE THE BUTTONS ON THE OVERVIEW MENU -->
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 230px; height: 100vh; background-color: #dcecf1 !important; position: fixed; top: 0; left: 0;">  <!-- !important keyword overrides whatever boostrap is doing to keep the color white-->
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-4 link-body-emphasis text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32"><use></use></svg>
+        <span class="fs-4"><img class="mb-4" src="https://i.ibb.co/YRmh26W/Screenshot-2024-09-16-152612-removebg-preview.png" alt="" width="175" height="175">  <!-- install the image to my computer folder, call the file here so it is not connecting to internet-->
+        </span>
+      </a>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li style="margin-bottom: 15px;">
+          <a href="#" id="overviewButton" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family: Georgia, serif; font-size: larger; display: flex; align-items: center; padding-left: 22px;">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+            Overview
+          </a>
+        </li>
+        <li style="margin-bottom: 15px;">
+          <a href="#" id="studentResponsesButton" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family: Georgia, serif; font-size: larger; display: flex; align-items: center; padding-left: 22px;">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+            Student Responses
+          </a>
+        </li>
+        <li style="margin-bottom: 15px;">
+          <a href="#" id="dormDetailsButton" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family:Georgia, serif;font-size: large; padding-right: 40px;">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+            Dorm Details
+          </a>
+        </li>
+        <li style="margin-bottom: 15px;">
+          <a href="#" id="helpButton" class="nav-link link-body-emphasis" style="color: #1a2f4a !important; font-family:Georgia, serif; font-size: large; padding-right: 40px;">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+            Help
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Default dropup button -->
+    <div class="fixed-bottom-left"> <!-- This is from Arman. This makes the drop up sticky to the bottom left of the page.-->
+      <div class="btn-group dropup">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #d2c6d3; color: #1a2f4a; font-family: Georgia, serif; font-weight: bold; overflow: hidden;">
+          {{session['name']}}
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <form action="{{ url_for('logout') }}" method="POST" style="margin: 0;">
+                <button type="submit" class="dropdown-item">Sign Out</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JAVASCRIPT LINK -->
+    <script src="{{ url_for('static', filename='AdminHomePageScript.js') }}"></script>
+
+  </body>
+</html>
