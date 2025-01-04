@@ -173,7 +173,6 @@ We welcome contributions from the community. To contribute:
 - **Jonathan Fasano**: Documentation Coordinator, API Integration Specialist, Frontend Developer
 - **Alexes Pagan**: Database Manager, Firebase Expert
 - **John Doyle**: QA Tester, Quality Assurance Lead
-- **Arman Hemmati Alamdari**: API Integration Specialist
 - **Parsa Jafaripour**: Project Manager, Algorithm Developer, Matching Logic Specialist
 
 ---
