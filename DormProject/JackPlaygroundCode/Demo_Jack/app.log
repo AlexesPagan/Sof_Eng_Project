@@ -1,0 +1,66 @@
+2024-12-02 22:52:44,719 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-02 22:52:44,719 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 22:52:44,724 - INFO -  * Restarting with stat
+2024-12-02 22:52:46,835 - WARNING -  * Debugger is active!
+2024-12-02 22:52:46,847 - INFO -  * Debugger PIN: 425-775-313
+2024-12-02 22:52:49,177 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-12-02 22:52:49,190 - INFO - Response: 200 OK Duration: 0.01s
+2024-12-02 22:52:49,191 - INFO - 127.0.0.1 - - [02/Dec/2024 22:52:49] "GET / HTTP/1.1" 200 -
+2024-12-02 22:52:49,303 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-12-02 22:52:49,503 - INFO - Response: 200 OK Duration: 0.20s
+2024-12-02 22:52:49,505 - INFO - 127.0.0.1 - - [02/Dec/2024 22:52:49] "GET /static/app.js HTTP/1.1" 200 -
+2024-12-02 22:52:55,620 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-12-02 22:52:56,215 - INFO - Response: 200 OK Duration: 0.59s
+2024-12-02 22:52:56,216 - INFO - 127.0.0.1 - - [02/Dec/2024 22:52:56] "POST /login HTTP/1.1" 200 -
+2024-12-02 22:52:56,260 - INFO - Request: GET http://127.0.0.1:5000/student User ID: tRaGQpWwD28YQ5Th3EXk Role: student
+2024-12-02 22:52:56,679 - INFO - Response: 200 OK Duration: 0.42s
+2024-12-02 22:52:56,680 - INFO - 127.0.0.1 - - [02/Dec/2024 22:52:56] "GET /student HTTP/1.1" 200 -
+2024-12-02 22:52:56,733 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: tRaGQpWwD28YQ5Th3EXk Role: student
+2024-12-02 22:52:56,754 - INFO - Response: 200 OK Duration: 0.02s
+2024-12-02 22:52:56,755 - INFO - 127.0.0.1 - - [02/Dec/2024 22:52:56] "GET /static/StudentHomePageStyleSheet.css HTTP/1.1" 200 -
+2024-12-02 22:52:56,784 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript1.1.js User ID: tRaGQpWwD28YQ5Th3EXk Role: student
+2024-12-02 22:52:56,846 - INFO - Response: 304 NOT MODIFIED Duration: 0.06s
+2024-12-02 22:52:56,847 - INFO - 127.0.0.1 - - [02/Dec/2024 22:52:56] "[36mGET /static/StudentHomePageScript1.1.js HTTP/1.1[0m" 304 -
+2024-12-02 22:53:09,077 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: tRaGQpWwD28YQ5Th3EXk Role: student
+2024-12-02 22:53:09,077 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-12-02 22:53:09,078 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:09] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-12-02 22:53:09,093 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-12-02 22:53:09,093 - INFO - Response: 200 OK Duration: 0.00s
+2024-12-02 22:53:09,094 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:09] "GET / HTTP/1.1" 200 -
+2024-12-02 22:53:09,162 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-12-02 22:53:09,165 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-12-02 22:53:09,166 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:09] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-12-02 22:53:15,958 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-12-02 22:53:16,192 - INFO - Response: 200 OK Duration: 0.23s
+2024-12-02 22:53:16,194 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:16] "POST /login HTTP/1.1" 200 -
+2024-12-02 22:53:16,273 - INFO - Request: GET http://127.0.0.1:5000/admin User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-12-02 22:53:16,576 - INFO - Response: 200 OK Duration: 0.30s
+2024-12-02 22:53:16,576 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:16] "GET /admin HTTP/1.1" 200 -
+2024-12-02 22:53:16,651 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageStyleSheet.css User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-12-02 22:53:16,655 - INFO - Request: GET http://127.0.0.1:5000/static/AdminHomePageScript.js User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-12-02 22:53:16,671 - INFO - Response: 304 NOT MODIFIED Duration: 0.02s
+2024-12-02 22:53:16,671 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:16] "[36mGET /static/AdminHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-12-02 22:53:16,709 - INFO - Response: 200 OK Duration: 0.05s
+2024-12-02 22:53:16,710 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:16] "GET /static/AdminHomePageScript.js HTTP/1.1" 200 -
+2024-12-02 22:53:56,738 - INFO - Request: POST http://127.0.0.1:5000/logout User ID: CjBOOhB9ZLYuGgROHp4a Role: admin
+2024-12-02 22:53:56,739 - INFO - Response: 302 FOUND Duration: 0.00s
+2024-12-02 22:53:56,739 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:56] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2024-12-02 22:53:56,753 - INFO - Request: GET http://127.0.0.1:5000/ User ID: None Role: None
+2024-12-02 22:53:56,754 - INFO - Response: 200 OK Duration: 0.00s
+2024-12-02 22:53:56,754 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:56] "GET / HTTP/1.1" 200 -
+2024-12-02 22:53:56,817 - INFO - Request: GET http://127.0.0.1:5000/static/app.js User ID: None Role: None
+2024-12-02 22:53:56,819 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-12-02 22:53:56,820 - INFO - 127.0.0.1 - - [02/Dec/2024 22:53:56] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+2024-12-02 22:54:04,805 - INFO - Request: POST http://127.0.0.1:5000/login User ID: None Role: None
+2024-12-02 22:54:04,994 - INFO - Response: 200 OK Duration: 0.19s
+2024-12-02 22:54:04,996 - INFO - 127.0.0.1 - - [02/Dec/2024 22:54:04] "POST /login HTTP/1.1" 200 -
+2024-12-02 22:54:05,046 - INFO - Request: GET http://127.0.0.1:5000/student User ID: tRaGQpWwD28YQ5Th3EXk Role: student
+2024-12-02 22:54:05,444 - INFO - Response: 200 OK Duration: 0.40s
+2024-12-02 22:54:05,444 - INFO - 127.0.0.1 - - [02/Dec/2024 22:54:05] "GET /student HTTP/1.1" 200 -
+2024-12-02 22:54:05,506 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageStyleSheet.css User ID: tRaGQpWwD28YQ5Th3EXk Role: student
+2024-12-02 22:54:05,507 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-12-02 22:54:05,507 - INFO - 127.0.0.1 - - [02/Dec/2024 22:54:05] "[36mGET /static/StudentHomePageStyleSheet.css HTTP/1.1[0m" 304 -
+2024-12-02 22:54:05,521 - INFO - Request: GET http://127.0.0.1:5000/static/StudentHomePageScript1.1.js User ID: tRaGQpWwD28YQ5Th3EXk Role: student
+2024-12-02 22:54:05,522 - INFO - Response: 304 NOT MODIFIED Duration: 0.00s
+2024-12-02 22:54:05,523 - INFO - 127.0.0.1 - - [02/Dec/2024 22:54:05] "[36mGET /static/StudentHomePageScript1.1.js HTTP/1.1[0m" 304 -

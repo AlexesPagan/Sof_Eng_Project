@@ -1,0 +1,160 @@
+    /* Can make this for all files, just one CSS file */
+    
+    /* dropdown CSS */
+    .dropdown-item:active {
+      background-color: #d2c6d3; 
+      color: #fff; 
+    }
+    .dropdown-item.active {
+        background-color: #d2c6d3; 
+        color: #fff;  
+    }
+
+    /*Carousel CSS */
+    .carousel {
+      margin-top: 10px; /* Adjust this to move the carousel closer to the top */
+    }
+
+    .carousel-control-prev-icon{
+      background-color: #f1d2f5; 
+      border-radius: 80%;  /* Makes it round edged, as opposed to straight. Used in temp uni tab */
+      margin-top: 900px;
+    }
+
+    .carousel-control-next-icon {
+      background-color:#f1d2f5; 
+      border-radius: 80%; /* Makes it round edged, as opposed to straight. Used in temp uni tab */
+      margin-top: 900px;
+    }
+
+    .carousel-indicators [data-bs-target] {
+        background-color: #dcecf1; 
+        margin-bottom: 600px
+    }
+
+    .carousel-indicators .active {
+        background-color: #edbcf2; 
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.5); /* Set RGB color as first 3 values, then the last is opacity! Easiest way to make opacity without turning */
+                                                /* the entire element & text opacity. (Yes i had this issue) */
+      padding: 10px; /* Adds some padding around the text */
+      border-radius: 10px; /* Rounds corners */
+    }
+
+    /* Handle text and content layout */
+    .container {
+      margin: 20px auto;
+      max-width: 80vw; /* Max width based on viewport */
+    }
+
+    /* Make carousel items responsive */
+    .carousel-item img {
+      width: 100%; /* Image takes full width */
+      height: auto; /* Adjusts height proportionally */
+      object-fit: contain; /* Ensures the image fits without distortion */
+    }
+
+    /* Carousel inner container */
+    .carousel-inner {
+        height: auto; /* Let it expand naturally */
+    }
+
+    /* Adjust column layout for different screen sizes */
+    .col-lg-4 img {
+        width: 100%;
+        height: auto;
+        border-radius: 10%;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%; /* Increase container width on smaller screens */
+        padding: 0;
+      }
+
+      /* Adjust carousel size for mobile */
+      .carousel {
+        height: 50vh; /* Reduce height on smaller screens */
+      }
+
+      .carousel-item img {
+        height: 50vh; /* Responsive height for images */
+      }
+    }
+
+    /* Media query for large screens */
+    @media (min-width: 1200px) {
+      #DD-Dorm-Page {
+        width: 70%; /* Slightly smaller width for larger screens */
+      }
+
+      /* Dorm Details Tab CSS */
+      #dorm-details{
+        visibility: hidden;
+        margin: 0 auto;
+        margin-top: -500px; /* This was the only way I could fix this extra white space issue at the top */
+        position: relative;
+        width: 80%; /* Responsive width */
+        max-width: 1200px; /* Cap the width for larger screens */
+        max-height: 90vh; /* Limit the height to 90% of the viewport */
+        overflow-y: visible; /* Allow vertical scrolling if content exceeds height */
+        padding: 10px;
+      }
+    }
+
+    #DD-Dorm-Page {
+      visibility: hidden;
+      margin: 0 auto;
+      margin-left: 280px;
+      margin-bottom: 250px;
+      margin-top: -200px;
+      position: relative;
+      bottom: 580px; /* Moves carosuel up and down */
+      width: 80%; /* Width */
+      max-width: 1200px; /* Cap the width for larger screens */
+      max-height: none;
+      overflow-x: hidden;
+      padding: 10px;
+    }
+    
+    #dorm-application{
+      visibility: hidden;
+      margin:auto;
+      position: absolute;
+      margin-left: 500px;
+    }
+
+    .fixed-bottom-left { /* This is from Arman */
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1050; /* Ensure it's above other elements */
+    }
+    
+    #overview-page{
+      margin-top: 150px;
+      margin-left: 600px;
+      display: block; /* Should we use this for other elements as well? */
+      width: 600px;
+      visibility: visible;
+    }
+
+    #help-page{
+      margin-top: -700px;
+      margin-left: 500px;
+      display: block; /* Should we use this for other elements as well? */
+      width: 800px;
+      visibility: hidden;
+      overflow: hidden;
+    }
+
+    #stu-resp-page{
+      margin-top: -600px;
+      margin-left: 600px;
+      display: block; /* Should we use this for other elements as well? */
+      width: 600px;
+      visibility: hidden;
+    }
